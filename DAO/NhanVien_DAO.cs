@@ -25,6 +25,24 @@ namespace DAO
             return table;
         }
 
+        public static List<string> DanhSachMaNV()
+        {
+            List<string> dsMaNV = new List<string>();
+
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Select MaNV From NhanVien");
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            foreach (DataRow row in table.Rows)
+            {
+                dsMaNV.Add(row["MaNV"].ToString());
+            }
+            
+            return dsMaNV;
+        }
+
         public static bool ThemNhanVien(NhanVien_DTO nv)
         {
             DataProvider dp = new DataProvider();

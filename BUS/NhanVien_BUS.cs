@@ -16,6 +16,12 @@ namespace BUS
             return NhanVien_DAO.DanhSachNhanVien();
         }
 
+        public static bool KiemTraMaNV(string maNV)
+        {
+            List<string> dsMaNV = NhanVien_DAO.DanhSachMaNV();
+            return dsMaNV.Contains(maNV.ToUpper());
+        }
+
         public static bool ThemNhanVien(NhanVien_DTO nv, out string message)
         {
             message = "";
@@ -29,6 +35,12 @@ namespace BUS
             if (string.IsNullOrEmpty(nv.TenNV))
             {
                 message = "Tên nhân viên không được bỏ trống";
+                return false;
+            }
+
+            if (KiemTraMaNV(nv.MaNV))
+            {
+                message = "Mã này đã tồn tại";
                 return false;
             }
 
@@ -65,7 +77,6 @@ namespace BUS
 
             return NhanVien_DAO.SuaNhanVien(nv, maNVcu);
         }
-   
 
     public static bool XoaNhanVien (NhanVien_DTO nv)
         {
