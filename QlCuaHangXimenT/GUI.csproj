@@ -74,18 +74,42 @@
     <Compile Include="main.Designer.cs">
       <DependentUpon>main.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVien\UC_NhanVien.cs">
+    <Compile Include="QuanLiNhanVien\Popup\ChiTietNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiNhanVien\Popup\ChiTietNV.Designer.cs">
+      <DependentUpon>ChiTietNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiNhanVien\Popup\Them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiNhanVien\Popup\Them.Designer.cs">
+      <DependentUpon>Them.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiNhanVien\UC_NhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NhanVien\UC_NhanVien.Designer.cs">
+    <Compile Include="QuanLiNhanVien\UC_NhanVien.Designer.cs">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLiSanPham\UC_MainSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLiSanPham\UC_MainSP.Designer.cs">
+      <DependentUpon>UC_MainSP.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien\UC_NhanVien.resx">
+    <EmbeddedResource Include="QuanLiNhanVien\Popup\ChiTietNV.resx">
+      <DependentUpon>ChiTietNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiNhanVien\Popup\Them.resx">
+      <DependentUpon>Them.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiNhanVien\UC_NhanVien.resx">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -98,6 +122,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QuanLiSanPham\UC_MainSP.resx">
+      <DependentUpon>UC_MainSP.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,6 +144,10 @@
       <Project>{51ca1e69-f3fa-4f01-9c33-d4ba977f8213}</Project>
       <Name>BUS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{b45fe71e-da7d-4f12-8b4e-e73c377a0d19}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{6fa1325c-9429-4171-9463-802f702e59f2}</Project>
       <Name>DTO</Name>
@@ -124,6 +155,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Adobe Express - file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nonePicture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

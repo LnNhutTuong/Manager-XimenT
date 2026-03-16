@@ -15,7 +15,7 @@ namespace DAO
         {
             DataProvider dp = new DataProvider();    
 
-            SqlCommand cmd = new SqlCommand( @" SELECT MaNV, TenNV, Ten_dang_nhap, Mat_khau , nv.MaCV, TenCV 
+            SqlCommand cmd = new SqlCommand(@" SELECT MaNV, TenNV, Ten_dang_nhap, Mat_khau, nv.MaCV, HinhAnh , TenCV 
                             FROM NhanVien as nv
                             Join ChucVu as cv
                             On nv.MaCV = cv.MaCV");
@@ -60,6 +60,25 @@ namespace DAO
 
             return kq > 0;
         }
+
+        public static DataTable TimNhanVienTheoMa (string maNV)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  SELECT MaNV, TenNV, Ten_dang_nhap, Mat_khau , nv.MaCV, TenCV 
+                                                FROM NhanVien as nv
+                                                Join ChucVu as cv
+                                                On nv.MaCV = cv.MaCV 
+                                                Where MaNV = @MaNV");
+
+            cmd.Parameters.Add("@MaNV", SqlDbType.VarChar,5).Value = maNV;
+
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
+
 
         public static bool SuaNhanVien (NhanVien_DTO nv, string maNVcu )
         {

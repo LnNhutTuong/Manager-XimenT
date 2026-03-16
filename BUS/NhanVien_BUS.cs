@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BUS
 {
@@ -51,6 +52,19 @@ namespace BUS
             }
 
             return NhanVien_DAO.ThemNhanVien(nv);
+        }
+
+        public static DataTable TimNhanVienTheoMa (string maNV, out string message)
+        {
+            message = "";
+
+            //validate ben day di thang lam bieng :D
+            if (!KiemTraMaNV(maNV))
+            {
+                message = "Không tồn tại mã này!";
+                return null;
+            }
+            return NhanVien_DAO.TimNhanVienTheoMa(maNV);
         }
 
         public static bool SuaNhanVien(NhanVien_DTO nv , string maNVcu, out string message)

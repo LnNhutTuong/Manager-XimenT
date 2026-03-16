@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36717.8 d17.14
+VisualStudioVersion = 17.14.36717.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "QlCuaHangXimenT\GUI.csproj", "{049A1D2C-25ED-411E-8F71-21F6C8C2A470}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{EB3DC2EC-4817-4663-B246-C065FFAE2F9C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{6FA1325C-9429-4171-9463-802F702E59F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B45FE71E-DA7D-4F12-8B4E-E73C377A0D19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6FA1325C-9429-4171-9463-802F702E59F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FA1325C-9429-4171-9463-802F702E59F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FA1325C-9429-4171-9463-802F702E59F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45FE71E-DA7D-4F12-8B4E-E73C377A0D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45FE71E-DA7D-4F12-8B4E-E73C377A0D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45FE71E-DA7D-4F12-8B4E-E73C377A0D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45FE71E-DA7D-4F12-8B4E-E73C377A0D19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

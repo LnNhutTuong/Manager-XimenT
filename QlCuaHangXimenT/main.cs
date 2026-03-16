@@ -1,4 +1,5 @@
 ﻿using System;
+    using BUS;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using QlCuaHangXimenT.NhanVien;
-
 namespace QlCuaHangXimenT
 {
     public partial class main : Form
@@ -19,16 +19,13 @@ namespace QlCuaHangXimenT
             InitializeComponent();
         }
 
-        private void btnQuanLiNhanVien_Click(object sender, EventArgs e)
+        private void btnNhanVien_Click(object sender, EventArgs e)
         {
             UC_NhanVien nv = new UC_NhanVien();
-            nv.Dock = DockStyle.Fill;
+            lblViTri.Text = "Quản lí Nhân Viên";
             content.Controls.Add(nv);
-        }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            
         }
     }
 }

@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChucVu_DAO.cs" />
+    <Compile Include="DanhMuc_DAO.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="NhanVien_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

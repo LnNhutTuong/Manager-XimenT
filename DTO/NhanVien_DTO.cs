@@ -13,5 +13,7 @@ namespace DTO
         public string MaCV { get;set; }
         public string Ten_dang_nhap { get;set; }
         public string Mat_khau { get;set; }
+        public string HinhAnh { get; set; }
+
     }
 }
