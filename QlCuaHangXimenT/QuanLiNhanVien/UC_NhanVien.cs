@@ -16,21 +16,7 @@ namespace QlCuaHangXimenT.NhanVien
 {
     public partial class UC_NhanVien : UserControl
     {
-        private void OnOff(bool value)
-        {
-            //txtMaNhanVien.Enabled = value;
-            //txtTenNhanVien.Enabled = value;
-            //txtTenDangNhap.Enabled = value;
-            //txtMatKhau.Enabled = value;
-            //cboChucVu.Enabled = value;
-
-            //btnThem.Enabled = !value;
-            //btnSua.Enabled = !value;
-            //btnXoa.Enabled = !value;
-
-            //btnHuy.Enabled = value;
-            //btnLuu.Enabled = value;
-        }
+    
 
         private void LayDuLieu()
         {
@@ -39,26 +25,7 @@ namespace QlCuaHangXimenT.NhanVien
             dgvNhanVien.Columns["Ten_dang_nhap"].Visible = false;
             dgvNhanVien.Columns["Mat_khau"].Visible = false;
             dgvNhanVien.Columns["MaCV"].Visible = false;
-
-            //txtMaNhanVien.DataBindings.Clear();
-            //txtTenNhanVien.DataBindings.Clear();
-            //txtTenDangNhap.DataBindings.Clear();
-            //txtMatKhau.DataBindings.Clear();
-            //cboChucVu.DataBindings.Clear();
-
-
-
-            //txtMaNhanVien.DataBindings.Add("Text", dgvNhanVien.DataSource, "MaNV");
-            //txtTenNhanVien.DataBindings.Add("Text", dgvNhanVien.DataSource, "TenNV");
-            //txtTenDangNhap.DataBindings.Add("Text", dgvNhanVien.DataSource, "Ten_dang_nhap");
-            //txtMatKhau.DataBindings.Add("Text", dgvNhanVien.DataSource, "Mat_khau");
-
-            //cboChucVu.DataSource = ChucVu_BUS.DanhSachChucVu();
-            //cboChucVu.DisplayMember = "TenCV";
-            //cboChucVu.ValueMember = "MaCV";
-
-
-            //cboChucVu.DataBindings.Add("SelectedValue", dgvNhanVien.DataSource, "MaCV");
+            dgvNhanVien.Columns["HinhAnh"].Visible = false;
         }
 
 
@@ -66,7 +33,6 @@ namespace QlCuaHangXimenT.NhanVien
         {
             InitializeComponent();
             LayDuLieu();
-            OnOff(false);
         }
 
         private void btnThem_Click(object sender, EventArgs e)

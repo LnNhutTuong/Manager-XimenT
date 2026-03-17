@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnHide = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnSua = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnXoa = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnThayAnh = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenDangNhap = new Guna.UI2.WinForms.Guna2TextBox();
@@ -47,6 +48,7 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnHuy = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnLuu = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ptbNhanVien)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -121,25 +123,25 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // guna2GradientButton1
+            // btnThayAnh
             // 
-            this.guna2GradientButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.BorderRadius = 10;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Black;
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(51, 266);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(113, 30);
-            this.guna2GradientButton1.TabIndex = 28;
-            this.guna2GradientButton1.Text = "Thay ảnh";
+            this.btnThayAnh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnThayAnh.BackColor = System.Drawing.Color.Transparent;
+            this.btnThayAnh.BorderRadius = 10;
+            this.btnThayAnh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThayAnh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThayAnh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThayAnh.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThayAnh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThayAnh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.btnThayAnh.FillColor2 = System.Drawing.Color.Black;
+            this.btnThayAnh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThayAnh.ForeColor = System.Drawing.Color.White;
+            this.btnThayAnh.Location = new System.Drawing.Point(51, 266);
+            this.btnThayAnh.Name = "btnThayAnh";
+            this.btnThayAnh.Size = new System.Drawing.Size(113, 30);
+            this.btnThayAnh.TabIndex = 28;
+            this.btnThayAnh.Text = "Thay ảnh";
             // 
             // txtMatKhau
             // 
@@ -319,11 +321,13 @@
             // ptbNhanVien
             // 
             this.ptbNhanVien.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ptbNhanVien.BackColor = System.Drawing.Color.White;
             this.ptbNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ptbNhanVien.ImageRotate = 0F;
             this.ptbNhanVien.Location = new System.Drawing.Point(26, 37);
             this.ptbNhanVien.Name = "ptbNhanVien";
             this.ptbNhanVien.Size = new System.Drawing.Size(156, 223);
+            this.ptbNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbNhanVien.TabIndex = 17;
             this.ptbNhanVien.TabStop = false;
             // 
@@ -332,14 +336,13 @@
             this.guna2GradientPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel1.BorderRadius = 15;
             this.guna2GradientPanel1.Controls.Add(this.btnHuy);
             this.guna2GradientPanel1.Controls.Add(this.btnLuu);
             this.guna2GradientPanel1.Controls.Add(this.guna2ControlBox1);
             this.guna2GradientPanel1.Controls.Add(this.btnHide);
             this.guna2GradientPanel1.Controls.Add(this.btnSua);
             this.guna2GradientPanel1.Controls.Add(this.btnXoa);
-            this.guna2GradientPanel1.Controls.Add(this.guna2GradientButton1);
+            this.guna2GradientPanel1.Controls.Add(this.btnThayAnh);
             this.guna2GradientPanel1.Controls.Add(this.txtMatKhau);
             this.guna2GradientPanel1.Controls.Add(this.label4);
             this.guna2GradientPanel1.Controls.Add(this.txtTenDangNhap);
@@ -402,6 +405,11 @@
             this.btnLuu.Visible = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 30;
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // ChiTietNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -426,7 +434,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox btnHide;
         private Guna.UI2.WinForms.Guna2GradientButton btnSua;
         private Guna.UI2.WinForms.Guna2GradientButton btnXoa;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnThayAnh;
         private Guna.UI2.WinForms.Guna2TextBox txtMatKhau;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txtTenDangNhap;
@@ -441,5 +449,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientButton btnHuy;
         private Guna.UI2.WinForms.Guna2GradientButton btnLuu;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

@@ -16,8 +16,8 @@ namespace DAO
             DataProvider dp = new DataProvider();    
 
             SqlCommand cmd = new SqlCommand(@" SELECT MaNV, TenNV, Ten_dang_nhap, Mat_khau, nv.MaCV, HinhAnh , TenCV 
-                            FROM NhanVien as nv
-                            Join ChucVu as cv
+                            FROM (select * from NhanVien) as nv
+                            Join (select * from ChucVu) as cv
                             On nv.MaCV = cv.MaCV");
             
             DataTable table = dp.TruyVanLayDuLieu(cmd);
@@ -65,7 +65,7 @@ namespace DAO
         {
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(@"  SELECT MaNV, TenNV, Ten_dang_nhap, Mat_khau , nv.MaCV, TenCV 
+            SqlCommand cmd = new SqlCommand(@"  SELECT MaNV, TenNV, Ten_dang_nhap, Mat_khau , nv.MaCV, TenCV, HinhAnh
                                                 FROM NhanVien as nv
                                                 Join ChucVu as cv
                                                 On nv.MaCV = cv.MaCV 

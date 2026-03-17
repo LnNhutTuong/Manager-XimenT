@@ -43,6 +43,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             cboChucVu.Enabled = isEdit;
             txtTenDangNhap.Enabled = isEdit;
             txtMatKhau.Enabled = isEdit;
+            btnThayAnh.Enabled = isEdit;
 
             btnSua.Visible = !isEdit;
             btnXoa.Visible = !isEdit;
@@ -76,12 +77,6 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             #region đưa data lên text box
 
             DataRow row = nv.Rows[0];
-
-            foreach (DataColumn col in nv.Columns)
-            {
-                MessageBox.Show(col.ColumnName);
-            }
-
             if (nv.Rows.Count > 0)
             {
                 txtMaNhanVien.Text = row["MaNV"].ToString();
@@ -89,11 +84,10 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
                 cboChucVu.SelectedValue = row["MaCV"].ToString();
                 txtTenDangNhap.Text = row["Ten_dang_nhap"].ToString();
                 txtMatKhau.Text = row["Mat_khau"].ToString();
-
-                //if ( row["HinhAnh"] == DBNull.Value)
-                //{
-                //    ptbNhanVien.Image = Resources.nonePicture;
-                //}
+                if (row["HinhAnh"] == DBNull.Value)
+                {
+                    ptbNhanVien.Image = Resources.nonePicture;
+                }
             }                                
             #endregion
 
