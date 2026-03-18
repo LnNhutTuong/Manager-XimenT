@@ -23,6 +23,7 @@ namespace QlCuaHangXimenT
         {
             UC_NhanVien nv = new UC_NhanVien();
             lblViTri.Text = "Quản lí Nhân Viên";
+            nv.Dock = DockStyle.Fill;
             content.Controls.Add(nv);
 
             

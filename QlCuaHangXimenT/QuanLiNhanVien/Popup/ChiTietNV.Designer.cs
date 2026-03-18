@@ -142,6 +142,7 @@
             this.btnThayAnh.Size = new System.Drawing.Size(113, 30);
             this.btnThayAnh.TabIndex = 28;
             this.btnThayAnh.Text = "Thay ảnh";
+            this.btnThayAnh.Click += new System.EventHandler(this.btnThayAnh_Click);
             // 
             // txtMatKhau
             // 

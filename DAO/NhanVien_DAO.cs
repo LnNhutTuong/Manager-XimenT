@@ -48,14 +48,15 @@ namespace DAO
             DataProvider dp = new DataProvider();
 
             SqlCommand cmd = new SqlCommand(@" Insert Into NhanVien
-                            Values(@MaNV, @TenNV,@MaCV , @Mat_khau, @Ten_dang_nhap )");
-
+                            Values(@MaNV, @TenNV, @MaCV , @Ten_dang_nhap, @Mat_khau , @HinhAnh)");
+                
             cmd.Parameters.Add("@MaNV", SqlDbType.VarChar,5).Value = nv.MaNV;
             cmd.Parameters.Add("@TenNV", SqlDbType.NVarChar, 100).Value = nv.TenNV;
             cmd.Parameters.Add("@MaCV", SqlDbType.VarChar, 5).Value = nv.MaCV;
             cmd.Parameters.Add("@Ten_dang_nhap", SqlDbType.VarChar, 30).Value = nv.Ten_dang_nhap;
             cmd.Parameters.Add("@Mat_khau", SqlDbType.VarChar, 50).Value = nv.Mat_khau;
-
+            cmd.Parameters.Add("@HinhAnh", SqlDbType.NVarChar, 255).Value = (object)nv.HinhAnh ?? DBNull.Value;
+            
             int kq = dp.TruyVanKhongLayDuLieu(cmd);
 
             return kq > 0;
@@ -89,7 +90,8 @@ namespace DAO
                                                     TenNV = @TenNV,
                                                     MaCV = @MaCV,
                                                     Ten_dang_nhap = @Ten_dang_nhap,
-                                                    Mat_khau = @Mat_khau
+                                                    Mat_khau = @Mat_khau,
+                                                    HinhAnh = @HinhAnh
                                                 Where MaNV = @MaNVCu");
             cmd.Parameters.Add("@MaNVMoi", SqlDbType.VarChar, 5).Value = nv.MaNV;
             cmd.Parameters.Add("@TenNV", SqlDbType.NVarChar, 100).Value = nv.TenNV;
@@ -97,6 +99,7 @@ namespace DAO
             cmd.Parameters.Add("@Ten_dang_nhap", SqlDbType.VarChar, 30).Value = nv.Ten_dang_nhap;
             cmd.Parameters.Add("@Mat_khau", SqlDbType.VarChar, 50).Value = nv.Mat_khau;
             cmd.Parameters.Add("@MaNVCu", SqlDbType.VarChar, 5).Value = maNVcu;
+            cmd.Parameters.Add("@HinhAnh", SqlDbType.NVarChar, 255).Value = (object)nv.HinhAnh ?? DBNull.Value;
 
             int kq = dp.TruyVanKhongLayDuLieu(cmd);
 

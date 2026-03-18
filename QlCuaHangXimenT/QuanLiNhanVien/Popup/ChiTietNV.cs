@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
 {
@@ -19,15 +21,6 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
     {
         string maNV;
         DataTable nv;
-
-        public void OnOff(bool value)
-        {
-            txtMaNhanVien.Enabled = value;
-            txtTenNhanVien.Enabled = value;
-            cboChucVu.Enabled = value;
-            txtTenDangNhap.Enabled = value;
-            txtMatKhau.Enabled = value;
-        }
 
         //bieesn CurrentMode cos kieeur FormMode
         public FormMode CurrentMode;
@@ -72,7 +65,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
 
         private void Sua_Load(object sender, EventArgs e)
         {
-            OnOff(false);
+            SetMode(FormMode.View);
 
             #region đưa data lên text box
 
@@ -84,10 +77,29 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
                 cboChucVu.SelectedValue = row["MaCV"].ToString();
                 txtTenDangNhap.Text = row["Ten_dang_nhap"].ToString();
                 txtMatKhau.Text = row["Mat_khau"].ToString();
+
                 if (row["HinhAnh"] == DBNull.Value)
                 {
                     ptbNhanVien.Image = Resources.nonePicture;
                 }
+                else
+                {
+                    string pathAnh = row["HinhAnh"].ToString();
+
+                    string fullPath = Path.Combine(Application.StartupPath, pathAnh);
+
+                    if (File.Exists(fullPath))
+                    {
+                        ptbNhanVien.Image = Image.FromFile(fullPath);
+                        ptbNhanVien.Tag = pathAnh;
+                    }
+                    else
+                    {
+                        ptbNhanVien.Image = Resources.nonePicture;
+                        MessageBox.Show(" ảnh không tồn tại nữa!");
+                    }
+                }
+                    
             }                                
             #endregion
 
@@ -107,6 +119,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             nv.Ten_dang_nhap = txtTenDangNhap.Text;
             nv.Mat_khau = txtMatKhau.Text;
             nv.MaCV = cboChucVu.SelectedValue.ToString();
+            nv.HinhAnh = ptbNhanVien.Tag?.ToString();
 
             string message;
 
@@ -121,6 +134,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             {
                 MessageBox.Show(message);
             }
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -150,6 +164,60 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
                     MessageBox.Show("Xóa không thành công");
                 }
             }
+        }
+
+        private void btnThayAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "Image| *.jpg; *.png; *.bmp; *.gif";
+
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                if (ptbNhanVien.Tag != null)
+                {
+                    string pathHienTai = Path.GetFullPath(Path.Combine(Application.StartupPath, ptbNhanVien.Tag.ToString()));
+                    string pathMoi = Path.GetFullPath(file.FileName);
+
+                    if (pathHienTai.Equals(pathMoi, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return;
+                    }
+                }
+
+                #region Thư mục
+                string folder = Application.StartupPath + "\\Image\\";
+
+                //neu ko co Folder thi tao
+                if (!Directory.Exists(folder))
+                {
+                    Directory.CreateDirectory(folder);
+                }
+                #endregion
+
+                #region Tên
+                //ten ko trung
+                DateTime date = DateTime.Now;
+                string filename = txtMaNhanVien.Text + "_" + date.ToString("ddMMyyyy") + Path.GetExtension(file.FileName);
+                //duong dan
+                string newPath = folder + filename;
+                #endregion
+
+                #region rất lú, hiểu đơn giản: sử dụng thằng "using" để giải quyết cái bug ảnh bị khóa :))
+                byte[] imageByte = File.ReadAllBytes(file.FileName);
+
+                using (MemoryStream ms = new MemoryStream(imageByte)) {
+
+                    ptbNhanVien.Image = Image.FromStream(ms);
+                }
+                #endregion
+
+                File.Copy(file.FileName, newPath, true);
+
+                //luu tag
+                ptbNhanVien.Tag = "Image\\" + filename;
+
+            }
+
         }
     }
 }

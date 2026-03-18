@@ -45,10 +45,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ptbNhanVien = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -70,7 +70,7 @@
             this.guna2GradientPanel1.Controls.Add(this.label1);
             this.guna2GradientPanel1.Controls.Add(this.txtMaNhanVien);
             this.guna2GradientPanel1.Controls.Add(this.lbl1);
-            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
+            this.guna2GradientPanel1.Controls.Add(this.ptbNhanVien);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(59)))));
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(84)))), ((int)(((byte)(97)))));
@@ -164,6 +164,7 @@
             this.btnThayAnh.Size = new System.Drawing.Size(113, 30);
             this.btnThayAnh.TabIndex = 28;
             this.btnThayAnh.Text = "Thay ảnh";
+            this.btnThayAnh.Click += new System.EventHandler(this.btnThayAnh_Click);
             // 
             // txtMatKhau
             // 
@@ -330,15 +331,17 @@
             this.lbl1.TabIndex = 18;
             this.lbl1.Text = "Mã nhân viên:";
             // 
-            // guna2PictureBox1
+            // ptbNhanVien
             // 
-            this.guna2PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(26, 37);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(156, 223);
-            this.guna2PictureBox1.TabIndex = 17;
-            this.guna2PictureBox1.TabStop = false;
+            this.ptbNhanVien.BackColor = System.Drawing.Color.White;
+            this.ptbNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbNhanVien.ImageRotate = 0F;
+            this.ptbNhanVien.Location = new System.Drawing.Point(26, 37);
+            this.ptbNhanVien.Name = "ptbNhanVien";
+            this.ptbNhanVien.Size = new System.Drawing.Size(156, 223);
+            this.ptbNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbNhanVien.TabIndex = 17;
+            this.ptbNhanVien.TabStop = false;
             // 
             // guna2Elipse1
             // 
@@ -361,7 +364,7 @@
             this.Text = "Them";
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbNhanVien)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,7 +385,7 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtMaNhanVien;
         private System.Windows.Forms.Label lbl1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox ptbNhanVien;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox btnHide;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
