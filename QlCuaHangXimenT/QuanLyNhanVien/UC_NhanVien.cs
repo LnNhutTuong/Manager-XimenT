@@ -37,7 +37,7 @@ namespace QlCuaHangXimenT.NhanVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            Them them = new Them();
+            ThemNV them = new ThemNV();
             if (them.ShowDialog() == DialogResult.OK)
             {
                 LayDuLieu();
@@ -49,7 +49,6 @@ namespace QlCuaHangXimenT.NhanVien
             if (dgvNhanVien.Columns[e.ColumnIndex].Name == "XemChiTiet")
             {
                 string maNV = dgvNhanVien.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
-                Console.WriteLine(maNV);
                 string message;
                 var nv = NhanVien_BUS.TimNhanVienTheoMa(maNV, out message);
 

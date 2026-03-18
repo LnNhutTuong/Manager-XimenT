@@ -57,10 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChucVu_DAO.cs" />
-    <Compile Include="DanhMuc_DAO.cs" />
+    <Compile Include="QuanLyNhanVien\ChucVu_DAO.cs" />
+    <Compile Include="QuanLySanPham\DanhMuc_DAO.cs" />
     <Compile Include="DataProvider.cs" />
-    <Compile Include="NhanVien_DAO.cs" />
+    <Compile Include="QuanLyNhanVien\NhanVien_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

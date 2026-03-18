@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class DanhMuc_DTO
+    public class DanhMuc_DTO
     {
         public string MaDM { get; set; }
         public string TenDM { get; set; }

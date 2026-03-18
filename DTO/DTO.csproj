@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DanhMuc_DTO.cs" />
-    <Compile Include="NhanVien_DTO.cs" />
+    <Compile Include="QuanLySanPham\DanhMuc_DTO.cs" />
+    <Compile Include="QuanLyNhanVien\NhanVien_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

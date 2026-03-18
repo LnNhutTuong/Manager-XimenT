@@ -77,6 +77,12 @@ namespace BUS
                 return false;
             }
 
+            if (string.IsNullOrEmpty(nv.MaNV))
+            {
+                message = "Tên nhân viên không được bỏ trống";
+                return false;
+            }
+
             if (string.IsNullOrEmpty(nv.TenNV))
             {
                 message = "Tên nhân viên không được bỏ trống";

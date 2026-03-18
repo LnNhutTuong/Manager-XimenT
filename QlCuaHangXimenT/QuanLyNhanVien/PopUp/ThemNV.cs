@@ -15,7 +15,7 @@ using System.IO;
 
 namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
 {
-    public partial class Them : Form
+    public partial class ThemNV : Form
     {
         public void DanhSachChucVu()
         {
@@ -24,7 +24,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             cboChucVu.ValueMember = "MaCV";
         }
 
-        public Them()
+        public ThemNV()
         {
             InitializeComponent();
             DanhSachChucVu();
@@ -124,7 +124,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
 
 
             }
-        }
+        }        
     }
 }
 

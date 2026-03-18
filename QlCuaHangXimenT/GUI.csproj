@@ -74,42 +74,54 @@
     <Compile Include="main.Designer.cs">
       <DependentUpon>main.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLiNhanVien\Popup\ChiTietNV.cs">
+    <Compile Include="QuanLyNhanVien\PopUp\ChiTietNV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLiNhanVien\Popup\ChiTietNV.Designer.cs">
+    <Compile Include="QuanLyNhanVien\PopUp\ChiTietNV.Designer.cs">
       <DependentUpon>ChiTietNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLiNhanVien\Popup\Them.cs">
+    <Compile Include="QuanLyNhanVien\PopUp\ThemNV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLiNhanVien\Popup\Them.Designer.cs">
-      <DependentUpon>Them.cs</DependentUpon>
+    <Compile Include="QuanLyNhanVien\PopUp\ThemNV.Designer.cs">
+      <DependentUpon>ThemNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLiNhanVien\UC_NhanVien.cs">
+    <Compile Include="QuanLyNhanVien\UC_NhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuanLiNhanVien\UC_NhanVien.Designer.cs">
+    <Compile Include="QuanLyNhanVien\UC_NhanVien.Designer.cs">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLiSanPham\UC_MainSP.cs">
+    <Compile Include="QuanLySanPham\DanhMuc\PopUp\ChiTietDM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\DanhMuc\PopUp\ChiTietDM.Designer.cs">
+      <DependentUpon>ChiTietDM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanPham\DanhMuc\PopUp\ThemDM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\DanhMuc\PopUp\ThemDM.Designer.cs">
+      <DependentUpon>ThemDM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanPham\DanhMuc\UC_DanhMuc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuanLiSanPham\UC_MainSP.Designer.cs">
-      <DependentUpon>UC_MainSP.cs</DependentUpon>
+    <Compile Include="QuanLySanPham\DanhMuc\UC_DanhMuc.Designer.cs">
+      <DependentUpon>UC_DanhMuc.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLiNhanVien\Popup\ChiTietNV.resx">
+    <EmbeddedResource Include="QuanLyNhanVien\PopUp\ChiTietNV.resx">
       <DependentUpon>ChiTietNV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLiNhanVien\Popup\Them.resx">
-      <DependentUpon>Them.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyNhanVien\PopUp\ThemNV.resx">
+      <DependentUpon>ThemNV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLiNhanVien\UC_NhanVien.resx">
+    <EmbeddedResource Include="QuanLyNhanVien\UC_NhanVien.resx">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -122,8 +134,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuanLiSanPham\UC_MainSP.resx">
-      <DependentUpon>UC_MainSP.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLySanPham\DanhMuc\PopUp\ChiTietDM.resx">
+      <DependentUpon>ChiTietDM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\DanhMuc\PopUp\ThemDM.resx">
+      <DependentUpon>ThemDM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\DanhMuc\UC_DanhMuc.resx">
+      <DependentUpon>UC_DanhMuc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -164,6 +182,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loupe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

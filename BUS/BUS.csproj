@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChucVu_BUS.cs" />
-    <Compile Include="NhanVien_BUS.cs" />
+    <Compile Include="QuanLyNhanVien\ChucVu_BUS.cs" />
+    <Compile Include="QuanLyNhanVien\NhanVien_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLySanPham\DanhMuc_BUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
