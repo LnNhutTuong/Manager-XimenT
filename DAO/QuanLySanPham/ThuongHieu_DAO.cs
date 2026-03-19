@@ -1,0 +1,72 @@
+﻿using DTO;
+using DTO.QuanLySanPham;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DAO.QuanLySanPham
+{
+    internal class ThuongHieu_DAO
+    {
+        public static DataTable DanhSachThuongHieu()
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Select * From ThuongHieu");
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
+
+        public static List<string> DanhSachMaTH()
+        {
+            List<string> dsMaTH = new List<string>();
+
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Select MaTH From ThuongHieu");
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            foreach (DataRow row in table.Rows)
+            {
+                dsMaTH.Add(row["MaTH"].ToString());
+            }
+            return dsMaTH;            
+        }
+        
+        public static bool ThemThuongHieu(ThuongHieu_DTO th)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  Insert Into ThuongHieu
+                                                Values @MaTH, @TenTH");
+
+            cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = th.MaTH;
+            cmd.Parameters.Add("@TenDM", SqlDbType.NVarChar, 100).Value = th.TenTH;
+
+            int kq = dp.TruyVanKhongLayDuLieu(cmd);
+
+            return kq > 0;
+        }
+
+        public static bool SuaThuongHieu(ThuongHieu_DTO th, string maTH)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"");
+
+            cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = th.MaTH;
+            cmd.Parameters.Add("@TenDM", SqlDbType.NVarChar, 100).Value = th.TenTH;
+
+            int kq = dp.TruyVanKhongLayDuLieu(cmd);
+
+            return kq > 0;
+        }
+    }
+}

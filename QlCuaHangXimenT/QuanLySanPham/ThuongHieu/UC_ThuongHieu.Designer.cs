@@ -1,6 +1,6 @@
-﻿namespace QlCuaHangXimenT.QuanLiSanPham
+﻿namespace QlCuaHangXimenT.QuanLySanPham.ThuongHieu
 {
-    partial class UC_DanhMuc
+    partial class UC_ThuongHieu
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.dgvDanhMuc = new System.Windows.Forms.DataGridView();
-            this.MaDM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChinhSua = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -66,7 +66,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.dgvDanhMuc);
             this.splitContainer1.Size = new System.Drawing.Size(1314, 708);
             this.splitContainer1.SplitterDistance = 169;
-            this.splitContainer1.TabIndex = 1;
+            this.splitContainer1.TabIndex = 2;
             // 
             // panel2
             // 
@@ -82,6 +82,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1314, 169);
             this.panel2.TabIndex = 2;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.BorderRadius = 10;
+            this.btnTimKiem.BorderThickness = 1;
+            this.btnTimKiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTimKiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTimKiem.FillColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnTimKiem.ForeColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.Image = global::QlCuaHangXimenT.Properties.Resources.loupe;
+            this.btnTimKiem.Location = new System.Drawing.Point(874, 128);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(41, 35);
+            this.btnTimKiem.TabIndex = 147;
             // 
             // txtTimKiem
             // 
@@ -103,7 +122,6 @@
             this.txtTimKiem.SelectedText = "";
             this.txtTimKiem.Size = new System.Drawing.Size(524, 41);
             this.txtTimKiem.TabIndex = 146;
-            this.txtTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyDown);
             // 
             // label2
             // 
@@ -112,9 +130,9 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(27, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(289, 35);
+            this.label2.Size = new System.Drawing.Size(327, 35);
             this.label2.TabIndex = 145;
-            this.label2.Text = "Danh sách danh mục:";
+            this.label2.Text = "Danh sách Thương hiệu:";
             // 
             // label1
             // 
@@ -142,7 +160,6 @@
             this.btnThem.Size = new System.Drawing.Size(161, 45);
             this.btnThem.TabIndex = 130;
             this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
@@ -160,29 +177,28 @@
             this.btnXoa.Size = new System.Drawing.Size(161, 45);
             this.btnXoa.TabIndex = 131;
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // dgvDanhMuc
             // 
             this.dgvDanhMuc.AllowUserToAddRows = false;
             this.dgvDanhMuc.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dgvDanhMuc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvDanhMuc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhMuc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhMuc.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhMuc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhMuc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhMuc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDanhMuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhMuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaDM,
-            this.TenDM,
+            this.MaTH,
+            this.TenTH,
             this.ChinhSua});
             this.dgvDanhMuc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhMuc.EnableHeadersVisualStyles = false;
@@ -194,23 +210,22 @@
             this.dgvDanhMuc.RowTemplate.Height = 24;
             this.dgvDanhMuc.Size = new System.Drawing.Size(1314, 535);
             this.dgvDanhMuc.TabIndex = 0;
-            this.dgvDanhMuc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhMuc_CellContentClick);
             // 
-            // MaDM
+            // MaTH
             // 
-            this.MaDM.DataPropertyName = "MaDM";
-            this.MaDM.HeaderText = "Mã danh mục";
-            this.MaDM.MinimumWidth = 6;
-            this.MaDM.Name = "MaDM";
-            this.MaDM.ReadOnly = true;
+            this.MaTH.DataPropertyName = "MaTH";
+            this.MaTH.HeaderText = "Mã thương hiệu";
+            this.MaTH.MinimumWidth = 6;
+            this.MaTH.Name = "MaTH";
+            this.MaTH.ReadOnly = true;
             // 
-            // TenDM
+            // TenTH
             // 
-            this.TenDM.DataPropertyName = "TenDM";
-            this.TenDM.HeaderText = "Tên danh mục";
-            this.TenDM.MinimumWidth = 6;
-            this.TenDM.Name = "TenDM";
-            this.TenDM.ReadOnly = true;
+            this.TenTH.DataPropertyName = "TenTH";
+            this.TenTH.HeaderText = "Tên thương hiệu";
+            this.TenTH.MinimumWidth = 6;
+            this.TenTH.Name = "TenTH";
+            this.TenTH.ReadOnly = true;
             // 
             // ChinhSua
             // 
@@ -221,32 +236,12 @@
             this.ChinhSua.Text = "Chỉnh sửa";
             this.ChinhSua.UseColumnTextForButtonValue = true;
             // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.BorderRadius = 10;
-            this.btnTimKiem.BorderThickness = 1;
-            this.btnTimKiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTimKiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTimKiem.FillColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.ForeColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.Image = global::QlCuaHangXimenT.Properties.Resources.loupe;
-            this.btnTimKiem.Location = new System.Drawing.Point(874, 128);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(41, 35);
-            this.btnTimKiem.TabIndex = 147;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
-            // UC_DanhMuc
+            // UC_ThuongHieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
-            this.Name = "UC_DanhMuc";
+            this.Name = "UC_ThuongHieu";
             this.Size = new System.Drawing.Size(1314, 708);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -270,8 +265,8 @@
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private System.Windows.Forms.DataGridView dgvDanhMuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaTH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTH;
         private System.Windows.Forms.DataGridViewButtonColumn ChinhSua;
     }
 }

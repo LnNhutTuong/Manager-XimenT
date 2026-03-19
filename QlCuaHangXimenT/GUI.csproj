@@ -112,6 +112,12 @@
     <Compile Include="QuanLySanPham\DanhMuc\UC_DanhMuc.Designer.cs">
       <DependentUpon>UC_DanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.Designer.cs">
+      <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\DanhMuc\UC_DanhMuc.resx">
       <DependentUpon>UC_DanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.resx">
+      <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

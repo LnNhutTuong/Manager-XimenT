@@ -66,6 +66,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
         private void Sua_Load(object sender, EventArgs e)
         {
             SetMode(FormMode.View);
+            lblTitle.Text = "Chi tiết Nhân viên";
 
             #region đưa data lên text box
 
@@ -108,6 +109,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
         private void btnSua_Click(object sender, EventArgs e)
         {
             SetMode(FormMode.Edit);
+            lblTitle.Text = "Sửa Nhân viên";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

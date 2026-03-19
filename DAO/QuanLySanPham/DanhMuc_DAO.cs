@@ -75,11 +75,10 @@ namespace DAO
             DataProvider dp = new DataProvider();
 
             SqlCommand cmd = new SqlCommand(@"  Update DanhMuc
-                                                Set MaDM = @NewMaDM
+                                                Set 
                                                     TenDM = @TenDM
                                                 Where MaDM = @OldMaDM");
-
-            cmd.Parameters.Add("@NewMaDM", SqlDbType.VarChar, 5).Value = dm.MaDM;
+          
             cmd.Parameters.Add("@TenDM", SqlDbType.NVarChar, 100).Value = dm.TenDM;
             cmd.Parameters.Add("@OldMaDM", SqlDbType.VarChar, 5).Value = maDM;
 

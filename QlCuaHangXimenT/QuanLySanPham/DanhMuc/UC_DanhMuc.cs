@@ -86,5 +86,59 @@ namespace QlCuaHangXimenT.QuanLiSanPham
                 }
             }
         }
+
+        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+                string maDM = txtTimKiem.Text.Trim();
+
+                if (string.IsNullOrEmpty(maDM))
+                {
+                    MessageBox.Show("Nhập mã để tìm!");
+                }
+
+                string message;
+                var dm = DanhMuc_BUS.TimDanhMucTheoMa(maDM, out message);
+
+                if (dm == null)
+                {
+                    MessageBox.Show(message);
+                    return;
+                }
+
+
+                ChiTietDM ct = new ChiTietDM(maDM, dm);
+                if (ct.ShowDialog() == DialogResult.OK)
+                {
+                    LayDuLieu();
+                }
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string maDM = txtTimKiem.Text.Trim();
+
+            if (string.IsNullOrEmpty(maDM))
+            {
+                MessageBox.Show("Nhập mã để tìm!");
+            }
+
+            string message;
+            var dm = DanhMuc_BUS.TimDanhMucTheoMa(maDM, out message);
+
+            if (dm == null)
+            {
+                MessageBox.Show(message);
+                return;
+            }
+
+
+            ChiTietDM ct = new ChiTietDM(maDM, dm);
+            if (ct.ShowDialog() == DialogResult.OK)
+            {
+                LayDuLieu();
+            }
+        }
     }
 }

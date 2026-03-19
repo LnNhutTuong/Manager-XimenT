@@ -50,6 +50,7 @@
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnHide = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbNhanVien)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
@@ -387,6 +388,7 @@
             // 
             // guna2GradientPanel2
             // 
+            this.guna2GradientPanel2.Controls.Add(this.lblTitle);
             this.guna2GradientPanel2.Controls.Add(this.guna2ControlBox1);
             this.guna2GradientPanel2.Controls.Add(this.btnHide);
             this.guna2GradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -424,6 +426,18 @@
             this.btnHide.Size = new System.Drawing.Size(33, 31);
             this.btnHide.TabIndex = 32;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(12, 6);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(54, 25);
+            this.lblTitle.TabIndex = 35;
+            this.lblTitle.Text = "Title";
+            // 
             // ChiTietNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -439,6 +453,7 @@
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             this.guna2GradientPanel2.ResumeLayout(false);
+            this.guna2GradientPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -465,5 +480,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMaNhanVien;
         private System.Windows.Forms.Label lbl1;
         private Guna.UI2.WinForms.Guna2PictureBox ptbNhanVien;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

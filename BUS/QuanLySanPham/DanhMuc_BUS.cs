@@ -63,18 +63,6 @@ namespace BUS.QuanLySanPham
         {
             message = "";
 
-            if (dm.MaDM.Length != 5)
-            {
-                message = "Mã danh mục phải bằng 5";
-                return false;
-            } 
-
-            if (string.IsNullOrEmpty(dm.MaDM))
-            {
-                message = "Mã danh mục không được bỏ trống";
-                return false;
-            }
-
             if (string.IsNullOrEmpty(dm.TenDM))
             {
                 message = "Tên danh mục không được bỏ trống";
