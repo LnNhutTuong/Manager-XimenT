@@ -92,7 +92,7 @@ namespace DAO.QuanLySanPham
 
             SqlCommand cmd = new SqlCommand(@"Delete From ThuongHieu Where MaTH = @MaTH");
 
-            cmd.Parameters.Add("@MaDM", SqlDbType.VarChar, 5).Value = th.;
+            cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = th.MaTH;
 
             int kq = dp.TruyVanKhongLayDuLieu(cmd);
 

@@ -77,6 +77,7 @@ namespace QlCuaHangXimenT.NhanVien
             string maNV = txtTimKiem.Text;
             string message;
             var nv = NhanVien_BUS.TimNhanVienTheoMa(maNV, out message);
+            string mkCu = dgvNhanVien.CurrentRow.Cells["Mat_khau"].Value.ToString();
 
             if (nv == null)
             {
@@ -84,7 +85,7 @@ namespace QlCuaHangXimenT.NhanVien
                 return;
             }
 
-            ChiTietNV ct = new ChiTietNV(maNV, nv);
+            ChiTietNV ct = new ChiTietNV(maNV, nv, mkCu);
             if (ct.ShowDialog() == DialogResult.OK)
             {
                 LayDuLieu();
@@ -96,6 +97,7 @@ namespace QlCuaHangXimenT.NhanVien
            if(e.KeyCode == Keys.Enter)
             {
                 string maNV = txtTimKiem.Text.Trim();
+                string mkCu = dgvNhanVien.CurrentRow.Cells["Mat_khau"].Value.ToString();
 
                 if (string.IsNullOrEmpty(maNV))
                 {
@@ -113,7 +115,7 @@ namespace QlCuaHangXimenT.NhanVien
                 }
 
 
-                ChiTietNV ct = new ChiTietNV(maNV, nv);
+                ChiTietNV ct = new ChiTietNV(maNV, nv, mkCu);
                 if (ct.ShowDialog() == DialogResult.OK)
                 {
                     LayDuLieu();
@@ -126,6 +128,8 @@ namespace QlCuaHangXimenT.NhanVien
             if (dgvNhanVien.Columns[e.ColumnIndex].Name == "XemChiTiet")
             {
                 string maNV = dgvNhanVien.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
+                string mkCu = dgvNhanVien.CurrentRow.Cells["Mat_khau"].Value.ToString();
+
                 string message;
                 var nv = NhanVien_BUS.TimNhanVienTheoMa(maNV, out message);
 
@@ -135,7 +139,7 @@ namespace QlCuaHangXimenT.NhanVien
                     return;
                 }
 
-                ChiTietNV ct = new ChiTietNV(maNV, nv);
+                ChiTietNV ct = new ChiTietNV(maNV, nv, mkCu);
                 if (ct.ShowDialog() == DialogResult.OK)
                 {
                     LayDuLieu();

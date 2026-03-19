@@ -21,6 +21,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
     {
         string maNV;
         DataTable nv;
+        string mkCu;
 
         //bieesn CurrentMode cos kieeur FormMode
         public FormMode CurrentMode;
@@ -35,7 +36,6 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             txtTenNhanVien.Enabled = isEdit;
             cboChucVu.Enabled = isEdit;
             txtTenDangNhap.Enabled = isEdit;
-            txtMatKhau.Enabled = isEdit;
             btnThayAnh.Enabled = isEdit;
 
             btnSua.Visible = !isEdit;
@@ -55,11 +55,12 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
         }
 
 
-        public ChiTietNV(string maNV, DataTable nv)
+        public ChiTietNV(string maNV, DataTable nv, string mkCu)
         {
             InitializeComponent();
             this.maNV = maNV;
             this.nv = nv;
+            this.mkCu = mkCu;
             DanhSachChucVu();
         }
 
@@ -77,7 +78,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
                 txtTenNhanVien.Text = row["TenNV"].ToString();
                 cboChucVu.SelectedValue = row["MaCV"].ToString();
                 txtTenDangNhap.Text = row["Ten_dang_nhap"].ToString();
-                txtMatKhau.Text = row["Mat_khau"].ToString();
+                //txtMatKhau.Text = row["Mat_khau"].ToString();
 
                 if (row["HinhAnh"] == DBNull.Value)
                 {
@@ -110,16 +111,31 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
         {
             SetMode(FormMode.Edit);
             lblTitle.Text = "Sửa Nhân viên";
+
+            lblMatKhau.Visible = true; 
+            txtMatKhau.Visible = true;
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             NhanVien_DTO nv = new NhanVien_DTO();
 
+            //string mkCu = dgvNhanVien.CurrentRow.Cells["Mat_khau"].Value.ToString();;
+
             nv.MaNV = txtMaNhanVien.Text.ToUpper();
             nv.TenNV = txtTenNhanVien.Text;
             nv.Ten_dang_nhap = txtTenDangNhap.Text;
-            nv.Mat_khau = txtMatKhau.Text;
+
+            if (string.IsNullOrWhiteSpace(txtMatKhau.Text))
+            {
+                nv.Mat_khau = mkCu; 
+            }
+            else
+            {
+                nv.Mat_khau = txtMatKhau.Text; 
+            }
+
             nv.MaCV = cboChucVu.SelectedValue.ToString();
             nv.HinhAnh = ptbNhanVien.Tag?.ToString();
 
@@ -130,7 +146,10 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             if (kq)
             {
                 MessageBox.Show("Sửa thành công");
+                this.DialogResult = DialogResult.OK;
                 SetMode(FormMode.View);
+                lblMatKhau.Visible = false;
+                txtMatKhau.Visible = false;
             }
             else
             {
@@ -142,6 +161,11 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
         private void btnHuy_Click(object sender, EventArgs e)
         {
             SetMode(FormMode.View);
+
+            lblTitle.Text = "Chi tiết Nhân viên";
+
+            lblMatKhau.Visible = false;
+            txtMatKhau.Visible = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -221,5 +245,30 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             }
 
         }
+
+        private void txtMatKhau_IconRightClick(object sender, EventArgs e)
+        {
+            if (txtMatKhau.UseSystemPasswordChar)
+            {
+                // Hiện mật khẩu
+                txtMatKhau.UseSystemPasswordChar = false;
+                txtMatKhau.PasswordChar = '\0';
+                txtMatKhau.IconRight = Properties.Resources.view;
+            }
+            else
+            {
+                // Ẩn mật khẩu
+                txtMatKhau.UseSystemPasswordChar = true;
+                txtMatKhau.PasswordChar = '*';
+                txtMatKhau.IconRight = Properties.Resources.hide;
+            }
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+
+
     }
 }

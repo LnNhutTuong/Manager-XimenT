@@ -80,7 +80,25 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             ptbNhanVien.Image = Resources.nonePicture;
         }
 
-        private void btnThayAnh_Click(object sender, EventArgs e)
+        private void txtMatKhau_IconRightClick(object sender, EventArgs e)
+        {
+            if (txtMatKhau.UseSystemPasswordChar)
+            {
+                // Hiện mật khẩu
+                txtMatKhau.UseSystemPasswordChar = false;
+                txtMatKhau.PasswordChar = '\0';
+                txtMatKhau.IconRight = Properties.Resources.view;
+            }
+            else
+            {
+                // Ẩn mật khẩu
+                txtMatKhau.UseSystemPasswordChar = true;
+                txtMatKhau.PasswordChar = '*';
+                txtMatKhau.IconRight = Properties.Resources.hide;
+            }
+        }
+
+        private void btnThayAnh_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog file = new OpenFileDialog();
             file.Filter = "Image| *.jpg; *.png; *.bmp; *.gif";
@@ -122,9 +140,8 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
                 //luu tag
                 ptbNhanVien.Tag = "Image\\" + filename;
 
-
             }
-        }        
+        }
     }
 }
 
