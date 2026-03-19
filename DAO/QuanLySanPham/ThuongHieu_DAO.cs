@@ -55,14 +55,44 @@ namespace DAO.QuanLySanPham
             return kq > 0;
         }
 
+        public static DataTable TimThuongHieuTheoMa(string maTH)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Select * From ThuongHieu Where MaTH = @MaTH ");
+
+            cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = maTH;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
+
+
         public static bool SuaThuongHieu(ThuongHieu_DTO th, string maTH)
         {
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(@"");
+            SqlCommand cmd = new SqlCommand(@"  Update ThuongHieu
+                                                Set 
+                                                    TenTH = @TenTH
+                                                Where MaTH = @OldMaTH");
 
-            cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = th.MaTH;
             cmd.Parameters.Add("@TenDM", SqlDbType.NVarChar, 100).Value = th.TenTH;
+            cmd.Parameters.Add("@OldMaTH", SqlDbType.VarChar, 5).Value = maTH;
+
+            int kq = dp.TruyVanKhongLayDuLieu(cmd);
+
+            return kq > 0;
+        }
+
+        public static bool XoaDanhMuc(ThuongHieu_DTO th)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Delete From ThuongHieu Where MaTH = @MaTH");
+
+            cmd.Parameters.Add("@MaDM", SqlDbType.VarChar, 5).Value = th.;
 
             int kq = dp.TruyVanKhongLayDuLieu(cmd);
 

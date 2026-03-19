@@ -26,6 +26,8 @@ namespace QlCuaHangXimenT.NhanVien
             dgvNhanVien.Columns["Mat_khau"].Visible = false;
             dgvNhanVien.Columns["MaCV"].Visible = false;
             dgvNhanVien.Columns["HinhAnh"].Visible = false;
+           
+            lblSoLuong.Text = dgvNhanVien.Rows.Count.ToString();
         }
 
 
@@ -43,30 +45,6 @@ namespace QlCuaHangXimenT.NhanVien
                 LayDuLieu();
             }
         }
-
-        private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvNhanVien.Columns[e.ColumnIndex].Name == "XemChiTiet")
-            {
-                string maNV = dgvNhanVien.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
-                string message;
-                var nv = NhanVien_BUS.TimNhanVienTheoMa(maNV, out message);
-
-                if (nv == null)
-                {
-                    MessageBox.Show(message);
-                    return;
-                }
-
-                ChiTietNV ct = new ChiTietNV(maNV, nv);
-                if (ct.ShowDialog() == DialogResult.OK)
-                {
-                    LayDuLieu();
-                }
-            }
-        }
-
-    
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -134,6 +112,28 @@ namespace QlCuaHangXimenT.NhanVien
                     return; 
                 }
 
+
+                ChiTietNV ct = new ChiTietNV(maNV, nv);
+                if (ct.ShowDialog() == DialogResult.OK)
+                {
+                    LayDuLieu();
+                }
+            }
+        }
+
+        private void dgvNhanVien_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvNhanVien.Columns[e.ColumnIndex].Name == "XemChiTiet")
+            {
+                string maNV = dgvNhanVien.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
+                string message;
+                var nv = NhanVien_BUS.TimNhanVienTheoMa(maNV, out message);
+
+                if (nv == null)
+                {
+                    MessageBox.Show(message);
+                    return;
+                }
 
                 ChiTietNV ct = new ChiTietNV(maNV, nv);
                 if (ct.ShowDialog() == DialogResult.OK)

@@ -31,7 +31,6 @@ namespace QlCuaHangXimenT
         {
             Reset();
             UC_NhanVien nv = new UC_NhanVien();
-            lblViTri.Text = "Quản lí Nhân Viên";
             nv.Dock = DockStyle.Fill;
             content.Controls.Add(nv);
 
@@ -47,7 +46,6 @@ namespace QlCuaHangXimenT
         {
             Reset();
             UC_DanhMuc dm = new UC_DanhMuc();
-            lblViTri.Text = "Quản lí Sản Phẩm / Danh Mục";
             dm.Dock = DockStyle.Fill;
             content.Controls.Add(dm);
         }
