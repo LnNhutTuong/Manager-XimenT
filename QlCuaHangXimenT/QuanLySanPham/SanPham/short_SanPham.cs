@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using DTO.QuanLySanPham;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +19,22 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
         {
             InitializeComponent();
         }
+
+        public void SetData(string maSP, string tenSP, int giaTien)
+        {
+            lblMaSanPham.Text = maSP;
+            lblTenSanPham.Text = tenSP;
+            lblGiaTien.Text = giaTien.ToString();
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            string maSP = lblMaSanPham.Text;
+            ChiTietSP ctsp = new ChiTietSP(maSP);
+
+            ctsp.Show();
+        }
     }
+
+
 }

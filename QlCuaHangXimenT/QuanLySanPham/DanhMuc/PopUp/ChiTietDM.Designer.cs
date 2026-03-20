@@ -43,6 +43,7 @@
             this.btnSua = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtTenDanhMuc = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnXoa = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -102,6 +103,7 @@
             // 
             // guna2GradientPanel1
             // 
+            this.guna2GradientPanel1.Controls.Add(this.guna2VScrollBar1);
             this.guna2GradientPanel1.Controls.Add(this.flpSanPham);
             this.guna2GradientPanel1.Controls.Add(this.guna2Panel1);
             this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel2);
@@ -118,7 +120,6 @@
             // 
             this.flpSanPham.AutoScroll = true;
             this.flpSanPham.BackColor = System.Drawing.Color.White;
-            this.flpSanPham.Dock = System.Windows.Forms.DockStyle.Right;
             this.flpSanPham.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpSanPham.Location = new System.Drawing.Point(321, 37);
             this.flpSanPham.Name = "flpSanPham";
@@ -299,6 +300,20 @@
             this.btnXoa.TabIndex = 59;
             this.btnXoa.Text = "Xóa";
             // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.BindingContainer = this.flpSanPham;
+            this.guna2VScrollBar1.BorderRadius = 5;
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 363;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(748, 37);
+            this.guna2VScrollBar1.Maximum = 368;
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 21;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(21, 363);
+            this.guna2VScrollBar1.SmallChange = 5;
+            this.guna2VScrollBar1.TabIndex = 49;
+            // 
             // ChiTietDM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -335,5 +350,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnSua;
         private Guna.UI2.WinForms.Guna2TextBox txtTenDanhMuc;
         private Guna.UI2.WinForms.Guna2GradientButton btnXoa;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
     }
 }

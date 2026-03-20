@@ -60,16 +60,16 @@ namespace QlCuaHangXimenT.QuanLySanPham.DanhMuc.PopUp
                 txtTenDanhMuc.Text = row["TenDM"].ToString();
 
             }
+
             string message;
             DataTable dsSanPham = DanhMuc_BUS.DanhSachSPTheoMaDM(maDM, out message);
-
-
             if (dsSanPham.Rows.Count>0)
             {
                 foreach (DataRow dr in dsSanPham.Rows)
                 {
                     short_SanPham spSort = new short_SanPham();
 
+                    spSort.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]));
                     flpSanPham.Controls.Add(spSort);
                 }
             }

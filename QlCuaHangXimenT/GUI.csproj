@@ -112,6 +112,12 @@
     <Compile Include="QuanLySanPham\DanhMuc\UC_DanhMuc.Designer.cs">
       <DependentUpon>UC_DanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanPham\SanPham\ChiTietSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\SanPham\ChiTietSP.Designer.cs">
+      <DependentUpon>ChiTietSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanPham\SanPham\short_SanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\DanhMuc\UC_DanhMuc.resx">
       <DependentUpon>UC_DanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\SanPham\ChiTietSP.resx">
+      <DependentUpon>ChiTietSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\SanPham\short_SanPham.resx">
       <DependentUpon>short_SanPham.cs</DependentUpon>

@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace DTO.QuanLySanPham
 {
-    internal class SanPham_DTO
+    public class SanPham_DTO
     {
-        string MaSP { get; set; }
-        string TenSP { get; set; }
-        string Size {  get; set; }
-        string MaDM { get; set; }
-        string MaTH { get; set; }
-        string MaNV { get; set; }
-        int SoLuongTon { get; set; }
-        DateTime NgayThem { get; set; }
-        DateTime NgayXoa { get; set; }
-        string HinhAnh  { get; set; }
-        int Gia { get; set; }
+        public string MaSP { get; set; }
+        public string TenSP { get; set; }
+        public string Size {  get; set; }
+        public string MaDM { get; set; }
+        public string MaTH { get; set; }
+        public string MaNV { get; set; }
+        public int SoLuongTon { get; set; }
+        public DateTime NgayThem { get; set; }
+        public DateTime NgayXoa { get; set; }
+        public string HinhAnh  { get; set; }
+        public int Gia { get; set; }
     }
 }
