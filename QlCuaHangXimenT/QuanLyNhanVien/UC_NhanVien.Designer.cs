@@ -190,6 +190,7 @@
             this.btnThem.FillColor = System.Drawing.Color.Black;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Image = global::QlCuaHangXimenT.Properties.Resources.plus;
             this.btnThem.Location = new System.Drawing.Point(57, 189);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(211, 49);

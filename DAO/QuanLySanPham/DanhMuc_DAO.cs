@@ -100,5 +100,17 @@ namespace DAO
             return kq > 0;
         }
 
+        public static DataTable DanhSachSPTheoMaDM(string maDM)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Select * From SanPham Where MaDM = @MaDM");
+            cmd.Parameters.Add("@MaDM", SqlDbType.VarChar, 5).Value = maDM;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
+
     }
 }

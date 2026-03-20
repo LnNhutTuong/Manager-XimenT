@@ -75,6 +75,18 @@ namespace BUS.QuanLySanPham
         {
             return DanhMuc_DAO.XoaDanhMuc(dm);
         }
+
+        public static DataTable DanhSachSPTheoMaDM(string maDM, out string message) 
+        {
+            message = "";
+
+            if (!KiemTraDM(maDM))
+            {
+                message = "Không tồn tại mã này!";
+                return null;
+            }
+            return DanhMuc_DAO.DanhSachSPTheoMaDM(maDM);
+        }
     }
 }
 

@@ -2,6 +2,7 @@
 using BUS.QuanLySanPham;
 using DTO;
 using QlCuaHangXimenT.Common.Enums;
+using QlCuaHangXimenT.QuanLySanPham.SanPham;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace QlCuaHangXimenT.QuanLySanPham.DanhMuc.PopUp
 {
     public partial class ChiTietDM : Form
     {
+
+
         string maDM;
         DataTable dm;
 
@@ -56,6 +60,20 @@ namespace QlCuaHangXimenT.QuanLySanPham.DanhMuc.PopUp
                 txtTenDanhMuc.Text = row["TenDM"].ToString();
 
             }
+            string message;
+            DataTable dsSanPham = DanhMuc_BUS.DanhSachSPTheoMaDM(maDM, out message);
+
+
+            if (dsSanPham.Rows.Count>0)
+            {
+                foreach (DataRow dr in dsSanPham.Rows)
+                {
+                    short_SanPham spSort = new short_SanPham();
+
+                    flpSanPham.Controls.Add(spSort);
+                }
+            }
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)

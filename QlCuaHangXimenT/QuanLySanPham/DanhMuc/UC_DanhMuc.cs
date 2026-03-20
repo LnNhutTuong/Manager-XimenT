@@ -20,6 +20,8 @@ namespace QlCuaHangXimenT.QuanLiSanPham
         private void LayDuLieu()
         {
             dgvDanhMuc.DataSource = DanhMuc_BUS.DanhSachDanhMuc();
+
+            lblSoLuong.Text = dgvDanhMuc.Rows.Count.ToString();
         }
 
         public UC_DanhMuc()
@@ -30,7 +32,7 @@ namespace QlCuaHangXimenT.QuanLiSanPham
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            ThemDM them = new ThemDM();           
+            ThemDM them = new ThemDM();
             if (them.ShowDialog() == DialogResult.OK)
             {
                 LayDuLieu();
@@ -60,12 +62,12 @@ namespace QlCuaHangXimenT.QuanLiSanPham
                     MessageBox.Show("Xóa không thành công");
                 }
             }
-
         }
 
         private void dgvDanhMuc_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDanhMuc.Columns[e.ColumnIndex].Name == "ChinhSua")
+
+            if (dgvDanhMuc.Columns[e.ColumnIndex].Name == "XemChiTiet")
             {
                 string maDM = dgvDanhMuc.Rows[e.RowIndex].Cells["MaDM"].Value.ToString().Trim();
                 Console.WriteLine(maDM);
@@ -89,7 +91,8 @@ namespace QlCuaHangXimenT.QuanLiSanPham
 
         private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) {
+            if (e.KeyCode == Keys.Enter)
+            {
                 string maDM = txtTimKiem.Text.Trim();
 
                 if (string.IsNullOrEmpty(maDM))

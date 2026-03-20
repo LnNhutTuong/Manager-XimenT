@@ -112,6 +112,12 @@
     <Compile Include="QuanLySanPham\DanhMuc\UC_DanhMuc.Designer.cs">
       <DependentUpon>UC_DanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanPham\SanPham\short_SanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\SanPham\short_SanPham.Designer.cs">
+      <DependentUpon>short_SanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\DanhMuc\UC_DanhMuc.resx">
       <DependentUpon>UC_DanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\SanPham\short_SanPham.resx">
+      <DependentUpon>short_SanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.resx">
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
@@ -200,6 +209,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

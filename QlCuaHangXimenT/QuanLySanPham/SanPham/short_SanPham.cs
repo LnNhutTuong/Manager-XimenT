@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QlCuaHangXimenT.QuanLySanPham.ThuongHieu
+namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 {
-    public partial class UC_ThuongHieu : UserControl
+    public partial class short_SanPham : UserControl
     {
-        public UC_ThuongHieu()
+        public short_SanPham()
         {
             InitializeComponent();
         }
-
     }
 }
