@@ -38,21 +38,21 @@
             this.btnNhanVien = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnTrangChu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnQuanliSanPham = new Guna.UI2.WinForms.Guna2GradientButton();
             this.pnlSubSanPham = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSanPham = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnThuongHieu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnDanhMuc = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnThongKe = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnKhachHang = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.content = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnQuanliSanPham = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nav.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.pnlSubSanPham.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -182,6 +182,28 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(256, 520);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
+            // btnQuanliSanPham
+            // 
+            this.btnQuanliSanPham.CustomBorderColor = System.Drawing.Color.White;
+            this.btnQuanliSanPham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuanliSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuanliSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQuanliSanPham.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQuanliSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQuanliSanPham.FillColor = System.Drawing.Color.Black;
+            this.btnQuanliSanPham.FillColor2 = System.Drawing.Color.Black;
+            this.btnQuanliSanPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btnQuanliSanPham.ForeColor = System.Drawing.Color.White;
+            this.btnQuanliSanPham.Image = global::QlCuaHangXimenT.Properties.Resources.up;
+            this.btnQuanliSanPham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnQuanliSanPham.Location = new System.Drawing.Point(3, 131);
+            this.btnQuanliSanPham.Name = "btnQuanliSanPham";
+            this.btnQuanliSanPham.Size = new System.Drawing.Size(253, 58);
+            this.btnQuanliSanPham.TabIndex = 2;
+            this.btnQuanliSanPham.Text = "Quản lí sản phẩm";
+            this.btnQuanliSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQuanliSanPham.Click += new System.EventHandler(this.btnQuanliSanPham_Click);
+            // 
             // pnlSubSanPham
             // 
             this.pnlSubSanPham.BackColor = System.Drawing.Color.Transparent;
@@ -230,6 +252,7 @@
             this.btnThuongHieu.TabIndex = 7;
             this.btnThuongHieu.Text = "Thương hiệu";
             this.btnThuongHieu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThuongHieu.Click += new System.EventHandler(this.btnThuongHieu_Click);
             // 
             // btnDanhMuc
             // 
@@ -288,6 +311,14 @@
             this.btnKhachHang.Text = "Khách hàng";
             this.btnKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, 524);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Black;
@@ -306,36 +337,6 @@
             this.content.Size = new System.Drawing.Size(1311, 783);
             this.content.TabIndex = 7;
             // 
-            // btnQuanliSanPham
-            // 
-            this.btnQuanliSanPham.CustomBorderColor = System.Drawing.Color.White;
-            this.btnQuanliSanPham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnQuanliSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnQuanliSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnQuanliSanPham.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnQuanliSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQuanliSanPham.FillColor = System.Drawing.Color.Black;
-            this.btnQuanliSanPham.FillColor2 = System.Drawing.Color.Black;
-            this.btnQuanliSanPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btnQuanliSanPham.ForeColor = System.Drawing.Color.White;
-            this.btnQuanliSanPham.Image = global::QlCuaHangXimenT.Properties.Resources.up;
-            this.btnQuanliSanPham.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnQuanliSanPham.Location = new System.Drawing.Point(3, 131);
-            this.btnQuanliSanPham.Name = "btnQuanliSanPham";
-            this.btnQuanliSanPham.Size = new System.Drawing.Size(253, 58);
-            this.btnQuanliSanPham.TabIndex = 2;
-            this.btnQuanliSanPham.Text = "Quản lí sản phẩm";
-            this.btnQuanliSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnQuanliSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 524);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -353,8 +354,8 @@
             this.nav.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.pnlSubSanPham.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

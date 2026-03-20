@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using BUS.QuanLySanPham;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +17,19 @@ namespace QlCuaHangXimenT.QuanLySanPham.ThuongHieu
         public UC_ThuongHieu()
         {
             InitializeComponent();
+            LayDuLieu();
         }
 
+        public void LayDuLieu()
+        {
+            dgvDanhMuc.DataSource = ThuongHieu_BUS.DanhSachThuongHieu();
+
+            lblSoLuong.Text = dgvDanhMuc.Rows.Count.ToString();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

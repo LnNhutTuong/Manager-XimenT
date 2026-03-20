@@ -10,6 +10,5 @@ namespace DTO.QuanLySanPham
     {
         public string MaTH { get; set; }
         public string TenTH { get; set; }
-
     }
 }

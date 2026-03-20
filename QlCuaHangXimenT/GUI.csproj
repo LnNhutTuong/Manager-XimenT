@@ -124,6 +124,12 @@
     <Compile Include="QuanLySanPham\SanPham\short_SanPham.Designer.cs">
       <DependentUpon>short_SanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanPham\ThuongHieu\ThemTH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\ThuongHieu\ThemTH.Designer.cs">
+      <DependentUpon>ThemTH.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\SanPham\short_SanPham.resx">
       <DependentUpon>short_SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\ThuongHieu\ThemTH.resx">
+      <DependentUpon>ThemTH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.resx">
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>

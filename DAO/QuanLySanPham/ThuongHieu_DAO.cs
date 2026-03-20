@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAO.QuanLySanPham
 {
-    internal class ThuongHieu_DAO
+    public class ThuongHieu_DAO
     {
         public static DataTable DanhSachThuongHieu()
         {
@@ -86,7 +86,7 @@ namespace DAO.QuanLySanPham
             return kq > 0;
         }
 
-        public static bool XoaDanhMuc(ThuongHieu_DTO th)
+        public static bool XoaThuongHieu(ThuongHieu_DTO th)
         {
             DataProvider dp = new DataProvider();
 
@@ -97,6 +97,19 @@ namespace DAO.QuanLySanPham
             int kq = dp.TruyVanKhongLayDuLieu(cmd);
 
             return kq > 0;
+        }
+
+
+        public static DataTable DanhSachSPTheoTH(string maTH)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Select * From SanPham Where MaTH = @MaTH");
+            cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = maTH;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
         }
     }
 }
