@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnHide = new Guna.UI2.WinForms.Guna2ControlBox();
             this.txtTenThuongHieu = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaThuongHieu = new Guna.UI2.WinForms.Guna2TextBox();
@@ -41,6 +37,9 @@
             this.bntLuu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnTaiLai = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -64,58 +63,6 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(382, 283);
             this.guna2GradientPanel1.TabIndex = 1;
-            // 
-            // guna2GradientPanel2
-            // 
-            this.guna2GradientPanel2.Controls.Add(this.label2);
-            this.guna2GradientPanel2.Controls.Add(this.guna2ControlBox1);
-            this.guna2GradientPanel2.Controls.Add(this.btnHide);
-            this.guna2GradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
-            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.Black;
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(382, 37);
-            this.guna2GradientPanel2.TabIndex = 42;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 25);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Thêm Danh mục";
-            // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.BorderRadius = 15;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.Red;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(344, 6);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(30, 27);
-            this.guna2ControlBox1.TabIndex = 33;
-            // 
-            // btnHide
-            // 
-            this.btnHide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHide.BackColor = System.Drawing.Color.Transparent;
-            this.btnHide.BorderColor = System.Drawing.Color.Transparent;
-            this.btnHide.BorderRadius = 15;
-            this.btnHide.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.btnHide.FillColor = System.Drawing.Color.Yellow;
-            this.btnHide.IconColor = System.Drawing.Color.Transparent;
-            this.btnHide.Location = new System.Drawing.Point(309, 6);
-            this.btnHide.Name = "btnHide";
-            this.btnHide.Size = new System.Drawing.Size(30, 27);
-            this.btnHide.TabIndex = 32;
             // 
             // txtTenThuongHieu
             // 
@@ -229,6 +176,43 @@
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.BorderRadius = 15;
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Black;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(344, 6);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(30, 27);
+            this.guna2ControlBox1.TabIndex = 33;
+            // 
+            // guna2GradientPanel2
+            // 
+            this.guna2GradientPanel2.Controls.Add(this.label2);
+            this.guna2GradientPanel2.Controls.Add(this.guna2ControlBox1);
+            this.guna2GradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.Black;
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.Black;
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(382, 37);
+            this.guna2GradientPanel2.TabIndex = 42;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(170, 25);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Thêm Danh mục";
+            // 
             // ThemTH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,10 +234,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private Guna.UI2.WinForms.Guna2ControlBox btnHide;
         private Guna.UI2.WinForms.Guna2TextBox txtTenThuongHieu;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtMaThuongHieu;
@@ -261,5 +241,8 @@
         private Guna.UI2.WinForms.Guna2GradientButton bntLuu;
         private Guna.UI2.WinForms.Guna2GradientButton btnTaiLai;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
     }
 }

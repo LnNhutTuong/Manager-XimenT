@@ -31,7 +31,6 @@
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnHide = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.flpSanPham = new System.Windows.Forms.FlowLayoutPanel();
@@ -53,9 +52,8 @@
             // 
             this.guna2GradientPanel2.Controls.Add(this.lblTitle);
             this.guna2GradientPanel2.Controls.Add(this.guna2ControlBox1);
-            this.guna2GradientPanel2.Controls.Add(this.btnHide);
             this.guna2GradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.Black;
             this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.Black;
             this.guna2GradientPanel2.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
@@ -80,26 +78,12 @@
             this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.BorderRadius = 15;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.Red;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Black;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox1.Location = new System.Drawing.Point(728, 2);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(33, 31);
             this.guna2ControlBox1.TabIndex = 33;
-            // 
-            // btnHide
-            // 
-            this.btnHide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHide.BackColor = System.Drawing.Color.Transparent;
-            this.btnHide.BorderColor = System.Drawing.Color.Transparent;
-            this.btnHide.BorderRadius = 15;
-            this.btnHide.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.btnHide.FillColor = System.Drawing.Color.Yellow;
-            this.btnHide.IconColor = System.Drawing.Color.Transparent;
-            this.btnHide.Location = new System.Drawing.Point(693, 2);
-            this.btnHide.Name = "btnHide";
-            this.btnHide.Size = new System.Drawing.Size(33, 31);
-            this.btnHide.TabIndex = 32;
             // 
             // guna2GradientPanel1
             // 
@@ -205,6 +189,7 @@
             this.btnHuy.TabIndex = 62;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.Visible = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // lbl1
             // 
@@ -237,6 +222,7 @@
             this.btnLuu.TabIndex = 61;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Visible = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
             // 
             // label1
             // 
@@ -254,22 +240,22 @@
             // 
             this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSua.BackColor = System.Drawing.Color.Transparent;
-            this.btnSua.BorderRadius = 10;
             this.btnSua.DefaultAutoSize = true;
             this.btnSua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSua.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSua.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSua.FillColor2 = System.Drawing.Color.Navy;
+            this.btnSua.FillColor = System.Drawing.Color.Black;
+            this.btnSua.FillColor2 = System.Drawing.Color.Black;
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Location = new System.Drawing.Point(162, 264);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(116, 34);
             this.btnSua.TabIndex = 60;
             this.btnSua.Text = "Chỉnh sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click_1);
             // 
             // txtTenDanhMuc
             // 
@@ -298,14 +284,14 @@
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnXoa.BackColor = System.Drawing.Color.Transparent;
-            this.btnXoa.BorderRadius = 10;
+            this.btnXoa.BorderThickness = 1;
             this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXoa.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoa.FillColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnXoa.FillColor2 = System.Drawing.Color.Red;
+            this.btnXoa.FillColor = System.Drawing.Color.White;
+            this.btnXoa.FillColor2 = System.Drawing.Color.White;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnXoa.Location = new System.Drawing.Point(40, 264);
@@ -313,6 +299,7 @@
             this.btnXoa.Size = new System.Drawing.Size(116, 34);
             this.btnXoa.TabIndex = 59;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // ChiTietDM
             // 
@@ -338,7 +325,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private System.Windows.Forms.Label lblTitle;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private Guna.UI2.WinForms.Guna2ControlBox btnHide;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.FlowLayoutPanel flpSanPham;

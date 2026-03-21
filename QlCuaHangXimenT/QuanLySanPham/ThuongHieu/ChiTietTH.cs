@@ -130,5 +130,11 @@ namespace QlCuaHangXimenT.QuanLySanPham.ThuongHieu
                 }
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            SetMode(FormMode.View);
+            lblTitle.Text = "Chi tiết Thương hiệu";
+        }
     }
 }

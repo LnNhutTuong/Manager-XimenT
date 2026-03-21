@@ -96,7 +96,7 @@
             this.guna2GradientPanel2.Controls.Add(this.lblTitle);
             this.guna2GradientPanel2.Controls.Add(this.guna2ControlBox1);
             this.guna2GradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.Black;
             this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.Black;
             this.guna2GradientPanel2.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
@@ -121,8 +121,8 @@
             this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.BorderRadius = 15;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.Red;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Black;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
             this.guna2ControlBox1.Location = new System.Drawing.Point(983, 2);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(33, 31);

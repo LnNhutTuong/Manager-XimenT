@@ -76,14 +76,9 @@ namespace QlCuaHangXimenT.QuanLySanPham.DanhMuc.PopUp
 
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnLuu_Click_1(object sender, EventArgs e)
         {
-            SetMode(FormMode.Edit);
-            lblTitle.Text = "Sửa danh mục";
-        }
 
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
             DanhMuc_DTO dm = new DanhMuc_DTO();
 
             //dm.MaDM = txtMaDanhMuc.Text.ToUpper();
@@ -103,10 +98,15 @@ namespace QlCuaHangXimenT.QuanLySanPham.DanhMuc.PopUp
             {
                 MessageBox.Show(message);
             }
-
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            SetMode(FormMode.View);
+            lblTitle.Text = "Chi tiết Danh mục";
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
         {
             DanhMuc_DTO dm = new DanhMuc_DTO();
 
@@ -129,6 +129,12 @@ namespace QlCuaHangXimenT.QuanLySanPham.DanhMuc.PopUp
                     MessageBox.Show("Xóa không thành công");
                 }
             }
+        }
+
+        private void btnSua_Click_1(object sender, EventArgs e)
+        {
+            SetMode(FormMode.Edit);
+            lblTitle.Text = "Sửa danh mục";
         }
     }
 }

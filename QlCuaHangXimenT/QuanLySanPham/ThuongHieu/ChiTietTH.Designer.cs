@@ -33,7 +33,6 @@
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnHide = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -67,9 +66,8 @@
             // 
             this.guna2GradientPanel2.Controls.Add(this.lblTitle);
             this.guna2GradientPanel2.Controls.Add(this.guna2ControlBox1);
-            this.guna2GradientPanel2.Controls.Add(this.btnHide);
             this.guna2GradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(67)))), ((int)(((byte)(67)))));
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.Black;
             this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.Black;
             this.guna2GradientPanel2.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
@@ -94,26 +92,12 @@
             this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.BorderRadius = 15;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.Red;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(724, 2);
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(724, 3);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(33, 31);
             this.guna2ControlBox1.TabIndex = 33;
-            // 
-            // btnHide
-            // 
-            this.btnHide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHide.BackColor = System.Drawing.Color.Transparent;
-            this.btnHide.BorderColor = System.Drawing.Color.Transparent;
-            this.btnHide.BorderRadius = 15;
-            this.btnHide.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.btnHide.FillColor = System.Drawing.Color.Yellow;
-            this.btnHide.IconColor = System.Drawing.Color.Transparent;
-            this.btnHide.Location = new System.Drawing.Point(689, 2);
-            this.btnHide.Name = "btnHide";
-            this.btnHide.Size = new System.Drawing.Size(33, 31);
-            this.btnHide.TabIndex = 32;
             // 
             // guna2GradientPanel1
             // 
@@ -206,6 +190,7 @@
             this.btnHuy.TabIndex = 62;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.Visible = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // lbl1
             // 
@@ -347,7 +332,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private System.Windows.Forms.Label lblTitle;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private Guna.UI2.WinForms.Guna2ControlBox btnHide;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
