@@ -124,6 +124,12 @@
     <Compile Include="QuanLySanPham\SanPham\short_SanPham.Designer.cs">
       <DependentUpon>short_SanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanPham\ThuongHieu\ChiTietTH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\ThuongHieu\ChiTietTH.Designer.cs">
+      <DependentUpon>ChiTietTH.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanPham\ThuongHieu\ThemTH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\SanPham\short_SanPham.resx">
       <DependentUpon>short_SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\ThuongHieu\ChiTietTH.resx">
+      <DependentUpon>ChiTietTH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\ThuongHieu\ThemTH.resx">
       <DependentUpon>ThemTH.cs</DependentUpon>

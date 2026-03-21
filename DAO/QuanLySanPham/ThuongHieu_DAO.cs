@@ -45,10 +45,10 @@ namespace DAO.QuanLySanPham
             DataProvider dp = new DataProvider();
 
             SqlCommand cmd = new SqlCommand(@"  Insert Into ThuongHieu
-                                                Values @MaTH, @TenTH");
+                                                Values (@MaTH, @TenTH)");
 
             cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = th.MaTH;
-            cmd.Parameters.Add("@TenDM", SqlDbType.NVarChar, 100).Value = th.TenTH;
+            cmd.Parameters.Add("@TenTH", SqlDbType.NVarChar, 100).Value = th.TenTH;
 
             int kq = dp.TruyVanKhongLayDuLieu(cmd);
 
@@ -74,11 +74,10 @@ namespace DAO.QuanLySanPham
             DataProvider dp = new DataProvider();
 
             SqlCommand cmd = new SqlCommand(@"  Update ThuongHieu
-                                                Set 
-                                                    TenTH = @TenTH
+                                                Set TenTH = @TenTH
                                                 Where MaTH = @OldMaTH");
 
-            cmd.Parameters.Add("@TenDM", SqlDbType.NVarChar, 100).Value = th.TenTH;
+            cmd.Parameters.Add("@TenTH", SqlDbType.NVarChar, 100).Value = th.TenTH;
             cmd.Parameters.Add("@OldMaTH", SqlDbType.VarChar, 5).Value = maTH;
 
             int kq = dp.TruyVanKhongLayDuLieu(cmd);

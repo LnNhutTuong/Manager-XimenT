@@ -30,13 +30,13 @@ namespace BUS.QuanLySanPham
 
             if (th.MaTH.Length != 5)
             {
-                message = "Mã danh mục phải bằng 5";
+                message = "Mã thương hiệu phải bằng 5";
                 return false;
             }
 
             if (string.IsNullOrEmpty(th.MaTH))
             {
-                message = "Mã danh mục không được bỏ trống";
+                message = "Mã thương hiệu không được bỏ trống";
                 return false;
             }
 
@@ -48,7 +48,7 @@ namespace BUS.QuanLySanPham
             return ThuongHieu_DAO.ThemThuongHieu(th);
         }
 
-        public static DataTable TimDanhMucTheoMa(string maTh, out string message)
+        public static DataTable TimThuongHieuTheoMa(string maTh, out string message)
         {
             message = "";
 
@@ -65,9 +65,9 @@ namespace BUS.QuanLySanPham
         {
             message = "";
 
-            if (string.IsNullOrEmpty(th.MaTH))
+            if (string.IsNullOrEmpty(th.TenTH))
             {
-                message = "Tên danh mục không được bỏ trống";
+                message = "Tên thương hiệu không được bỏ trống";
                 return false;
             }
             return ThuongHieu_DAO.SuaThuongHieu(th, maTHCu);
@@ -78,7 +78,7 @@ namespace BUS.QuanLySanPham
             return ThuongHieu_DAO.XoaThuongHieu(th);
         }
 
-        public static DataTable DanhSachSPTheoMaDM(string maTh, out string message)
+        public static DataTable DanhSachSPTheoTH(string maTh, out string message)
         {
             message = "";
 
