@@ -77,15 +77,60 @@ namespace DAO.QuanLySanPham
                                                 (MaSP, TenSP, Size, MaDM, MaTH, MaNV, SoLuongTon, NgayThem, HinhAnh, Gia)
                                                 Values @MaSP, @TenSP, @Size, @MaDM, @MaTH, @MaNV, @SoLuongTon, @NgayThem, @HinhAnh, @Gia");
             cmd.Parameters.Add("@MaSp", SqlDbType.VarChar, 5).Value = sp.MaSP;
-            cmd.Parameters.Add("@TenSP", SqlDbType.VarChar, 5).Value = sp.MaSP;
-            cmd.Parameters.Add("@Size", SqlDbType.VarChar, 5).Value = sp.MaSP;
-            cmd.Parameters.Add("@MaDM", SqlDbType.VarChar, 5).Value = sp.MaSP;
-            cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = sp.MaSP;
-            cmd.Parameters.Add("@MaNV", SqlDbType.VarChar, 5).Value = sp.MaSP;
-            cmd.Parameters.Add("@SoLuongTon", SqlDbType.VarChar, 5).Value = sp.MaSP;
-            cmd.Parameters.Add("@NgayThem", SqlDbType.VarChar, 5).Value = sp.MaSP;
-            cmd.Parameters.Add("@HinhAnh", SqlDbType.VarChar, 5).Value = sp.MaSP;
-            cmd.Parameters.Add("@Gia", SqlDbType.VarChar, 5).Value = sp.MaSP;
+            cmd.Parameters.Add("@TenSP", SqlDbType.NVarChar, 100).Value = sp.TenSP;
+            cmd.Parameters.Add("@Size", SqlDbType.NVarChar, 100).Value = sp.Size;
+            cmd.Parameters.Add("@MaDM", SqlDbType.VarChar, 5).Value = sp.MaDM;
+            cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = sp.MaTH;
+            cmd.Parameters.Add("@MaNV", SqlDbType.VarChar, 5).Value = sp.MaNV;
+            cmd.Parameters.Add("@SoLuongTon", SqlDbType.SmallInt).Value = sp.SoLuongTon;
+            cmd.Parameters.Add("@NgayThem", SqlDbType.DateTime).Value = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+            cmd.Parameters.Add("@HinhAnh", SqlDbType.NVarChar, 255).Value = sp.HinhAnh;
+            cmd.Parameters.Add("@Gia", SqlDbType.Int).Value = sp.Gia;
+                
+            int kq = dp.TruyVanKhongLayDuLieu(cmd);
+
+            return kq > 0;
+        }
+
+        public static bool SuaSanPham (SanPham_DTO sp, string maSP)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  UPDATE SanPham 
+                                                SET  TenSP = @TenSP,
+                                                     Size = @Size,
+                                                     MaDM =  @MaDM,
+                                                     MaTH =  @MaTH,
+                                                     MaNV = @MaNV,
+                                                     SoLuongTon = @SoLuongTon,
+                                                     NgaySua = @NgaySua,
+                                                     HinhAnh = @HinhAnh,
+                                                     Gia = @Gia
+                                                Where MaTH = @oldMaTH ");
+            cmd.Parameters.Add("@MaSp", SqlDbType.VarChar, 5).Value = sp.MaSP;
+            cmd.Parameters.Add("@TenSP", SqlDbType.NVarChar, 100).Value = sp.TenSP;
+            cmd.Parameters.Add("@Size", SqlDbType.NVarChar, 100).Value = sp.Size;
+            cmd.Parameters.Add("@MaDM", SqlDbType.VarChar, 5).Value = sp.MaDM;
+            cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = sp.MaTH;
+            cmd.Parameters.Add("@MaNV", SqlDbType.VarChar, 5).Value = sp.MaNV;
+            cmd.Parameters.Add("@SoLuongTon", SqlDbType.SmallInt).Value = sp.SoLuongTon;
+            cmd.Parameters.Add("@NgaySua", SqlDbType.DateTime).Value = sp.NgayThem;
+            cmd.Parameters.Add("@HinhAnh", SqlDbType.NVarChar, 255).Value = sp.HinhAnh;
+            cmd.Parameters.Add("@Gia", SqlDbType.Int).Value = sp.Gia;
+            cmd.Parameters.Add("@oldMaTH", SqlDbType.VarChar, 5).Value = maSP;
+
+            int kq = dp.TruyVanKhongLayDuLieu(cmd);
+
+            return kq > 0;
+        }
+
+        public static bool XoaSanPham(SanPham_DTO sp)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Delete From SanPham Where MaSP = @MaSP");
+
+            cmd.Parameters.Add("@MaSP", SqlDbType.VarChar, 5).Value = sp.MaSP;
 
             int kq = dp.TruyVanKhongLayDuLieu(cmd);
 

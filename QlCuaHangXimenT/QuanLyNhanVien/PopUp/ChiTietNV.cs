@@ -100,8 +100,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
                         ptbNhanVien.Image = Resources.nonePicture;
                         MessageBox.Show(" ảnh không tồn tại nữa!");
                     }
-                }
-                    
+                }                   
             }                                
             #endregion
 

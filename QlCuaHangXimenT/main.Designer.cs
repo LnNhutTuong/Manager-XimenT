@@ -234,6 +234,7 @@
             this.btnSanPham.TabIndex = 8;
             this.btnSanPham.Text = "Sản phẩm";
             this.btnSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
             // btnThuongHieu
             // 

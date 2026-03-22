@@ -112,10 +112,16 @@
     <Compile Include="QuanLySanPham\DanhMuc\UC_DanhMuc.Designer.cs">
       <DependentUpon>UC_DanhMuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySanPham\SanPham\ChiTietSP.cs">
+    <Compile Include="QuanLySanPham\SanPham\card_SanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\SanPham\card_SanPham.Designer.cs">
+      <DependentUpon>card_SanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanPham\SanPham\PopUp\ChiTietSP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLySanPham\SanPham\ChiTietSP.Designer.cs">
+    <Compile Include="QuanLySanPham\SanPham\PopUp\ChiTietSP.Designer.cs">
       <DependentUpon>ChiTietSP.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanPham\SanPham\short_SanPham.cs">
@@ -123,6 +129,12 @@
     </Compile>
     <Compile Include="QuanLySanPham\SanPham\short_SanPham.Designer.cs">
       <DependentUpon>short_SanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySanPham\SanPham\UC_SanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\SanPham\UC_SanPham.Designer.cs">
+      <DependentUpon>UC_SanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanPham\ThuongHieu\ChiTietTH.cs">
       <SubType>Form</SubType>
@@ -173,11 +185,17 @@
     <EmbeddedResource Include="QuanLySanPham\DanhMuc\UC_DanhMuc.resx">
       <DependentUpon>UC_DanhMuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanPham\SanPham\ChiTietSP.resx">
+    <EmbeddedResource Include="QuanLySanPham\SanPham\card_SanPham.resx">
+      <DependentUpon>card_SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\SanPham\PopUp\ChiTietSP.resx">
       <DependentUpon>ChiTietSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\SanPham\short_SanPham.resx">
       <DependentUpon>short_SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\SanPham\UC_SanPham.resx">
+      <DependentUpon>UC_SanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\ThuongHieu\ChiTietTH.resx">
       <DependentUpon>ChiTietTH.cs</DependentUpon>
@@ -229,7 +247,7 @@
     <None Include="Resources\loupe.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
+    <None Include="Resources\undo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\view.png" />
@@ -245,6 +263,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noImg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

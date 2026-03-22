@@ -2,6 +2,7 @@
 using QlCuaHangXimenT.NhanVien;
 using QlCuaHangXimenT.Properties;
 using QlCuaHangXimenT.QuanLiSanPham;
+using QlCuaHangXimenT.QuanLySanPham.SanPham;
 using QlCuaHangXimenT.QuanLySanPham.ThuongHieu;
 using System;
 using System.Collections.Generic;
@@ -112,6 +113,14 @@ namespace QlCuaHangXimenT
             UC_DanhMuc dm = new UC_DanhMuc();
             dm.Dock = DockStyle.Fill;
             content.Controls.Add(dm);
+        }
+
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            ActiveBtn(btnSanPham);
+            UC_SanPham sp = new UC_SanPham();
+            sp.Dock = DockStyle.Fill;
+            content.Controls.Add(sp);
         }
     }
 }
