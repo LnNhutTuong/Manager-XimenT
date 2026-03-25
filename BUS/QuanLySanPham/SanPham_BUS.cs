@@ -60,45 +60,52 @@ namespace BUS.QuanLySanPham
                 return false;
             }
 
+            #region Giá sản phẩm
             if (string.IsNullOrWhiteSpace(giaRaw)) 
-            {
-                message = "Giá không được để trống";
+            { 
+                message = "Giá không được để trống"; 
                 return false; 
             }
-            if (!int.TryParse(giaRaw, out int gia))
-            {
+
+            if (!int.TryParse(giaRaw, out int gia)) 
+            { 
                 message = "Giá phải là số nguyên"; 
                 return false; 
             }
 
             if (gia <= 0) 
-            {   
+            { 
                 message = "Giá phải lớn hơn 0"; 
                 return false; 
             }
+            sp.Gia = gia;
+            #endregion
 
+            #region Sò lương tốns
             if (string.IsNullOrWhiteSpace(soLuongTonRaw)) 
-            {
-                message = "Số lượng không được để trống";
+            { 
+                message = "Số lượng không được để trống"; 
                 return false; 
             }
 
             if (!int.TryParse(soLuongTonRaw, out int soLuong)) 
-            { message = "Số lượng tồn phải là số";
-                return false;
+            { message = "Số lượng tồn phải là số"; 
+                return false; 
             }
 
             if (soLuong < 0) 
-            { 
-                message = "Số lượng tồn không được âm"; 
-                return false;
+            { message = "Số lượng tồn không được âm"; 
+                return false; 
             }
+
+            sp.SoLuongTon = soLuong;
+            #endregion
 
 
             return SanPham_DAO.ThemSanPham(sp);
         }
 
-        public static bool SuaSanPham(SanPham_DTO sp,string maSP, out string message)
+        public static bool SuaSanPham(SanPham_DTO sp,string maSP, string giaRaw, string soLuongTonRaw, out string message)
         {
             message = "";
 
@@ -114,24 +121,55 @@ namespace BUS.QuanLySanPham
                 return false;
             }
 
-            if (sp.Gia <= 0)
+            #region Giá sản phẩm
+            if (string.IsNullOrWhiteSpace(giaRaw))
             {
                 message = "Giá không được để trống";
                 return false;
             }
 
-            if (sp.SoLuongTon < 0) 
+            if (!int.TryParse(giaRaw, out int gia))
             {
-                message = "Số lượng tồn không được là số âm";
+                message = "Giá phải là số nguyên";
                 return false;
             }
+
+            if (gia <= 0)
+            {
+                message = "Giá phải lớn hơn 0";
+                return false;
+            }
+            sp.Gia = gia;
+            #endregion
+
+            #region Sò lương tốns
+            if (string.IsNullOrWhiteSpace(soLuongTonRaw))
+            {
+                message = "Số lượng không được để trống";
+                return false;
+            }
+
+            if (!int.TryParse(soLuongTonRaw, out int soLuong))
+            {
+                message = "Số lượng tồn phải là số";
+                return false;
+            }
+
+            if (soLuong < 0)
+            {
+                message = "Số lượng tồn không được âm";
+                return false;
+            }
+
+            sp.SoLuongTon = soLuong;
+            #endregion
 
             return SanPham_DAO.SuaSanPham(sp, maSP);
         }
 
-        public static bool XoaSanPham(SanPham_DTO sp)
+        public static bool XoaSanPham(string maSP)
         {
-            return SanPham_DAO.XoaSanPham(sp);
+            return SanPham_DAO.XoaSanPham(maSP);
         }
 
     }

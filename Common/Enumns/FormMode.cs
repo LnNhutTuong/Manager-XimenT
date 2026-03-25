@@ -9,6 +9,13 @@ namespace QlCuaHangXimenT.Common.Enums
     public enum FormMode
     {
         View,
-        Edit
+        Edit,
+        
+    }
+
+    public enum CardMode
+    {
+        Selected,
+        NoSelected
     }
 }

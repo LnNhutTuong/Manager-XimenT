@@ -46,13 +46,15 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp
         {
             InitializeComponent();
             LayDuLieuCBO();
+            lblNgayThem.Text = DateTime.Now.ToString("dd-MM-yyyy");
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             SanPham_DTO sp = new SanPham_DTO();
 
-            sp.MaSP = txtMaSanPham.Text.Trim().ToUpper();
+            sp.MaSP = txtMaSanPham.Text.ToUpper().Trim();
             sp.TenSP = txtTenSanPham.Text;
             sp.Size = txtSize.Text;
 
@@ -60,6 +62,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp
             sp.MaTH= cboThuongHieu.SelectedValue.ToString();
             sp.MaNV= cboNhanVien.SelectedValue.ToString();
             sp.NgayThem = DateTime.Now;
+            //sp.NgaySua = DateTime.Now;
             sp.HinhAnh = ptbSanPham.Tag?.ToString();
 
             string message;

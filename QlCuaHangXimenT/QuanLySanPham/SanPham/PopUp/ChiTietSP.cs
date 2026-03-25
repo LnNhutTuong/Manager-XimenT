@@ -3,6 +3,7 @@ using BUS.QuanLySanPham;
 using DTO;
 using DTO.QuanLySanPham;
 using QlCuaHangXimenT.Common.Enums;
+using QlCuaHangXimenT.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
     public partial class ChiTietSP : Form
     {
         string maSP;
-        DataTable dm;
+       DataTable dm;
 
         public FormMode CurrentMode;
 
@@ -31,7 +32,6 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
             //txtMaDanhMuc.Enabled = isEdit;
             txtTenSanPham.Visible = isEdit;
-            txtMaSanPham.Visible = isEdit;
             txtSize.Visible = isEdit;
             txtGia.Visible = isEdit;
             txtSoLuongTon.Visible = isEdit;
@@ -49,7 +49,6 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             lblSize.Visible = !isEdit;
             lblGia.Visible = !isEdit;
 
-            lblMaSanPham.Visible = !isEdit;
             lblMaNV.Visible = !isEdit;
             lblSoLuongTon.Visible = !isEdit;
 
@@ -65,21 +64,23 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
         private void LayDuLieuCBO()
         {
             #region Danh sách danh mục
-            cboDanhMuc.DataSource = DanhMuc_BUS.DanhSachDanhMuc();
             cboDanhMuc.DisplayMember = "TenDM";
             cboDanhMuc.ValueMember = "MaDM";
+            cboDanhMuc.DataSource = DanhMuc_BUS.DanhSachDanhMuc();
+
             #endregion
 
             #region Danh sách thương hiệu
-            cboThuongHieu.DataSource = ThuongHieu_BUS.DanhSachThuongHieu();
             cboThuongHieu.DisplayMember = "TenTH";
             cboThuongHieu.ValueMember = "MaTH";
+            cboThuongHieu.DataSource = ThuongHieu_BUS.DanhSachThuongHieu();
+
             #endregion
 
             #region Danh sách nhân viên
-            cboNhanVien.DataSource = NhanVien_BUS.DanhSachNhanVien();
             cboNhanVien.DisplayMember = "TenNV";
             cboNhanVien.ValueMember = "MaNV";
+            cboNhanVien.DataSource = NhanVien_BUS.DanhSachNhanVien();
             #endregion
         }
 
@@ -88,8 +89,8 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
         {
             InitializeComponent();
             this.maSP = maSP;
-            LayDuLieuCBO();
             SetData();
+            LayDuLieuCBO();
             SetMode(FormMode.View);
             lblTitle.Text = ("Chi tiết sản phẩm");
 
@@ -108,14 +109,22 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
                 lblTenSP.Text = sanPham["TenSP"].ToString();
 
                 lblDanhMuc.Text = sanPham["TenDM"].ToString();
+                cboDanhMuc.SelectedValue = sanPham["MaDM"].ToString();
+
                 lblThuongHieu.Text = sanPham["TenTH"].ToString();
+                cboThuongHieu.SelectedValue = sanPham["MaTH"].ToString();
+
+
                 lblSize.Text = sanPham["Size"].ToString();
 
                 decimal gia = Convert.ToInt32(sanPham["Gia"]);
                 lblGia.Text = gia.ToString("N0") + " VNĐ";
 
                 lblMaSanPham.Text = sanPham["MaSP"].ToString();
+
                 lblMaNV.Text = sanPham["MaNV"].ToString();
+                cboNhanVien.SelectedValue = sanPham["MaNV"].ToString();
+
 
                 DateTime ngayThem = Convert.ToDateTime(sanPham["NgayThem"]);
                 lblNgayThem.Text = ngayThem.ToString("dd-MM-yyyy");
@@ -124,6 +133,39 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
                 DateTime ngaySua = Convert.ToDateTime(sanPham["NgaySua"]);
                 lblNgaySua.Text = ngaySua.ToString("dd-MM-yyyy HH:mm:ss");
+
+                if (sanPham["HinhAnh"] == DBNull.Value)
+                {
+                    ptbSanPham.Image = Resources.noImg;
+                    ptbSanPham.Tag = null;
+                }
+                else
+                {
+                    string pathAnh = sanPham["HinhAnh"].ToString();
+
+                    ptbSanPham.Tag = pathAnh;
+
+                    string fullPath = Path.Combine(Application.StartupPath, pathAnh);
+
+                    if (File.Exists(fullPath))
+                    {
+
+                        #region chạm thôi không nắm
+                        byte[] imageByte = File.ReadAllBytes(fullPath);
+
+                        using (MemoryStream ms = new MemoryStream(imageByte))
+                        {
+
+                            ptbSanPham.Image = Image.FromStream(ms);
+                        }
+                        #endregion
+                    }
+                    else
+                    {
+                        ptbSanPham.Image = Resources.noImg;
+                        MessageBox.Show(" ảnh không tồn tại nữa!");
+                    }
+                }
             }                                      
        }    
 
@@ -135,7 +177,6 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             lblTitle.Text = "Chỉnh sửa sản phẩm";
 
             txtTenSanPham.Text = sanPham["TenSP"].ToString();
-            txtMaSanPham.Text = sanPham["MaSP"].ToString();
             txtSize.Text = sanPham["Size"].ToString();
             txtGia.Text = sanPham["Gia"].ToString(); 
             txtSoLuongTon.Text = sanPham["SoLuongTon"].ToString();
@@ -154,38 +195,38 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            SanPham_DTO sp = new SanPham_DTO();
-
-            sp.MaSP = txtMaSanPham.Text;
-            sp.TenSP = txtTenSanPham.Text;
-            sp.Size = txtSize.Text;
-            sp.MaDM = cboDanhMuc.SelectedValue?.ToString();
-            sp.MaTH = cboThuongHieu.SelectedValue?.ToString();
-            sp.MaNV = cboNhanVien.SelectedValue?.ToString();
-            sp.NgaySua = DateTime.Now; 
-            sp.HinhAnh = ptbSanPham.Tag?.ToString();
-
-            // vì lý do an toàn nên hãy làm một cách an toàn đi, đừng mạo hiểm nữa my boy! dear XimenT
-            int gia, soLuong;
-            int.TryParse(txtGia.Text, out gia);
-            int.TryParse(txtSoLuongTon.Text, out soLuong);
-
-            sp.Gia = gia;
-            sp.SoLuongTon = soLuong;
-
-            string message;
-            bool kq = SanPham_BUS.SuaSanPham(sp, maSP, out message);
-
-            if (kq)
+            try
             {
-                MessageBox.Show("Sửa thành công!");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
+                SanPham_DTO sp = new SanPham_DTO();
+
+                sp.TenSP = txtTenSanPham.Text;
+                sp.Size = txtSize.Text;
+                sp.MaDM = cboDanhMuc.SelectedValue?.ToString();
+                sp.MaTH = cboThuongHieu.SelectedValue?.ToString();
+                sp.MaNV = cboNhanVien.SelectedValue?.ToString();
+                //sp.NgaySua = DateTime.Now;
+                sp.HinhAnh = ptbSanPham.Tag?.ToString();
+
+
+                string message = "";
+                bool kq = SanPham_BUS.SuaSanPham(sp, maSP, txtGia.Text, txtSoLuongTon.Text, out message);
+
+                if (kq)
+                {
+                    MessageBox.Show("Sửa thành công!");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                    MessageBox.Show(message);
+                {
+                }
+            }catch( Exception ex)
             {
-                MessageBox.Show(message);
+                MessageBox.Show(ex.Message);
+
             }
+
         }
 
         private void btnThayAnh_Click(object sender, EventArgs e)
@@ -205,7 +246,8 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
                         return;
                     }
                 }
-                //tao bien folder
+
+                #region Thư mục
                 string folder = Application.StartupPath + "\\Image\\";
 
                 //neu ko co Folder thi tao
@@ -213,23 +255,65 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
                 {
                     Directory.CreateDirectory(folder);
                 }
+                #endregion
 
+                #region Tên
                 //ten ko trung
                 DateTime date = DateTime.Now;
-                string filename = txtMaSanPham.Text + "_" + date.ToString("ddMMyyyy") + Path.GetExtension(file.FileName);
-
+                string filename = lblMaSanPham.Text + "_" + date.ToString("ddMMyyyy") + Path.GetExtension(file.FileName);
                 //duong dan
                 string newPath = folder + filename;
+                #endregion
 
-                //copy file cua nv vao bin
+
+                #region cho ảnh đang chọn đoi vễ kĩ luôn
+                if (ptbSanPham.Image != null)
+                {
+                    ptbSanPham.Image.Dispose(); // hãy buông tha cho tấm ảnh pls
+                    ptbSanPham.Image = null;
+                }
+                #endregion
 
                 File.Copy(file.FileName, newPath, true);
 
-                ptbSanPham.Image = Image.FromFile(file.FileName);
+
+                #region rất lú, hiểu đơn giản: sử dụng thằng "using" để giải quyết cái bug ảnh bị khóa :))
+                byte[] imageByte = File.ReadAllBytes(file.FileName);
+
+                using (MemoryStream ms = new MemoryStream(imageByte))
+                {
+
+                    ptbSanPham.Image = Image.FromStream(ms);
+                }
+                #endregion
+
 
                 //luu tag
                 ptbSanPham.Tag = "Image\\" + filename;
+
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult ans = MessageBox.Show($"Bạn có muốn xóa {lblMaSanPham.Text} sản phẩm?", "Xác nhận", MessageBoxButtons.YesNo);
+
+            if (ans == DialogResult.Yes)
+            {
+                bool kq = SanPham_BUS.XoaSanPham(maSP);
+                if (kq)
+                {
+                    MessageBox.Show("Xóa thành công");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công");
+
+                }
+            }
+        }      
+        
     }
 }

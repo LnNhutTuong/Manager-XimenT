@@ -115,7 +115,8 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
                         return;
                     }
                 }
-                //tao bien folder
+
+                #region Thư mục
                 string folder = Application.StartupPath + "\\Image\\";
 
                 //neu ko co Folder thi tao
@@ -123,24 +124,33 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
                 {
                     Directory.CreateDirectory(folder);
                 }
+                #endregion
 
+                #region Tên
                 //ten ko trung
                 DateTime date = DateTime.Now;
                 string filename = txtMaNhanVien.Text + "_" + date.ToString("ddMMyyyy") + Path.GetExtension(file.FileName);
-
                 //duong dan
                 string newPath = folder + filename;
+                #endregion
 
-                //copy file cua nv vao bin
+                #region rất lú, hiểu đơn giản: sử dụng thằng "using" để giải quyết cái bug ảnh bị khóa :))
+                byte[] imageByte = File.ReadAllBytes(file.FileName);
+
+                using (MemoryStream ms = new MemoryStream(imageByte))
+                {
+
+                    ptbNhanVien.Image = Image.FromStream(ms);
+                }
+                #endregion
 
                 File.Copy(file.FileName, newPath, true);
-
-                ptbNhanVien.Image = Image.FromFile(file.FileName);
 
                 //luu tag
                 ptbNhanVien.Tag = "Image\\" + filename;
 
             }
+
         }
     }
 }

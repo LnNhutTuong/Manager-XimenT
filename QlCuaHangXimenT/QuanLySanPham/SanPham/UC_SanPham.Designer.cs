@@ -52,6 +52,7 @@
             this.filterContent = new Guna.UI2.WinForms.Guna2Panel();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.btnXoaSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.header.SuspendLayout();
@@ -121,7 +122,7 @@
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(847, 14);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(1083, 13);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(169, 49);
             this.guna2GroupBox1.TabIndex = 158;
@@ -332,6 +333,7 @@
             this.header.BorderColor = System.Drawing.Color.Silver;
             this.header.BorderRadius = 15;
             this.header.BorderThickness = 2;
+            this.header.Controls.Add(this.btnXoaSanPham);
             this.header.Controls.Add(this.label1);
             this.header.Controls.Add(this.label2);
             this.header.Controls.Add(this.guna2GroupBox1);
@@ -355,7 +357,7 @@
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = global::QlCuaHangXimenT.Properties.Resources.plus;
-            this.btnThem.Location = new System.Drawing.Point(1041, 14);
+            this.btnThem.Location = new System.Drawing.Point(649, 12);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(211, 49);
             this.btnThem.TabIndex = 152;
@@ -409,6 +411,26 @@
             this.guna2VScrollBar1.SmallChange = 5;
             this.guna2VScrollBar1.TabIndex = 173;
             // 
+            // btnXoaSanPham
+            // 
+            this.btnXoaSanPham.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnXoaSanPham.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoaSanPham.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnXoaSanPham.CustomBorderThickness = new System.Windows.Forms.Padding(1);
+            this.btnXoaSanPham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoaSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoaSanPham.FillColor = System.Drawing.Color.White;
+            this.btnXoaSanPham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaSanPham.ForeColor = System.Drawing.Color.Black;
+            this.btnXoaSanPham.Location = new System.Drawing.Point(866, 12);
+            this.btnXoaSanPham.Name = "btnXoaSanPham";
+            this.btnXoaSanPham.Size = new System.Drawing.Size(211, 49);
+            this.btnXoaSanPham.TabIndex = 159;
+            this.btnXoaSanPham.Text = "Xóa sản phẩm";
+            this.btnXoaSanPham.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // UC_SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -461,5 +483,6 @@
         private Guna.UI2.WinForms.Guna2Panel header;
         private Guna.UI2.WinForms.Guna2Panel filterContent;
         private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
+        private Guna.UI2.WinForms.Guna2Button btnXoaSanPham;
     }
 }

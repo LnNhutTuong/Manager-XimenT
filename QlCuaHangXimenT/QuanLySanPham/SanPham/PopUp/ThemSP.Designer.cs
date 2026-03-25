@@ -169,6 +169,7 @@
             this.txtTenSanPham.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenSanPham.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenSanPham.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSanPham.ForeColor = System.Drawing.Color.Black;
             this.txtTenSanPham.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenSanPham.Location = new System.Drawing.Point(14, 42);
             this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
@@ -180,6 +181,7 @@
             // 
             // cboThuongHieu
             // 
+            this.cboThuongHieu.ForeColor = System.Drawing.Color.Black;
             this.cboThuongHieu.FormattingEnabled = true;
             this.cboThuongHieu.Location = new System.Drawing.Point(368, 169);
             this.cboThuongHieu.Name = "cboThuongHieu";
@@ -188,6 +190,7 @@
             // 
             // cboDanhMuc
             // 
+            this.cboDanhMuc.ForeColor = System.Drawing.Color.Black;
             this.cboDanhMuc.FormattingEnabled = true;
             this.cboDanhMuc.Location = new System.Drawing.Point(23, 169);
             this.cboDanhMuc.Name = "cboDanhMuc";
@@ -205,6 +208,7 @@
             this.txtGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.ForeColor = System.Drawing.Color.Black;
             this.txtGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGia.Location = new System.Drawing.Point(367, 259);
             this.txtGia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -225,6 +229,7 @@
             this.txtSize.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSize.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSize.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSize.ForeColor = System.Drawing.Color.Black;
             this.txtSize.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSize.Location = new System.Drawing.Point(23, 259);
             this.txtSize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -311,6 +316,7 @@
             // 
             // cboNhanVien
             // 
+            this.cboNhanVien.ForeColor = System.Drawing.Color.Black;
             this.cboNhanVien.FormattingEnabled = true;
             this.cboNhanVien.Location = new System.Drawing.Point(176, 80);
             this.cboNhanVien.Name = "cboNhanVien";
@@ -328,6 +334,7 @@
             this.txtSoLuongTon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSoLuongTon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoLuongTon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuongTon.ForeColor = System.Drawing.Color.Black;
             this.txtSoLuongTon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoLuongTon.Location = new System.Drawing.Point(173, 150);
             this.txtSoLuongTon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -348,6 +355,7 @@
             this.txtMaSanPham.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMaSanPham.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaSanPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSanPham.ForeColor = System.Drawing.Color.Black;
             this.txtMaSanPham.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaSanPham.Location = new System.Drawing.Point(20, 82);
             this.txtMaSanPham.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

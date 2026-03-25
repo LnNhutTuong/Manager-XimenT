@@ -44,10 +44,17 @@
             this.lblMaSanPham = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.cboNhanVien = new System.Windows.Forms.ComboBox();
+            this.txtSoLuongTon = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.txtTenSanPham = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cboThuongHieu = new System.Windows.Forms.ComboBox();
             this.lblGia = new System.Windows.Forms.Label();
+            this.cboDanhMuc = new System.Windows.Forms.ComboBox();
             this.lblSize = new System.Windows.Forms.Label();
+            this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblThuongHieu = new System.Windows.Forms.Label();
+            this.txtSize = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblDanhMuc = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,14 +77,6 @@
             this.btnSua = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnHuy = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnXoa = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.txtTenSanPham = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cboThuongHieu = new System.Windows.Forms.ComboBox();
-            this.cboDanhMuc = new System.Windows.Forms.ComboBox();
-            this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtSize = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cboNhanVien = new System.Windows.Forms.ComboBox();
-            this.txtSoLuongTon = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtMaSanPham = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnThayAnh = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.ptbSanPham)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
@@ -153,7 +152,6 @@
             this.guna2GroupBox1.Controls.Add(this.label11);
             this.guna2GroupBox1.Controls.Add(this.label9);
             this.guna2GroupBox1.Controls.Add(this.cboNhanVien);
-            this.guna2GroupBox1.Controls.Add(this.txtMaSanPham);
             this.guna2GroupBox1.Controls.Add(this.txtSoLuongTon);
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0);
             this.guna2GroupBox1.FillColor = System.Drawing.Color.Transparent;
@@ -262,6 +260,36 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "label9";
             // 
+            // cboNhanVien
+            // 
+            this.cboNhanVien.ForeColor = System.Drawing.Color.Black;
+            this.cboNhanVien.FormattingEnabled = true;
+            this.cboNhanVien.Location = new System.Drawing.Point(176, 80);
+            this.cboNhanVien.Name = "cboNhanVien";
+            this.cboNhanVien.Size = new System.Drawing.Size(121, 31);
+            this.cboNhanVien.TabIndex = 73;
+            // 
+            // txtSoLuongTon
+            // 
+            this.txtSoLuongTon.BorderColor = System.Drawing.Color.Black;
+            this.txtSoLuongTon.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSoLuongTon.DefaultText = "";
+            this.txtSoLuongTon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSoLuongTon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSoLuongTon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoLuongTon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoLuongTon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoLuongTon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuongTon.ForeColor = System.Drawing.Color.Black;
+            this.txtSoLuongTon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoLuongTon.Location = new System.Drawing.Point(173, 150);
+            this.txtSoLuongTon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSoLuongTon.Name = "txtSoLuongTon";
+            this.txtSoLuongTon.PlaceholderText = "Số lượng tồn";
+            this.txtSoLuongTon.SelectedText = "";
+            this.txtSoLuongTon.Size = new System.Drawing.Size(124, 29);
+            this.txtSoLuongTon.TabIndex = 72;
+            // 
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -291,6 +319,37 @@
             this.guna2GroupBox2.TabIndex = 45;
             this.guna2GroupBox2.Text = "Chi tiết sản phẩm";
             // 
+            // txtTenSanPham
+            // 
+            this.txtTenSanPham.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTenSanPham.BorderColor = System.Drawing.Color.Black;
+            this.txtTenSanPham.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenSanPham.DefaultText = "";
+            this.txtTenSanPham.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenSanPham.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenSanPham.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenSanPham.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSanPham.ForeColor = System.Drawing.Color.Black;
+            this.txtTenSanPham.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenSanPham.Location = new System.Drawing.Point(14, 30);
+            this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtTenSanPham.Name = "txtTenSanPham";
+            this.txtTenSanPham.PlaceholderText = "Tên sản phẩm";
+            this.txtTenSanPham.SelectedText = "";
+            this.txtTenSanPham.Size = new System.Drawing.Size(401, 46);
+            this.txtTenSanPham.TabIndex = 76;
+            // 
+            // cboThuongHieu
+            // 
+            this.cboThuongHieu.ForeColor = System.Drawing.Color.Black;
+            this.cboThuongHieu.FormattingEnabled = true;
+            this.cboThuongHieu.Location = new System.Drawing.Point(359, 159);
+            this.cboThuongHieu.Name = "cboThuongHieu";
+            this.cboThuongHieu.Size = new System.Drawing.Size(214, 31);
+            this.cboThuongHieu.TabIndex = 75;
+            // 
             // lblGia
             // 
             this.lblGia.AutoSize = true;
@@ -301,6 +360,15 @@
             this.lblGia.Size = new System.Drawing.Size(164, 25);
             this.lblGia.TabIndex = 12;
             this.lblGia.Text = "1.000.000 VNĐ";
+            // 
+            // cboDanhMuc
+            // 
+            this.cboDanhMuc.ForeColor = System.Drawing.Color.Black;
+            this.cboDanhMuc.FormattingEnabled = true;
+            this.cboDanhMuc.Location = new System.Drawing.Point(14, 159);
+            this.cboDanhMuc.Name = "cboDanhMuc";
+            this.cboDanhMuc.Size = new System.Drawing.Size(214, 31);
+            this.cboDanhMuc.TabIndex = 74;
             // 
             // lblSize
             // 
@@ -313,6 +381,27 @@
             this.lblSize.TabIndex = 11;
             this.lblSize.Text = "Free Size";
             // 
+            // txtGia
+            // 
+            this.txtGia.BorderColor = System.Drawing.Color.Black;
+            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGia.DefaultText = "";
+            this.txtGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.ForeColor = System.Drawing.Color.Black;
+            this.txtGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGia.Location = new System.Drawing.Point(358, 249);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.PlaceholderText = "Giá niêm yết";
+            this.txtGia.SelectedText = "";
+            this.txtGia.Size = new System.Drawing.Size(215, 29);
+            this.txtGia.TabIndex = 70;
+            // 
             // lblThuongHieu
             // 
             this.lblThuongHieu.AutoSize = true;
@@ -323,6 +412,27 @@
             this.lblThuongHieu.Size = new System.Drawing.Size(135, 25);
             this.lblThuongHieu.TabIndex = 10;
             this.lblThuongHieu.Text = "Issey Miyaki";
+            // 
+            // txtSize
+            // 
+            this.txtSize.BorderColor = System.Drawing.Color.Black;
+            this.txtSize.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSize.DefaultText = "";
+            this.txtSize.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSize.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSize.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSize.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSize.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSize.ForeColor = System.Drawing.Color.Black;
+            this.txtSize.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSize.Location = new System.Drawing.Point(14, 249);
+            this.txtSize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSize.Name = "txtSize";
+            this.txtSize.PlaceholderText = "Kích thước";
+            this.txtSize.SelectedText = "";
+            this.txtSize.Size = new System.Drawing.Size(214, 29);
+            this.txtSize.TabIndex = 69;
             // 
             // lblDanhMuc
             // 
@@ -610,131 +720,7 @@
             this.btnXoa.Size = new System.Drawing.Size(180, 48);
             this.btnXoa.TabIndex = 67;
             this.btnXoa.Text = "Xóa";
-            // 
-            // txtTenSanPham
-            // 
-            this.txtTenSanPham.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTenSanPham.BorderColor = System.Drawing.Color.Black;
-            this.txtTenSanPham.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenSanPham.DefaultText = "";
-            this.txtTenSanPham.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTenSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTenSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenSanPham.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenSanPham.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenSanPham.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSanPham.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenSanPham.Location = new System.Drawing.Point(14, 30);
-            this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.txtTenSanPham.Name = "txtTenSanPham";
-            this.txtTenSanPham.PlaceholderText = "Tên sản phẩm";
-            this.txtTenSanPham.SelectedText = "";
-            this.txtTenSanPham.Size = new System.Drawing.Size(401, 46);
-            this.txtTenSanPham.TabIndex = 76;
-            // 
-            // cboThuongHieu
-            // 
-            this.cboThuongHieu.FormattingEnabled = true;
-            this.cboThuongHieu.Location = new System.Drawing.Point(359, 159);
-            this.cboThuongHieu.Name = "cboThuongHieu";
-            this.cboThuongHieu.Size = new System.Drawing.Size(214, 31);
-            this.cboThuongHieu.TabIndex = 75;
-            // 
-            // cboDanhMuc
-            // 
-            this.cboDanhMuc.FormattingEnabled = true;
-            this.cboDanhMuc.Location = new System.Drawing.Point(14, 159);
-            this.cboDanhMuc.Name = "cboDanhMuc";
-            this.cboDanhMuc.Size = new System.Drawing.Size(214, 31);
-            this.cboDanhMuc.TabIndex = 74;
-            // 
-            // txtGia
-            // 
-            this.txtGia.BorderColor = System.Drawing.Color.Black;
-            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGia.DefaultText = "";
-            this.txtGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGia.Location = new System.Drawing.Point(358, 249);
-            this.txtGia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.PlaceholderText = "Giá niêm yết";
-            this.txtGia.SelectedText = "";
-            this.txtGia.Size = new System.Drawing.Size(215, 29);
-            this.txtGia.TabIndex = 70;
-            // 
-            // txtSize
-            // 
-            this.txtSize.BorderColor = System.Drawing.Color.Black;
-            this.txtSize.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSize.DefaultText = "";
-            this.txtSize.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSize.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSize.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSize.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSize.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSize.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSize.Location = new System.Drawing.Point(14, 249);
-            this.txtSize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtSize.Name = "txtSize";
-            this.txtSize.PlaceholderText = "Kích thước";
-            this.txtSize.SelectedText = "";
-            this.txtSize.Size = new System.Drawing.Size(214, 29);
-            this.txtSize.TabIndex = 69;
-            // 
-            // cboNhanVien
-            // 
-            this.cboNhanVien.FormattingEnabled = true;
-            this.cboNhanVien.Location = new System.Drawing.Point(176, 80);
-            this.cboNhanVien.Name = "cboNhanVien";
-            this.cboNhanVien.Size = new System.Drawing.Size(121, 31);
-            this.cboNhanVien.TabIndex = 73;
-            // 
-            // txtSoLuongTon
-            // 
-            this.txtSoLuongTon.BorderColor = System.Drawing.Color.Black;
-            this.txtSoLuongTon.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSoLuongTon.DefaultText = "";
-            this.txtSoLuongTon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSoLuongTon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSoLuongTon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSoLuongTon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSoLuongTon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoLuongTon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuongTon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoLuongTon.Location = new System.Drawing.Point(173, 150);
-            this.txtSoLuongTon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtSoLuongTon.Name = "txtSoLuongTon";
-            this.txtSoLuongTon.PlaceholderText = "Số lượng tồn";
-            this.txtSoLuongTon.SelectedText = "";
-            this.txtSoLuongTon.Size = new System.Drawing.Size(124, 29);
-            this.txtSoLuongTon.TabIndex = 72;
-            // 
-            // txtMaSanPham
-            // 
-            this.txtMaSanPham.BorderColor = System.Drawing.Color.Black;
-            this.txtMaSanPham.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaSanPham.DefaultText = "";
-            this.txtMaSanPham.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaSanPham.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaSanPham.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaSanPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSanPham.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaSanPham.Location = new System.Drawing.Point(20, 82);
-            this.txtMaSanPham.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMaSanPham.Name = "txtMaSanPham";
-            this.txtMaSanPham.PlaceholderText = "Mã sản phẩm";
-            this.txtMaSanPham.SelectedText = "";
-            this.txtMaSanPham.Size = new System.Drawing.Size(124, 29);
-            this.txtMaSanPham.TabIndex = 71;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThayAnh
             // 
@@ -842,7 +828,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtGia;
         private Guna.UI2.WinForms.Guna2TextBox txtSize;
         private System.Windows.Forms.ComboBox cboNhanVien;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaSanPham;
         private Guna.UI2.WinForms.Guna2TextBox txtSoLuongTon;
         private Guna.UI2.WinForms.Guna2GradientButton btnThayAnh;
     }

@@ -35,13 +35,14 @@
             this.lblMaSanPham = new System.Windows.Forms.Label();
             this.ptbHinhAnh = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.borderCard = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.ptbHinhAnh)).BeginInit();
-            this.guna2CustomGradientPanel1.SuspendLayout();
+            this.borderCard.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnXemChiTiet
             // 
+            this.btnXemChiTiet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnXemChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnXemChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXemChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -58,6 +59,7 @@
             // 
             // lblGia
             // 
+            this.lblGia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblGia.BackColor = System.Drawing.Color.White;
             this.lblGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGia.ForeColor = System.Drawing.Color.Red;
@@ -70,6 +72,7 @@
             // 
             // lblTenSanPham
             // 
+            this.lblTenSanPham.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTenSanPham.BackColor = System.Drawing.Color.White;
             this.lblTenSanPham.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenSanPham.ForeColor = System.Drawing.Color.Black;
@@ -82,6 +85,7 @@
             // 
             // lblMaSanPham
             // 
+            this.lblMaSanPham.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblMaSanPham.BackColor = System.Drawing.Color.White;
             this.lblMaSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaSanPham.ForeColor = System.Drawing.Color.Gray;
@@ -94,6 +98,7 @@
             // 
             // ptbHinhAnh
             // 
+            this.ptbHinhAnh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ptbHinhAnh.BackColor = System.Drawing.Color.White;
             this.ptbHinhAnh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ptbHinhAnh.Image = global::QlCuaHangXimenT.Properties.Resources.noImg;
@@ -110,17 +115,17 @@
             this.guna2Elipse1.BorderRadius = 5;
             this.guna2Elipse1.TargetControl = this;
             // 
-            // guna2CustomGradientPanel1
+            // borderCard
             // 
-            this.guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.Black;
-            this.guna2CustomGradientPanel1.BorderRadius = 15;
-            this.guna2CustomGradientPanel1.BorderThickness = 2;
-            this.guna2CustomGradientPanel1.Controls.Add(this.btnXemChiTiet);
-            this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(270, 370);
-            this.guna2CustomGradientPanel1.TabIndex = 11;
+            this.borderCard.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.borderCard.BorderColor = System.Drawing.Color.Black;
+            this.borderCard.BorderRadius = 15;
+            this.borderCard.BorderThickness = 2;
+            this.borderCard.Controls.Add(this.btnXemChiTiet);
+            this.borderCard.Location = new System.Drawing.Point(0, 0);
+            this.borderCard.Name = "borderCard";
+            this.borderCard.Size = new System.Drawing.Size(270, 370);
+            this.borderCard.TabIndex = 11;
             // 
             // card_SanPham
             // 
@@ -131,12 +136,13 @@
             this.Controls.Add(this.lblGia);
             this.Controls.Add(this.lblTenSanPham);
             this.Controls.Add(this.lblMaSanPham);
-            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Controls.Add(this.borderCard);
             this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "card_SanPham";
             this.Size = new System.Drawing.Size(270, 370);
+            this.Click += new System.EventHandler(this.card_SanPham_Click);
             ((System.ComponentModel.ISupportInitialize)(this.ptbHinhAnh)).EndInit();
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.borderCard.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -149,6 +155,6 @@
         private System.Windows.Forms.Label lblMaSanPham;
         private Guna.UI2.WinForms.Guna2PictureBox ptbHinhAnh;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel borderCard;
     }
 }

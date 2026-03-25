@@ -1,4 +1,5 @@
 ﻿using BUS.QuanLySanPham;
+using QlCuaHangXimenT.Common.Enums;
 using QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,8 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
         public void LayDuLieu()
         {
+            flpSanPham.Controls.Clear();
+
             string message;
             DataTable dsSanPham = SanPham_BUS.DanhSachSanPham();
             if (dsSanPham.Rows.Count > 0)
@@ -32,6 +35,12 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
                     card_SanPham sanpham = new card_SanPham();                   
 
                     sanpham.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]), dr["HinhAnh"].ToString());
+
+
+                    sanpham.added = () =>
+                    {
+                        LayDuLieu();
+                    };
 
                     flpSanPham.Controls.Add(sanpham);
                 }
@@ -45,11 +54,79 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
         private void btnThem_Click(object sender, EventArgs e)
         {
             ThemSP them = new ThemSP();
-            
-            if(them.ShowDialog() == DialogResult.OK)
+            if (them.ShowDialog() == DialogResult.OK)
             {
+                flpSanPham.Controls.Clear();
                 LayDuLieu();
             }
         }
+
+
+        #region Xóa theo số lượng Card được chọn
+        List<string> dsSpChon = new List<string>();
+
+        private List<string> DsSpChon()
+        {
+
+            // chạy foreach hết tất cả thứ trong flow, bao gồm tất cả btn, label, panle,... ko bỏ gì hết
+            foreach (Control ctrl in flpSanPham.Controls)
+            {
+                //nếu đó là panel mang tên ... do mình đặt 
+                if (ctrl is card_SanPham card)
+                {
+                    // ez
+                    if (card.CurrentMode == CardMode.Selected)
+                    {
+                        dsSpChon.Add(card.MaSP);
+                    }
+                    else 
+                    {
+                        dsSpChon.Remove(card.MaSP);
+                    }
+                }
+            }
+            return dsSpChon;
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            List<string> dsDaChon = DsSpChon();
+            if ( dsSpChon.Count == 0){
+                MessageBox.Show("Vui lòng chọn sản phẩm đế xóa");
+            }
+            else
+            {
+                DialogResult ans = MessageBox.Show($"Bạn có muốn xóa {dsSpChon.Count} sản phẩm?", "Xác nhận", MessageBoxButtons.YesNo);
+
+                if (ans == DialogResult.Yes)
+                {
+                    int flag = 0;
+                    foreach (string maSP in dsDaChon)
+                    {
+                       bool kq = SanPham_BUS.XoaSanPham(maSP);
+
+                        if (!kq)
+                        {                            
+                            flag++;
+                            break;
+                        }
+                    }
+
+                    if(flag != 0)
+                    {
+                        MessageBox.Show("Xóa không thành công");
+                    }
+                    else
+                    {
+                        flpSanPham.Controls.Clear();
+                        LayDuLieu();
+                        MessageBox.Show("Xóa thành công");
+                    }
+                }
+                       
+            }
+        }
+
+        #endregion 
     }
 }
