@@ -1,5 +1,6 @@
 ﻿using BUS.QuanLySanPham;
 using QlCuaHangXimenT.Common.Enums;
+using QlCuaHangXimenT.QuanLySanPham.DanhMuc.PopUp;
 using QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp;
 using System;
 using System.Collections.Generic;
@@ -127,6 +128,63 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             }
         }
 
-        #endregion 
+        #endregion
+
+        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string maSP = txtTimKiem.Text.Trim();
+
+                if (string.IsNullOrEmpty(maSP))
+                {
+                    MessageBox.Show("Nhập mã để tìm!");
+                }
+
+                string message;
+                var dm = SanPham_BUS.SanPhamTheoMa(maSP, out message);
+
+                if (dm == null)
+                {
+                    MessageBox.Show(message);
+                    return;
+                }
+
+
+                ChiTietSP ct = new ChiTietSP(maSP);
+                if (ct.ShowDialog() == DialogResult.OK)
+                {
+                    flpSanPham.Controls.Clear();
+                    LayDuLieu();
+                }
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string maSP = txtTimKiem.Text.Trim();
+
+            if (string.IsNullOrEmpty(maSP))
+            {
+                MessageBox.Show("Nhập mã để tìm!");
+            }
+
+            string message;
+            var dm = SanPham_BUS.SanPhamTheoMa(maSP, out message);
+
+            if (dm == null)
+            {
+                MessageBox.Show(message);
+                return;
+            }
+
+
+            ChiTietSP ct = new ChiTietSP(maSP);
+            if (ct.ShowDialog() == DialogResult.OK)
+            {
+                flpSanPham.Controls.Clear();
+                LayDuLieu();
+            }
+        }
     }
 }

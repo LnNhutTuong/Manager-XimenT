@@ -48,11 +48,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lblSoSanPhamPhuHop = new System.Windows.Forms.Label();
             this.header = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnXoaSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.filterContent = new Guna.UI2.WinForms.Guna2Panel();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.btnXoaSanPham = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.header.SuspendLayout();
@@ -112,12 +112,13 @@
             this.txtTimKiem.SelectedText = "";
             this.txtTimKiem.Size = new System.Drawing.Size(1234, 41);
             this.txtTimKiem.TabIndex = 154;
+            this.txtTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyDown);
             // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Controls.Add(this.lblSoLuongSanPham);
             this.guna2GroupBox1.Controls.Add(this.label3);
+            this.guna2GroupBox1.Controls.Add(this.lblSoLuongSanPham);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(1);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -132,9 +133,9 @@
             this.lblSoLuongSanPham.BackColor = System.Drawing.Color.Transparent;
             this.lblSoLuongSanPham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoLuongSanPham.ForeColor = System.Drawing.Color.Black;
-            this.lblSoLuongSanPham.Location = new System.Drawing.Point(0, 21);
+            this.lblSoLuongSanPham.Location = new System.Drawing.Point(0, 20);
             this.lblSoLuongSanPham.Name = "lblSoLuongSanPham";
-            this.lblSoLuongSanPham.Size = new System.Drawing.Size(169, 27);
+            this.lblSoLuongSanPham.Size = new System.Drawing.Size(169, 28);
             this.lblSoLuongSanPham.TabIndex = 160;
             this.lblSoLuongSanPham.Text = "10000";
             this.lblSoLuongSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -320,7 +321,7 @@
             this.lblSoSanPhamPhuHop.AutoSize = true;
             this.lblSoSanPhamPhuHop.BackColor = System.Drawing.Color.Transparent;
             this.lblSoSanPhamPhuHop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoSanPhamPhuHop.Location = new System.Drawing.Point(167, 213);
+            this.lblSoSanPhamPhuHop.Location = new System.Drawing.Point(167, 210);
             this.lblSoSanPhamPhuHop.Name = "lblSoSanPhamPhuHop";
             this.lblSoSanPhamPhuHop.Size = new System.Drawing.Size(60, 25);
             this.lblSoSanPhamPhuHop.TabIndex = 170;
@@ -342,6 +343,26 @@
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(1268, 75);
             this.header.TabIndex = 171;
+            // 
+            // btnXoaSanPham
+            // 
+            this.btnXoaSanPham.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnXoaSanPham.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoaSanPham.CustomBorderColor = System.Drawing.Color.Black;
+            this.btnXoaSanPham.CustomBorderThickness = new System.Windows.Forms.Padding(1);
+            this.btnXoaSanPham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoaSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoaSanPham.FillColor = System.Drawing.Color.White;
+            this.btnXoaSanPham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaSanPham.ForeColor = System.Drawing.Color.Black;
+            this.btnXoaSanPham.Location = new System.Drawing.Point(866, 12);
+            this.btnXoaSanPham.Name = "btnXoaSanPham";
+            this.btnXoaSanPham.Size = new System.Drawing.Size(211, 49);
+            this.btnXoaSanPham.TabIndex = 159;
+            this.btnXoaSanPham.Text = "Xóa sản phẩm";
+            this.btnXoaSanPham.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // btnThem
             // 
@@ -396,6 +417,7 @@
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(41, 35);
             this.btnTimKiem.TabIndex = 155;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // guna2VScrollBar1
             // 
@@ -410,26 +432,6 @@
             this.guna2VScrollBar1.Size = new System.Drawing.Size(21, 428);
             this.guna2VScrollBar1.SmallChange = 5;
             this.guna2VScrollBar1.TabIndex = 173;
-            // 
-            // btnXoaSanPham
-            // 
-            this.btnXoaSanPham.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnXoaSanPham.BackColor = System.Drawing.Color.Transparent;
-            this.btnXoaSanPham.CustomBorderColor = System.Drawing.Color.Black;
-            this.btnXoaSanPham.CustomBorderThickness = new System.Windows.Forms.Padding(1);
-            this.btnXoaSanPham.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoaSanPham.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoaSanPham.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXoaSanPham.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoaSanPham.FillColor = System.Drawing.Color.White;
-            this.btnXoaSanPham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaSanPham.ForeColor = System.Drawing.Color.Black;
-            this.btnXoaSanPham.Location = new System.Drawing.Point(866, 12);
-            this.btnXoaSanPham.Name = "btnXoaSanPham";
-            this.btnXoaSanPham.Size = new System.Drawing.Size(211, 49);
-            this.btnXoaSanPham.TabIndex = 159;
-            this.btnXoaSanPham.Text = "Xóa sản phẩm";
-            this.btnXoaSanPham.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // UC_SanPham
             // 

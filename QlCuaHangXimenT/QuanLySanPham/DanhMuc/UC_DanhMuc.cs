@@ -143,5 +143,7 @@ namespace QlCuaHangXimenT.QuanLiSanPham
                 LayDuLieu();
             }
         }
+
+       
     }
 }
