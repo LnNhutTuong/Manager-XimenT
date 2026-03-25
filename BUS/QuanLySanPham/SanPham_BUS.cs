@@ -38,7 +38,7 @@ namespace BUS.QuanLySanPham
             return SanPham_DAO.SanPhamTheoMa(maSP);
         }
 
-        public static bool ThemSanPham(SanPham_DTO sp, out string message)
+        public static bool ThemSanPham(SanPham_DTO sp, string giaRaw, string soLuongTonRaw, out string message)
         {
             message = "";
 
@@ -60,31 +60,78 @@ namespace BUS.QuanLySanPham
                 return false;
             }
 
-            if (string.IsNullOrEmpty(sp.TenSP))
+            if (string.IsNullOrWhiteSpace(giaRaw)) 
+            {
+                message = "Giá không được để trống";
+                return false; 
+            }
+            if (!int.TryParse(giaRaw, out int gia))
+            {
+                message = "Giá phải là số nguyên"; 
+                return false; 
+            }
+
+            if (gia <= 0) 
+            {   
+                message = "Giá phải lớn hơn 0"; 
+                return false; 
+            }
+
+            if (string.IsNullOrWhiteSpace(soLuongTonRaw)) 
+            {
+                message = "Số lượng không được để trống";
+                return false; 
+            }
+
+            if (!int.TryParse(soLuongTonRaw, out int soLuong)) 
+            { message = "Số lượng tồn phải là số";
+                return false;
+            }
+
+            if (soLuong < 0) 
+            { 
+                message = "Số lượng tồn không được âm"; 
+                return false;
+            }
+
+
+            return SanPham_DAO.ThemSanPham(sp);
+        }
+
+        public static bool SuaSanPham(SanPham_DTO sp,string maSP, out string message)
+        {
+            message = "";
+
+            if (string.IsNullOrWhiteSpace(sp.TenSP))
             {
                 message = "Tên không được để trống";
                 return false;
             }
 
-            if (string.IsNullOrEmpty(sp.Size))
+            if (string.IsNullOrWhiteSpace(sp.Size))
             {
                 message = "Size không được để trống";
                 return false;
             }
 
-            if (string.IsNullOrEmpty(sp.SoLuongTon.ToString()))
-            {
-                message = "Số lượng tồn không được để trống";
-                return false;
-            }
-
-            if (string.IsNullOrEmpty(sp.Gia.ToString()))
+            if (sp.Gia <= 0)
             {
                 message = "Giá không được để trống";
                 return false;
             }
 
-            return SanPham_DAO.ThemSanPham(sp);
+            if (sp.SoLuongTon < 0) 
+            {
+                message = "Số lượng tồn không được là số âm";
+                return false;
+            }
+
+            return SanPham_DAO.SuaSanPham(sp, maSP);
+        }
+
+        public static bool XoaSanPham(SanPham_DTO sp)
+        {
+            return SanPham_DAO.XoaSanPham(sp);
         }
 
     }

@@ -124,6 +124,12 @@
     <Compile Include="QuanLySanPham\SanPham\PopUp\ChiTietSP.Designer.cs">
       <DependentUpon>ChiTietSP.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanPham\SanPham\PopUp\ThemSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\SanPham\PopUp\ThemSP.Designer.cs">
+      <DependentUpon>ThemSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanPham\SanPham\short_SanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\SanPham\PopUp\ChiTietSP.resx">
       <DependentUpon>ChiTietSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\SanPham\PopUp\ThemSP.resx">
+      <DependentUpon>ThemSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\SanPham\short_SanPham.resx">
       <DependentUpon>short_SanPham.cs</DependentUpon>

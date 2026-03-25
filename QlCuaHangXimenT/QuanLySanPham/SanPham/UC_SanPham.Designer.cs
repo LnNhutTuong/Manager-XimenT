@@ -51,6 +51,7 @@
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.filterContent = new Guna.UI2.WinForms.Guna2Panel();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.header.SuspendLayout();
@@ -127,15 +128,15 @@
             // 
             // lblSoLuongSanPham
             // 
-            this.lblSoLuongSanPham.AutoSize = true;
             this.lblSoLuongSanPham.BackColor = System.Drawing.Color.Transparent;
             this.lblSoLuongSanPham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoLuongSanPham.ForeColor = System.Drawing.Color.Black;
-            this.lblSoLuongSanPham.Location = new System.Drawing.Point(51, 21);
+            this.lblSoLuongSanPham.Location = new System.Drawing.Point(0, 21);
             this.lblSoLuongSanPham.Name = "lblSoLuongSanPham";
-            this.lblSoLuongSanPham.Size = new System.Drawing.Size(67, 28);
+            this.lblSoLuongSanPham.Size = new System.Drawing.Size(169, 27);
             this.lblSoLuongSanPham.TabIndex = 160;
             this.lblSoLuongSanPham.Text = "10000";
+            this.lblSoLuongSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -167,6 +168,7 @@
             // 
             // guna2GroupBox2
             // 
+            this.guna2GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2GroupBox2.BorderColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.BorderRadius = 10;
             this.guna2GroupBox2.Controls.Add(this.guna2ComboBox4);
@@ -358,6 +360,7 @@
             this.btnThem.Size = new System.Drawing.Size(211, 49);
             this.btnThem.TabIndex = 152;
             this.btnThem.Text = "Thêm sản phẩm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // filterContent
             // 
@@ -392,11 +395,26 @@
             this.btnTimKiem.Size = new System.Drawing.Size(41, 35);
             this.btnTimKiem.TabIndex = 155;
             // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.BindingContainer = this.flpSanPham;
+            this.guna2VScrollBar1.BorderRadius = 5;
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 428;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(1290, 360);
+            this.guna2VScrollBar1.Maximum = 433;
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 21;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(21, 428);
+            this.guna2VScrollBar1.SmallChange = 5;
+            this.guna2VScrollBar1.TabIndex = 173;
+            // 
             // UC_SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Controls.Add(this.guna2VScrollBar1);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.flpSanPham);
@@ -442,5 +460,6 @@
         private System.Windows.Forms.Label lblSoSanPhamPhuHop;
         private Guna.UI2.WinForms.Guna2Panel header;
         private Guna.UI2.WinForms.Guna2Panel filterContent;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
     }
 }

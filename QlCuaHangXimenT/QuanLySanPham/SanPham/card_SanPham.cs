@@ -14,18 +14,10 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp
 {
     public partial class card_SanPham : UserControl
     {
-        string maSP;
-        string tenSP;
-        int Gia;
-        string hinhAnh;
-
+       
         public card_SanPham()
         {
-            InitializeComponent();
-            //this.maSP = maSP;
-            //this.tenSP = tenSP;
-            //this.Gia = gia;
-            //this.hinhAnh = hinhAnh;
+            InitializeComponent();         
         }
 
         public void SetData(string maSP, string tenSP, int gia, string hinhAnh)
@@ -52,6 +44,19 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp
                     ptbHinhAnh.Tag = pathAnh;
                 }
             }
+        }
+
+        private void btnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            ChiTietSP ctsp = new ChiTietSP(lblMaSanPham.Text);
+
+            ctsp.ShowDialog();
+
+            //if(ctsp.ShowDialog() == DialogResult.OK)
+            //{
+            //    SetData(, tenSP);
+            //}
+          
         }
     }
 }

@@ -122,5 +122,10 @@ namespace QlCuaHangXimenT
             sp.Dock = DockStyle.Fill;
             content.Controls.Add(sp);
         }
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

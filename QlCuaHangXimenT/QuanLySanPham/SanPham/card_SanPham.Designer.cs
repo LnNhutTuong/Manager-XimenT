@@ -54,6 +54,7 @@
             this.btnXemChiTiet.Size = new System.Drawing.Size(131, 34);
             this.btnXemChiTiet.TabIndex = 9;
             this.btnXemChiTiet.Text = "Xem chi tiết";
+            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
             // 
             // lblGia
             // 
@@ -106,7 +107,7 @@
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.BorderRadius = 10;
+            this.guna2Elipse1.BorderRadius = 5;
             this.guna2Elipse1.TargetControl = this;
             // 
             // guna2CustomGradientPanel1
