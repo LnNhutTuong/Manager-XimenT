@@ -119,5 +119,21 @@ namespace DAO
             return k > 0;
         }
 
+        public static DataTable DsNvTheoCv(string maCV)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  Select * From NhanVien as nv 
+                                                Join ChucVu as cv 
+                                                On cv.MaCV = nv.MaCV
+                                                Where cv.MaCV = @MaCV");
+
+            cmd.Parameters.Add("@MaCV", SqlDbType.VarChar, 5).Value = maCV;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
+
     }
 }

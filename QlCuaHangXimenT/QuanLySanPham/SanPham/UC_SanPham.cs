@@ -20,35 +20,77 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
         public UC_SanPham()
         {
             InitializeComponent();
-            LayDuLieu();
+            LayDuLieuCBO();
+            LoadFlowTheoDK();
+
+            dtpBatDau.MaxDate = DateTime.Now;
+
+            dtpKetThuc.MaxDate = DateTime.Now;
+
         }
 
-        public void LayDuLieu()
+        public void LayDuLieuCBO()
+        {
+            #region Danh sách Danh mục
+            DataTable dm = DanhMuc_BUS.DanhSachDanhMuc();
+
+            DataRow dr = dm.NewRow();
+            dr["MaDM"] = DBNull.Value;          
+            dr["TenDM"] = "*Chọn danh mục*"; 
+
+            dm.Rows.InsertAt(dr, 0);
+
+            cboDanhMuc.DisplayMember = "TenDM";
+            cboDanhMuc.ValueMember = "MaDM";
+            cboDanhMuc.DataSource = dm;
+            #endregion
+
+            #region Danh sách thương hiệu
+             DataTable tt = ThuongHieu_BUS.DanhSachThuongHieu();
+
+            DataRow dro = tt.NewRow();
+            dro["MaTH"] = DBNull.Value;
+            dro["TenTH"] = "*Chọn thương hiệu*"; 
+
+            tt.Rows.InsertAt(dro, 0);
+            cboThuongHieu.DisplayMember = "TenTH";
+            cboThuongHieu.ValueMember = "MaTH";
+            cboThuongHieu.DataSource = tt;
+            #endregion
+
+        }
+
+        private void LoadFlowTheoDK()
         {
             flpSanPham.Controls.Clear();
 
-            string message;
-            DataTable dsSanPham = SanPham_BUS.DanhSachSanPham();
+            string maDM = (cboDanhMuc.SelectedIndex <= 0) ? null : cboDanhMuc.SelectedValue.ToString();
+            string maTH = (cboThuongHieu.SelectedIndex <= 0) ? null : cboThuongHieu.SelectedValue.ToString();
+
+            DateTime? tuNgay = dtpBatDau.Checked ? dtpBatDau.Value.Date : (DateTime?)null;
+            DateTime? denNgay = dtpKetThuc.Checked ? dtpKetThuc.Value.Date.AddDays(1).AddTicks(-1) : (DateTime?)null;
+
+            DataTable dsSanPham = SanPham_BUS.LocSanPham(maDM, maTH, tuNgay, denNgay);
+
+
             if (dsSanPham.Rows.Count > 0)
             {
                 foreach (DataRow dr in dsSanPham.Rows)
                 {
-                    card_SanPham sanpham = new card_SanPham();                   
+                    card_SanPham sanpham = new card_SanPham();
 
                     sanpham.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]), dr["HinhAnh"].ToString());
 
-
                     sanpham.added = () =>
                     {
-                        LayDuLieu();
+                        LoadFlowTheoDK();
                     };
 
                     flpSanPham.Controls.Add(sanpham);
                 }
             }
 
-            lblSoLuongSanPham.Text = dsSanPham.Rows.Count.ToString();
-
+            lblSoSanPhamPhuHop.Text = flpSanPham.Controls.Count.ToString();
 
         }
 
@@ -57,8 +99,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             ThemSP them = new ThemSP();
             if (them.ShowDialog() == DialogResult.OK)
             {
-                flpSanPham.Controls.Clear();
-                LayDuLieu();
+                LoadFlowTheoDK();
             }
         }
 
@@ -119,8 +160,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
                     }
                     else
                     {
-                        flpSanPham.Controls.Clear();
-                        LayDuLieu();
+                        LoadFlowTheoDK();
                         MessageBox.Show("Xóa thành công");
                     }
                 }
@@ -154,8 +194,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
                 ChiTietSP ct = new ChiTietSP(maSP);
                 if (ct.ShowDialog() == DialogResult.OK)
                 {
-                    flpSanPham.Controls.Clear();
-                    LayDuLieu();
+                    LoadFlowTheoDK();
                 }
             }
         }
@@ -182,9 +221,28 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             ChiTietSP ct = new ChiTietSP(maSP);
             if (ct.ShowDialog() == DialogResult.OK)
             {
-                flpSanPham.Controls.Clear();
-                LayDuLieu();
+                LoadFlowTheoDK();
             }
+        }   
+
+        private void cboDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadFlowTheoDK();
+        }
+
+        private void cboThuongHieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadFlowTheoDK();
+        }
+
+        private void dtpBatDau_ValueChanged(object sender, EventArgs e)
+        {
+            LoadFlowTheoDK();
+        }
+
+        private void dtpKetThuc_ValueChanged(object sender, EventArgs e)
+        {
+            LoadFlowTheoDK();
         }
     }
 }

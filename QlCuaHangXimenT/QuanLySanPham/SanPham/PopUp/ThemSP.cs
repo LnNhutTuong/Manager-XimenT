@@ -35,10 +35,9 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp
             #endregion
 
             #region Danh sách nhân viên
-            cboNhanVien.DisplayMember = "TenNV";
+            cboNhanVien.DisplayMember = "MaNV";
             cboNhanVien.ValueMember = "MaNV";
-            cboNhanVien.DataSource = NhanVien_BUS.DanhSachNhanVien();
-
+            cboNhanVien.DataSource = NhanVien_BUS.DsNvTheoCv("CV002");
             #endregion
         }
 

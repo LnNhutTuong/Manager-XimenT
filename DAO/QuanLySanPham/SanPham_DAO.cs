@@ -136,5 +136,29 @@ namespace DAO.QuanLySanPham
 
             return kq > 0;
         }
+
+        public static DataTable LocSanPham(string maDM, string maTH, DateTime? tuNgay, DateTime? denNgay)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@" SELECT * FROM SanPham
+                                        WHERE (@MaDM IS NULL OR MaDM = @MaDM)
+                                          AND (@MaTH IS NULL OR MaTH = @MaTH)
+                                          AND (@tuNgay IS NULL OR NgayThem >= @tuNgay)
+                                          AND (@denNgay IS NULL OR NgayThem <= @denNgay)");
+
+            cmd.Parameters.Add("@MaDM", SqlDbType.VarChar, 5).Value = (object)maDM ?? DBNull.Value;
+            cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = (object)maTH ?? DBNull.Value;
+            cmd.Parameters.Add("@tuNgay", SqlDbType.DateTime).Value = (object)tuNgay ?? DBNull.Value;
+            cmd.Parameters.Add("@denNgay", SqlDbType.DateTime).Value = (object)denNgay ?? DBNull.Value;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
     }
+
+
+    
+
 }

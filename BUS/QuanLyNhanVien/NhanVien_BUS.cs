@@ -98,9 +98,14 @@ namespace BUS
             return NhanVien_DAO.SuaNhanVien(nv, maNVcu);
         }
 
-    public static bool XoaNhanVien (NhanVien_DTO nv)
+        public static bool XoaNhanVien (NhanVien_DTO nv)
         {
             return NhanVien_DAO.XoaNhanVien(nv);
+        }
+
+        public static DataTable DsNvTheoCv(string maCV)
+        {
+            return NhanVien_DAO.DsNvTheoCv(maCV);
         }
     }
 }

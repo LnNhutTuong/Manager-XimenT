@@ -78,10 +78,11 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             #endregion
 
             #region Danh sách nhân viên
-            cboNhanVien.DisplayMember = "TenNV";
+            cboNhanVien.DisplayMember = "MaNV";
             cboNhanVien.ValueMember = "MaNV";
-            cboNhanVien.DataSource = NhanVien_BUS.DanhSachNhanVien();
+            cboNhanVien.DataSource = NhanVien_BUS.DsNvTheoCv("CV002");
             #endregion
+            
         }
 
 
@@ -98,13 +99,14 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
 
         DataRow sanPham;
+
         public void SetData()
         {
             string message;
             DataTable sp = SanPham_BUS.SanPhamTheoMa(maSP, out message);
             if (sp != null && sp.Rows.Count > 0)
             {
-                 sanPham = sp.Rows[0];
+                sanPham = sp.Rows[0];
 
                 lblTenSP.Text = sanPham["TenSP"].ToString();
 
