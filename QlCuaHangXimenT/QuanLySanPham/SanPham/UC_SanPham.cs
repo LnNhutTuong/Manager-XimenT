@@ -201,8 +201,8 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             cboDanhMuc.SelectedIndex = 0;
             cboThuongHieu.SelectedIndex = 0;
 
-            dtpBatDau.Value = new DateTime(2022,22,02);
-            dtpKetThuc.Value= DateTime.Now;
+            dtpBatDau.Value = new DateTime(2022,02,22);
+            dtpKetThuc.Value = DateTime.Today;
 
             txtTimKiem.Clear();
 
