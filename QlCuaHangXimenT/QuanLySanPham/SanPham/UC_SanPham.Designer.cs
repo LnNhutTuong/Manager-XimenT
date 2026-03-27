@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.flpSanPham = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.cboDanhMuc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -38,10 +37,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnResetFilter = new Guna.UI2.WinForms.Guna2Button();
             this.cboThuongHieu = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dtpKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.dtpBatDau = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.lblSoSanPhamPhuHop = new System.Windows.Forms.Label();
             this.filterContent = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
+            this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.header = new Guna.UI2.WinForms.Guna2Panel();
             this.btnXoaSanPham = new Guna.UI2.WinForms.Guna2Button();
@@ -51,8 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblSoLuongSanPham = new System.Windows.Forms.Label();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
-            this.dtpBatDau = new System.Windows.Forms.DateTimePicker();
-            this.dtpKetThuc = new System.Windows.Forms.DateTimePicker();
             this.guna2GroupBox2.SuspendLayout();
             this.filterContent.SuspendLayout();
             this.header.SuspendLayout();
@@ -69,29 +68,6 @@
             this.flpSanPham.Size = new System.Drawing.Size(1311, 428);
             this.flpSanPham.TabIndex = 0;
             // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTimKiem.BorderColor = System.Drawing.Color.Black;
-            this.txtTimKiem.BorderRadius = 10;
-            this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTimKiem.DefaultText = "";
-            this.txtTimKiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(39, 114);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.PlaceholderText = "Tìm kiếm theo mã...";
-            this.txtTimKiem.SelectedText = "";
-            this.txtTimKiem.Size = new System.Drawing.Size(1234, 41);
-            this.txtTimKiem.TabIndex = 154;
-            this.txtTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyDown);
-            // 
             // cboDanhMuc
             // 
             this.cboDanhMuc.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -106,7 +82,7 @@
             this.cboDanhMuc.ItemHeight = 30;
             this.cboDanhMuc.Items.AddRange(new object[] {
             "..."});
-            this.cboDanhMuc.Location = new System.Drawing.Point(134, 46);
+            this.cboDanhMuc.Location = new System.Drawing.Point(135, 47);
             this.cboDanhMuc.Name = "cboDanhMuc";
             this.cboDanhMuc.Size = new System.Drawing.Size(224, 36);
             this.cboDanhMuc.TabIndex = 161;
@@ -130,7 +106,7 @@
             this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0);
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(39, 178);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(17, 24);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(1234, 114);
             this.guna2GroupBox2.TabIndex = 168;
@@ -143,7 +119,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(899, 30);
+            this.label8.Location = new System.Drawing.Point(900, 31);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 23);
             this.label8.TabIndex = 173;
@@ -156,7 +132,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(662, 30);
+            this.label7.Location = new System.Drawing.Point(663, 31);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 23);
             this.label7.TabIndex = 172;
@@ -169,7 +145,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(396, 33);
+            this.label6.Location = new System.Drawing.Point(397, 34);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 23);
             this.label6.TabIndex = 171;
@@ -182,7 +158,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(130, 33);
+            this.label5.Location = new System.Drawing.Point(131, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 23);
             this.label5.TabIndex = 169;
@@ -202,10 +178,11 @@
             this.btnResetFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnResetFilter.ForeColor = System.Drawing.Color.White;
             this.btnResetFilter.Image = global::QlCuaHangXimenT.Properties.Resources.undo;
-            this.btnResetFilter.Location = new System.Drawing.Point(1196, 3);
+            this.btnResetFilter.Location = new System.Drawing.Point(1122, 49);
             this.btnResetFilter.Name = "btnResetFilter";
             this.btnResetFilter.Size = new System.Drawing.Size(34, 28);
             this.btnResetFilter.TabIndex = 168;
+            this.btnResetFilter.Click += new System.EventHandler(this.btnResetFilter_Click);
             // 
             // cboThuongHieu
             // 
@@ -221,11 +198,32 @@
             this.cboThuongHieu.ItemHeight = 30;
             this.cboThuongHieu.Items.AddRange(new object[] {
             "..."});
-            this.cboThuongHieu.Location = new System.Drawing.Point(400, 46);
+            this.cboThuongHieu.Location = new System.Drawing.Point(401, 47);
             this.cboThuongHieu.Name = "cboThuongHieu";
             this.cboThuongHieu.Size = new System.Drawing.Size(224, 36);
             this.cboThuongHieu.TabIndex = 174;
             this.cboThuongHieu.SelectedIndexChanged += new System.EventHandler(this.cboThuongHieu_SelectedIndexChanged);
+            // 
+            // dtpKetThuc
+            // 
+            this.dtpKetThuc.CustomFormat = "dd-MM-yyyy";
+            this.dtpKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpKetThuc.Location = new System.Drawing.Point(904, 47);
+            this.dtpKetThuc.Name = "dtpKetThuc";
+            this.dtpKetThuc.Size = new System.Drawing.Size(200, 34);
+            this.dtpKetThuc.TabIndex = 180;
+            this.dtpKetThuc.ValueChanged += new System.EventHandler(this.dtpKetThuc_ValueChanged);
+            // 
+            // dtpBatDau
+            // 
+            this.dtpBatDau.CustomFormat = "dd-MM-yyyy";
+            this.dtpBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBatDau.Location = new System.Drawing.Point(667, 49);
+            this.dtpBatDau.Name = "dtpBatDau";
+            this.dtpBatDau.Size = new System.Drawing.Size(200, 34);
+            this.dtpBatDau.TabIndex = 179;
+            this.dtpBatDau.Value = new System.DateTime(2022, 2, 22, 0, 0, 0, 0);
+            this.dtpBatDau.ValueChanged += new System.EventHandler(this.dtpBatDau_ValueChanged);
             // 
             // label9
             // 
@@ -257,7 +255,9 @@
             this.filterContent.BorderColor = System.Drawing.Color.Silver;
             this.filterContent.BorderRadius = 15;
             this.filterContent.BorderThickness = 2;
+            this.filterContent.Controls.Add(this.txtTimKiem);
             this.filterContent.Controls.Add(this.lblSoSanPhamPhuHop);
+            this.filterContent.Controls.Add(this.guna2GroupBox2);
             this.filterContent.Controls.Add(this.label9);
             this.filterContent.FillColor = System.Drawing.Color.White;
             this.filterContent.Location = new System.Drawing.Point(21, 101);
@@ -265,25 +265,31 @@
             this.filterContent.Size = new System.Drawing.Size(1268, 248);
             this.filterContent.TabIndex = 172;
             // 
-            // btnTimKiem
+            // txtTimKiem
             // 
-            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTimKiem.BackColor = System.Drawing.Color.White;
-            this.btnTimKiem.BorderRadius = 10;
-            this.btnTimKiem.BorderThickness = 1;
-            this.btnTimKiem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTimKiem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTimKiem.FillColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.ForeColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.Image = global::QlCuaHangXimenT.Properties.Resources.loupe;
-            this.btnTimKiem.Location = new System.Drawing.Point(1228, 117);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(41, 35);
-            this.btnTimKiem.TabIndex = 155;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTimKiem.BorderColor = System.Drawing.Color.Black;
+            this.txtTimKiem.BorderRadius = 10;
+            this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTimKiem.DefaultText = "";
+            this.txtTimKiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
+            this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiem.IconRight = global::QlCuaHangXimenT.Properties.Resources.loupe;
+            this.txtTimKiem.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.txtTimKiem.Location = new System.Drawing.Point(320, 160);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.PlaceholderText = "Tìm kiếm theo mã...";
+            this.txtTimKiem.SelectedText = "";
+            this.txtTimKiem.Size = new System.Drawing.Size(667, 41);
+            this.txtTimKiem.TabIndex = 174;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // guna2VScrollBar1
             // 
@@ -424,37 +430,13 @@
             this.btnThem.Text = "Thêm sản phẩm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // dtpBatDau
-            // 
-            this.dtpBatDau.CustomFormat = "dd-MM-yyyy";
-            this.dtpBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBatDau.Location = new System.Drawing.Point(666, 48);
-            this.dtpBatDau.Name = "dtpBatDau";
-            this.dtpBatDau.Size = new System.Drawing.Size(200, 34);
-            this.dtpBatDau.TabIndex = 179;
-            this.dtpBatDau.Value = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
-            this.dtpBatDau.ValueChanged += new System.EventHandler(this.dtpBatDau_ValueChanged);
-            // 
-            // dtpKetThuc
-            // 
-            this.dtpKetThuc.CustomFormat = "dd-MM-yyyy";
-            this.dtpKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpKetThuc.Location = new System.Drawing.Point(903, 46);
-            this.dtpKetThuc.Name = "dtpKetThuc";
-            this.dtpKetThuc.Size = new System.Drawing.Size(200, 34);
-            this.dtpKetThuc.TabIndex = 180;
-            this.dtpKetThuc.ValueChanged += new System.EventHandler(this.dtpKetThuc_ValueChanged);
-            // 
             // UC_SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Controls.Add(this.guna2VScrollBar1);
-            this.Controls.Add(this.btnTimKiem);
-            this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.flpSanPham);
-            this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.header);
             this.Controls.Add(this.filterContent);
             this.Name = "UC_SanPham";
@@ -474,8 +456,6 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flpSanPham;
-        private Guna.UI2.WinForms.Guna2Button btnTimKiem;
-        private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
         private Guna.UI2.WinForms.Guna2ComboBox cboDanhMuc;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Guna.UI2.WinForms.Guna2Button btnResetFilter;
@@ -498,5 +478,6 @@
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private System.Windows.Forms.DateTimePicker dtpKetThuc;
         private System.Windows.Forms.DateTimePicker dtpBatDau;
+        private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
     }
 }

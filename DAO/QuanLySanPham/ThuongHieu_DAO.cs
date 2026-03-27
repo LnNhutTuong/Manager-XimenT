@@ -110,5 +110,17 @@ namespace DAO.QuanLySanPham
 
             return table;
         }
+
+        public static DataTable TimKiemThuongHieu(string tuKhoa)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Select * From ThuongHieu Where MaTH Like  '%' + @tuKhoa + '%' or TenTH Like '%' + @tuKhoa + '%'");
+            cmd.Parameters.Add("@tuKhoa", SqlDbType.NVarChar).Value = tuKhoa;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
     }
 }

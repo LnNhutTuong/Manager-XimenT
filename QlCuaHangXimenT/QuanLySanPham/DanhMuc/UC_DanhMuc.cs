@@ -144,6 +144,18 @@ namespace QlCuaHangXimenT.QuanLiSanPham
             }
         }
 
-       
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimKiem.Text;
+
+            if (string.IsNullOrEmpty(tuKhoa))
+            {
+                LayDuLieu();
+            }
+            else
+            {
+                dgvDanhMuc.DataSource = DanhMuc_BUS.TimKiemDanhMuc(tuKhoa);
+            }
+        }
     }
 }

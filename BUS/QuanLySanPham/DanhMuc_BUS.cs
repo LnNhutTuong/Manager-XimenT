@@ -1,4 +1,5 @@
 ﻿using DAO;
+using DAO.QuanLySanPham;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -86,6 +87,11 @@ namespace BUS.QuanLySanPham
                 return null;
             }
             return DanhMuc_DAO.DanhSachSPTheoMaDM(maDM);
+        }
+
+        public static DataTable TimKiemDanhMuc(string tuKhoa)
+        {
+            return DanhMuc_DAO.TimKiemDanhMuc(tuKhoa);
         }
     }
 }

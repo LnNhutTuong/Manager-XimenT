@@ -70,7 +70,8 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             DateTime? tuNgay = dtpBatDau.Checked ? dtpBatDau.Value.Date : (DateTime?)null;
             DateTime? denNgay = dtpKetThuc.Checked ? dtpKetThuc.Value.Date.AddDays(1).AddTicks(-1) : (DateTime?)null;
 
-            DataTable dsSanPham = SanPham_BUS.LocSanPham(maDM, maTH, tuNgay, denNgay);
+            string tuKhoa = string.IsNullOrEmpty(txtTimKiem.Text) ? null : txtTimKiem.Text;
+            DataTable dsSanPham = SanPham_BUS.LocSanPham(maDM, maTH, tuNgay, denNgay, tuKhoa);
 
 
             if (dsSanPham.Rows.Count > 0)
@@ -170,61 +171,6 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
         #endregion
 
-        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string maSP = txtTimKiem.Text.Trim();
-
-                if (string.IsNullOrEmpty(maSP))
-                {
-                    MessageBox.Show("Nhập mã để tìm!");
-                }
-
-                string message;
-                var dm = SanPham_BUS.SanPhamTheoMa(maSP, out message);
-
-                if (dm == null)
-                {
-                    MessageBox.Show(message);
-                    return;
-                }
-
-
-                ChiTietSP ct = new ChiTietSP(maSP);
-                if (ct.ShowDialog() == DialogResult.OK)
-                {
-                    LoadFlowTheoDK();
-                }
-            }
-        }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string maSP = txtTimKiem.Text.Trim();
-
-            if (string.IsNullOrEmpty(maSP))
-            {
-                MessageBox.Show("Nhập mã để tìm!");
-            }
-
-            string message;
-            var dm = SanPham_BUS.SanPhamTheoMa(maSP, out message);
-
-            if (dm == null)
-            {
-                MessageBox.Show(message);
-                return;
-            }
-
-
-            ChiTietSP ct = new ChiTietSP(maSP);
-            if (ct.ShowDialog() == DialogResult.OK)
-            {
-                LoadFlowTheoDK();
-            }
-        }   
-
         private void cboDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadFlowTheoDK();
@@ -242,6 +188,24 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
         private void dtpKetThuc_ValueChanged(object sender, EventArgs e)
         {
+            LoadFlowTheoDK();
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            LoadFlowTheoDK();
+        }
+
+        private void btnResetFilter_Click(object sender, EventArgs e)
+        {
+            cboDanhMuc.SelectedIndex = 0;
+            cboThuongHieu.SelectedIndex = 0;
+
+            dtpBatDau.Value = new DateTime(2022,22,02);
+            dtpKetThuc.Value= DateTime.Now;
+
+            txtTimKiem.Clear();
+
             LoadFlowTheoDK();
         }
     }

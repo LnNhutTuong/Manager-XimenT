@@ -135,5 +135,20 @@ namespace DAO
             return table;
         }
 
+        public static DataTable TimKiemNhanVien(string tuKhoa)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  SELECT MaNV, TenNV, Ten_dang_nhap, Mat_khau , nv.MaCV, TenCV, HinhAnh
+                                                FROM NhanVien as nv
+                                                Join ChucVu as cv
+                                                On nv.MaCV = cv.MaCV
+                                                Where MaNV Like  '%' + @tuKhoa + '%' or TenNV Like '%' + @tuKhoa + '%'");
+            cmd.Parameters.Add("@tuKhoa", SqlDbType.NVarChar).Value = tuKhoa;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
     }
 }

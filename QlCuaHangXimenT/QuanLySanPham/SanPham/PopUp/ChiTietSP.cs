@@ -20,7 +20,6 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
     public partial class ChiTietSP : Form
     {
         string maSP;
-       DataTable dm;
 
         public FormMode CurrentMode;
 

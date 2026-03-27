@@ -175,8 +175,8 @@
             this.flowLayoutPanel1.Controls.Add(this.btnNhanVien);
             this.flowLayoutPanel1.Controls.Add(this.btnQuanliSanPham);
             this.flowLayoutPanel1.Controls.Add(this.pnlSubSanPham);
-            this.flowLayoutPanel1.Controls.Add(this.btnThongKe);
             this.flowLayoutPanel1.Controls.Add(this.btnKhachHang);
+            this.flowLayoutPanel1.Controls.Add(this.btnThongKe);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(7, 151);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -287,7 +287,7 @@
             this.btnThongKe.FillColor2 = System.Drawing.Color.Black;
             this.btnThongKe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
-            this.btnThongKe.Location = new System.Drawing.Point(3, 396);
+            this.btnThongKe.Location = new System.Drawing.Point(3, 460);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(253, 58);
             this.btnThongKe.TabIndex = 6;
@@ -306,12 +306,13 @@
             this.btnKhachHang.FillColor2 = System.Drawing.Color.Black;
             this.btnKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhachHang.ForeColor = System.Drawing.Color.White;
-            this.btnKhachHang.Location = new System.Drawing.Point(3, 460);
+            this.btnKhachHang.Location = new System.Drawing.Point(3, 396);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(253, 58);
             this.btnKhachHang.TabIndex = 5;
             this.btnKhachHang.Text = "Khách hàng";
             this.btnKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // pictureBox1
             // 

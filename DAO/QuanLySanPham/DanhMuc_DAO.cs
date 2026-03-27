@@ -112,5 +112,17 @@ namespace DAO
             return table;
         }
 
+        public static DataTable TimKiemDanhMuc(string tuKhoa)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Select * From DanhMuc Where MaDM Like  '%' + @tuKhoa + '%' or TenDM Like '%' + @tuKhoa + '%'");
+            cmd.Parameters.Add("@tuKhoa", SqlDbType.NVarChar).Value = tuKhoa;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
+
     }
 }

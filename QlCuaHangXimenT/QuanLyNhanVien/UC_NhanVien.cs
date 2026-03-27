@@ -72,59 +72,11 @@ namespace QlCuaHangXimenT.NhanVien
 
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string maNV = txtTimKiem.Text;
-            string message;
-            var nv = NhanVien_BUS.TimNhanVienTheoMa(maNV, out message);
-            string mkCu = dgvNhanVien.CurrentRow.Cells["Mat_khau"].Value.ToString();
-
-            if (nv == null)
-            {
-                MessageBox.Show(message);
-                return;
-            }
-
-            ChiTietNV ct = new ChiTietNV(maNV, nv, mkCu);
-            if (ct.ShowDialog() == DialogResult.OK)
-            {
-                LayDuLieu();
-            }
-        }
-
-        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
-        {
-           if(e.KeyCode == Keys.Enter)
-            {
-                string maNV = txtTimKiem.Text.Trim();
-                string mkCu = dgvNhanVien.CurrentRow.Cells["Mat_khau"].Value.ToString();
-
-                if (string.IsNullOrEmpty(maNV))
-                {
-                    MessageBox.Show("Nhập mã để tìm kiếm");
-                    return; 
-                }
-             
-                string message;
-                var nv = NhanVien_BUS.TimNhanVienTheoMa(maNV, out message);
-
-                if (nv == null) 
-                {
-                    MessageBox.Show(message);
-                    return; 
-                }
-
-
-                ChiTietNV ct = new ChiTietNV(maNV, nv, mkCu);
-                if (ct.ShowDialog() == DialogResult.OK)
-                {
-                    LayDuLieu();
-                }
-            }
-        }
-
         private void dgvNhanVien_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == 0)
+                return;
+
             if (dgvNhanVien.Columns[e.ColumnIndex].Name == "XemChiTiet")
             {
                 string maNV = dgvNhanVien.Rows[e.RowIndex].Cells["MaNV"].Value.ToString();
@@ -144,6 +96,21 @@ namespace QlCuaHangXimenT.NhanVien
                 {
                     LayDuLieu();
                 }
+            }
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimKiem.Text;
+
+            if (string.IsNullOrEmpty(tuKhoa))
+            {
+                LayDuLieu();
+            }
+            else
+            {
+                dgvNhanVien.DataSource = NhanVien_BUS.TimKiemNhanvien(tuKhoa);
+
             }
         }
     }

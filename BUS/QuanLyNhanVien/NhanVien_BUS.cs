@@ -107,5 +107,10 @@ namespace BUS
         {
             return NhanVien_DAO.DsNvTheoCv(maCV);
         }
+
+        public static DataTable TimKiemNhanvien(string tuKhoa)
+        {
+            return NhanVien_DAO.TimKiemNhanVien(tuKhoa);
+        }
     }
 }

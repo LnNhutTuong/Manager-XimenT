@@ -88,6 +88,7 @@
             this.txtMaNhanVien.SelectedText = "";
             this.txtMaNhanVien.Size = new System.Drawing.Size(172, 35);
             this.txtMaNhanVien.TabIndex = 19;
+            this.txtMaNhanVien.Visible = false;
             // 
             // label1
             // 

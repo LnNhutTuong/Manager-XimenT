@@ -120,8 +120,6 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
         {
             NhanVien_DTO nv = new NhanVien_DTO();
 
-            //string mkCu = dgvNhanVien.CurrentRow.Cells["Mat_khau"].Value.ToString();;
-
             nv.MaNV = txtMaNhanVien.Text.ToUpper();
             nv.TenNV = txtTenNhanVien.Text;
             nv.Ten_dang_nhap = txtTenDangNhap.Text;

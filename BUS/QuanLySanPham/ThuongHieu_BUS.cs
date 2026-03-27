@@ -89,5 +89,10 @@ namespace BUS.QuanLySanPham
             }
             return ThuongHieu_DAO.DanhSachSPTheoTH(maTh);
         }
+
+        public static DataTable TimKiemThuongHieu(string tuKhoa)
+        {
+            return ThuongHieu_DAO.TimKiemThuongHieu(tuKhoa);
+        }
     }
 }

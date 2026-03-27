@@ -88,5 +88,18 @@ namespace QlCuaHangXimenT.QuanLySanPham.ThuongHieu
             }
         }
 
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTimKiem.Text;
+
+            if (string.IsNullOrEmpty(tuKhoa))
+            {
+                LayDuLieu();
+            }
+            else
+            {
+                dgvThuongHieu.DataSource = ThuongHieu_BUS.TimKiemThuongHieu(tuKhoa);
+            }
+        }
     }
 }

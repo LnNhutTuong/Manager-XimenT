@@ -172,16 +172,12 @@ namespace BUS.QuanLySanPham
             return SanPham_DAO.XoaSanPham(maSP);
         }
 
-        public static DataTable LocSanPham(string maDM, string maTH, DateTime? tuNgay, DateTime? denNgay)
+        public static DataTable LocSanPham(string maDM, string maTH, DateTime? tuNgay, DateTime? denNgay, string tuKhoa)
         {
-            //message = "";
-
-            //if (string.IsNullOrEmpty(sp.MaDM) || string.IsNullOrEmpty(sp.MaDM) || tuNgay == null || denNgay == null)
-            //{
-            //    message = "Vui lòng chọn ít nhất một "
-            //}
-
-            return SanPham_DAO.LocSanPham(maDM, maTH, tuNgay, denNgay);
+            return SanPham_DAO.LocSanPham(maDM, maTH, tuNgay, denNgay, tuKhoa);
         }
 
-    }}
+    
+
+    }
+}
