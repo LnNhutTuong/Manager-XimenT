@@ -86,7 +86,6 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
                     {
                         LoadFlowTheoDK();
                     };
-
                     flpSanPham.Controls.Add(sanpham);
                 }
             }

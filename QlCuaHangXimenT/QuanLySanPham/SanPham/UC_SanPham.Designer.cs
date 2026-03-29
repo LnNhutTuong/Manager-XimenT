@@ -65,6 +65,7 @@
             this.flpSanPham.BackColor = System.Drawing.Color.White;
             this.flpSanPham.Location = new System.Drawing.Point(0, 355);
             this.flpSanPham.Name = "flpSanPham";
+            this.flpSanPham.Padding = new System.Windows.Forms.Padding(62, 3, 62, 3);
             this.flpSanPham.Size = new System.Drawing.Size(1311, 428);
             this.flpSanPham.TabIndex = 0;
             // 

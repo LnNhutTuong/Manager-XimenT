@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChucNang = new Guna.UI2.WinForms.Guna2Button();
             this.lblGia = new System.Windows.Forms.Label();
             this.lblTenSanPham = new System.Windows.Forms.Label();
             this.lblMaSanPham = new System.Windows.Forms.Label();
@@ -40,22 +40,22 @@
             this.borderCard.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnXemChiTiet
+            // btnChucNang
             // 
-            this.btnXemChiTiet.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnXemChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXemChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXemChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXemChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXemChiTiet.FillColor = System.Drawing.Color.Black;
-            this.btnXemChiTiet.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.Location = new System.Drawing.Point(70, 321);
-            this.btnXemChiTiet.Name = "btnXemChiTiet";
-            this.btnXemChiTiet.Size = new System.Drawing.Size(131, 34);
-            this.btnXemChiTiet.TabIndex = 9;
-            this.btnXemChiTiet.Text = "Xem chi tiết";
-            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
+            this.btnChucNang.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChucNang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChucNang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChucNang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChucNang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChucNang.FillColor = System.Drawing.Color.Black;
+            this.btnChucNang.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChucNang.ForeColor = System.Drawing.Color.White;
+            this.btnChucNang.Location = new System.Drawing.Point(70, 329);
+            this.btnChucNang.Name = "btnChucNang";
+            this.btnChucNang.Size = new System.Drawing.Size(131, 34);
+            this.btnChucNang.TabIndex = 9;
+            this.btnChucNang.Text = "Chức năng";
+            this.btnChucNang.Click += new System.EventHandler(this.btnXemChiTiet_Click);
             // 
             // lblGia
             // 
@@ -63,7 +63,7 @@
             this.lblGia.BackColor = System.Drawing.Color.White;
             this.lblGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGia.ForeColor = System.Drawing.Color.Red;
-            this.lblGia.Location = new System.Drawing.Point(4, 284);
+            this.lblGia.Location = new System.Drawing.Point(3, 301);
             this.lblGia.Name = "lblGia";
             this.lblGia.Size = new System.Drawing.Size(262, 25);
             this.lblGia.TabIndex = 8;
@@ -76,7 +76,7 @@
             this.lblTenSanPham.BackColor = System.Drawing.Color.White;
             this.lblTenSanPham.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenSanPham.ForeColor = System.Drawing.Color.Black;
-            this.lblTenSanPham.Location = new System.Drawing.Point(4, 242);
+            this.lblTenSanPham.Location = new System.Drawing.Point(3, 259);
             this.lblTenSanPham.Name = "lblTenSanPham";
             this.lblTenSanPham.Size = new System.Drawing.Size(262, 32);
             this.lblTenSanPham.TabIndex = 7;
@@ -89,7 +89,7 @@
             this.lblMaSanPham.BackColor = System.Drawing.Color.White;
             this.lblMaSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaSanPham.ForeColor = System.Drawing.Color.Gray;
-            this.lblMaSanPham.Location = new System.Drawing.Point(4, 222);
+            this.lblMaSanPham.Location = new System.Drawing.Point(3, 239);
             this.lblMaSanPham.Name = "lblMaSanPham";
             this.lblMaSanPham.Size = new System.Drawing.Size(262, 20);
             this.lblMaSanPham.TabIndex = 6;
@@ -103,9 +103,9 @@
             this.ptbHinhAnh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ptbHinhAnh.Image = global::QlCuaHangXimenT.Properties.Resources.noImg;
             this.ptbHinhAnh.ImageRotate = 0F;
-            this.ptbHinhAnh.Location = new System.Drawing.Point(41, 15);
+            this.ptbHinhAnh.Location = new System.Drawing.Point(42, 11);
             this.ptbHinhAnh.Name = "ptbHinhAnh";
-            this.ptbHinhAnh.Size = new System.Drawing.Size(187, 205);
+            this.ptbHinhAnh.Size = new System.Drawing.Size(187, 225);
             this.ptbHinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbHinhAnh.TabIndex = 10;
             this.ptbHinhAnh.TabStop = false;
@@ -117,14 +117,18 @@
             // 
             // borderCard
             // 
-            this.borderCard.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.borderCard.BorderColor = System.Drawing.Color.Black;
             this.borderCard.BorderRadius = 15;
             this.borderCard.BorderThickness = 2;
-            this.borderCard.Controls.Add(this.btnXemChiTiet);
+            this.borderCard.Controls.Add(this.lblGia);
+            this.borderCard.Controls.Add(this.ptbHinhAnh);
+            this.borderCard.Controls.Add(this.lblTenSanPham);
+            this.borderCard.Controls.Add(this.btnChucNang);
+            this.borderCard.Controls.Add(this.lblMaSanPham);
+            this.borderCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.borderCard.Location = new System.Drawing.Point(0, 0);
             this.borderCard.Name = "borderCard";
-            this.borderCard.Size = new System.Drawing.Size(270, 370);
+            this.borderCard.Size = new System.Drawing.Size(270, 375);
             this.borderCard.TabIndex = 11;
             // 
             // card_SanPham
@@ -132,14 +136,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.ptbHinhAnh);
-            this.Controls.Add(this.lblGia);
-            this.Controls.Add(this.lblTenSanPham);
-            this.Controls.Add(this.lblMaSanPham);
             this.Controls.Add(this.borderCard);
             this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "card_SanPham";
-            this.Size = new System.Drawing.Size(270, 370);
+            this.Size = new System.Drawing.Size(270, 375);
             this.Click += new System.EventHandler(this.card_SanPham_Click);
             ((System.ComponentModel.ISupportInitialize)(this.ptbHinhAnh)).EndInit();
             this.borderCard.ResumeLayout(false);
@@ -149,7 +149,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button btnXemChiTiet;
+        private Guna.UI2.WinForms.Guna2Button btnChucNang;
         private System.Windows.Forms.Label lblGia;
         private System.Windows.Forms.Label lblTenSanPham;
         private System.Windows.Forms.Label lblMaSanPham;

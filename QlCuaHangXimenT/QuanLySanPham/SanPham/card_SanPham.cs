@@ -35,9 +35,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp
                 borderCard.BorderThickness = 2  ;
 
             }
-
         }
-
         public card_SanPham()
         {
             InitializeComponent();
@@ -86,16 +84,12 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp
         public Action added;
 
         private void btnXemChiTiet_Click(object sender, EventArgs e)
-        {
-            ChiTietSP ctsp = new ChiTietSP(lblMaSanPham.Text);
-
-            //ctsp.ShowDialog();
-
-            if (ctsp.ShowDialog() == DialogResult.OK)
-            {
-                added.Invoke();
-            }
-
+        {          
+                ChiTietSP ctsp = new ChiTietSP(lblMaSanPham.Text);
+                if (ctsp.ShowDialog() == DialogResult.OK)
+                {
+                    added?.Invoke();
+                }                   
         }
 
         //Dùng prop

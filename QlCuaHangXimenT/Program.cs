@@ -1,4 +1,5 @@
 ﻿using DTO;
+using DTO.QuanLyDonHang;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace QlCuaHangXimenT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new main());
+            Application.Run(new ThemDH());
         }
     }
 }

@@ -18,4 +18,10 @@ namespace QlCuaHangXimenT.Common.Enums
         Selected,
         NoSelected
     }
+
+    public enum CardContext
+    {
+        ChuaVaoGio,
+        TrongGioHang
+    }
 }

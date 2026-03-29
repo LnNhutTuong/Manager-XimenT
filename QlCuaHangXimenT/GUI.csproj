@@ -69,10 +69,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KhachHang\UC_KhachHang.cs">
+    <Compile Include="QuanLyDonHang\PopUp\ThemDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyDonHang\PopUp\ThemDH.Designer.cs">
+      <DependentUpon>ThemDH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyDonHang\UC_DonHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="KhachHang\UC_KhachHang.Designer.cs">
+    <Compile Include="QuanLyDonHang\UC_DonHang.Designer.cs">
+      <DependentUpon>UC_DonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyKhachHang\UC_KhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLyKhachHang\UC_KhachHang.Designer.cs">
       <DependentUpon>UC_KhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="main.cs">
@@ -125,6 +137,12 @@
     <Compile Include="QuanLySanPham\SanPham\card_SanPham.Designer.cs">
       <DependentUpon>card_SanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanPham\SanPham\OverView\Card_SanPham_Overview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\SanPham\OverView\Card_SanPham_Overview.Designer.cs">
+      <DependentUpon>Card_SanPham_Overview.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanPham\SanPham\PopUp\ChiTietSP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,7 +185,13 @@
     <Compile Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.Designer.cs">
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="KhachHang\UC_KhachHang.resx">
+    <EmbeddedResource Include="QuanLyDonHang\PopUp\ThemDH.resx">
+      <DependentUpon>ThemDH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyDonHang\UC_DonHang.resx">
+      <DependentUpon>UC_DonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyKhachHang\UC_KhachHang.resx">
       <DependentUpon>UC_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
@@ -203,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\SanPham\card_SanPham.resx">
       <DependentUpon>card_SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\SanPham\OverView\Card_SanPham_Overview.resx">
+      <DependentUpon>Card_SanPham_Overview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\SanPham\PopUp\ChiTietSP.resx">
       <DependentUpon>ChiTietSP.cs</DependentUpon>
