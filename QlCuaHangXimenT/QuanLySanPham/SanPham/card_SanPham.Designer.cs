@@ -54,7 +54,7 @@
             this.btnChucNang.Name = "btnChucNang";
             this.btnChucNang.Size = new System.Drawing.Size(131, 34);
             this.btnChucNang.TabIndex = 9;
-            this.btnChucNang.Text = "Chức năng";
+            this.btnChucNang.Text = "Xem chi tiết";
             this.btnChucNang.Click += new System.EventHandler(this.btnXemChiTiet_Click);
             // 
             // lblGia

@@ -39,10 +39,23 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.OverView
             {
                 btnChucNang.Image = Resources.ecommerce;
                 label2.Text = "Số lượng:";
-
             }
         }
 
+        public FormMode CurrentMode;
+        public void SetMode(FormMode mode)
+        {
+            CurrentMode = mode;
+
+            if(mode == FormMode.View)
+            {
+                btnChucNang.Visible = false;
+            }
+            else if (mode == FormMode.Edit)
+            {
+                btnChucNang.Visible = true;
+            }
+        }
     
         public void SetData(string maSP, string tenSP, int giaTien, int SoLuongton)
         {

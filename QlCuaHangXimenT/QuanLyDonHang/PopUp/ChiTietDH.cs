@@ -2,6 +2,7 @@
 using BUS.QuanLyDonHang;
 using BUS.QuanLyKhachHang;
 using BUS.QuanLySanPham;
+using DTO.QuanLyDonHang;
 using QlCuaHangXimenT.Common.Enums;
 using QlCuaHangXimenT.QuanLySanPham.SanPham.OverView;
 using System;
@@ -30,25 +31,36 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
 
             bool isEdit = (mode == FormMode.Edit);
 
-            txtMaDonHang.Visible = isEdit;
-
             cboKhachHang.Visible = isEdit;
             cboNhanVien.Visible = isEdit;
+            cboTrangThai.Visible = isEdit;
 
-
-            lblMaDonHang.Visible = !isEdit;
-
-            lblMaDonHang.Visible = !isEdit;
             lblNhanVien.Visible = !isEdit;
             lblKhachHang.Visible = !isEdit;
+            lblTrangThai.Visible = !isEdit;
 
             btnSua.Visible = !isEdit;
             btnXoa.Visible = !isEdit;
 
             btnLuu.Visible = isEdit;
             btnHuy.Visible = isEdit;
-        }
 
+            foreach(Control crl in flpDanhSachSanPham.Controls)
+            {
+                if(crl is Card_SanPham_Overview item)
+                {
+                    item.SetMode(mode);
+                }
+            }
+
+            foreach (Control crl in flpGioHang.Controls)
+            {
+                if (crl is Card_SanPham_Overview item)
+                {
+                    item.SetMode(mode);
+                }
+            }
+        }
 
         public void LayDuLieuCBO()
         {
@@ -103,7 +115,7 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
         {
 
             #region xử lí những sản phẩm trong đơn
-            DataTable CartKhach = DonHang_BUS.DonHangTheoMa(maDH);
+            DataTable CartKhach = DonHang_BUS.ChiTietDonHangTheoMa(maDH);
 
             Dictionary<string, int> gioHangCuaKhach = new Dictionary<string, int>();
 
@@ -140,6 +152,7 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
 
                     Card_SanPham_Overview cardTren = new Card_SanPham_Overview();
                     cardTren.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]), Convert.ToInt32(dr["SoLuongTon"]));
+                    cardTren.SetMode(this.CurrentMode);
                     cardTren.SetContext(CardContext.ChuaVaoGio);
                     if (cardTren.SoLuongTon < 0)
                     {
@@ -148,7 +161,8 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
 
 
                     Card_SanPham_Overview cardDuoi = new Card_SanPham_Overview();
-                    cardDuoi.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]), 1); // phải gán là 1 vì nó bị ăn theo cái SetData
+                    cardDuoi.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]), 0); // phải gán là 1 vì nó bị ăn theo cái SetData
+                    cardDuoi.SetMode(this.CurrentMode);
                     cardDuoi.SetContext(CardContext.TrongGioHang);
                     cardDuoi.Visible = false; //ẩn                 
 
@@ -160,9 +174,9 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
                         cardDuoi.CapNhatSoLuongMua(soLuongKhachDaMua);
                         cardDuoi.Visible = true;
 
-                        cardTren.CapNhatSoLuongTon(Convert.ToInt32(dr["SoLuongTon"]) - soLuongKhachDaMua);
+                        //cardTren.CapNhatSoLuongTon(Convert.ToInt32(dr["SoLuongTon"]) - soLuongKhachDaMua);
                         tongSoLuong += soLuongKhachDaMua;
-
+                 
                     }
                     #endregion
 
@@ -219,11 +233,69 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
 
                     flpDanhSachSanPham.Controls.Add(cardTren);
                     flpGioHang.Controls.Add(cardDuoi);
+                    CapNhatSoLuongTrongGio();
+                    tinhTongTien();
                 }
             }
             #endregion
         }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            SetMode(FormMode.Edit);
+            lblTitle.Text = "Chỉnh sửa đơn hàng";
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            SetMode(FormMode.View);
+            lblTitle.Text = "Chỉnh sửa đơn hàng";
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            #region dữ liệu Đơn hàng
+            DonHang_DTO dh = new DonHang_DTO();
+            dh.MaDH = lblMaDonHang.Text.ToUpper();
+            dh.MaNV = cboNhanVien.SelectedValue.ToString();
+            dh.MaKH = cboKhachHang.SelectedValue.ToString();
+            dh.TrangThai = Convert.ToInt32(cboTrangThai.SelectedIndex);
+            //dh.TrangThai = 
+            #endregion
+
+            #region dữ liệu Danh sách đơn hàng
+            List<CtDonHang_DTO> ctdh = new List<CtDonHang_DTO>();
+
+            foreach (Control sanpham in flpGioHang.Controls)
+            {
+                if (sanpham is Card_SanPham_Overview item && sanpham.Visible == true)
+                {
+                    CtDonHang_DTO ct = new CtDonHang_DTO();
+                    ct.MaDH = dh.MaDH;
+                    ct.MaSP = item.maSP;
+                    ct.MaSP = item.maSP;
+                    ct.DonGia = item.giaTien;
+                    ct.SoLuong = item.SoLuongMua;
+
+                    ctdh.Add(ct);
+                }
+            }
+
+            #endregion
+            string message;
+            bool kq = DonHang_BUS.SuaDonHang(dh, ctdh, dh.MaDH,out message);
+
+            if (kq)
+            {
+                MessageBox.Show("Sửa thành công!");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(message);
+            }
+        }
 
         private void ChiTietDH_Load(object sender, EventArgs e)
         {
@@ -237,18 +309,43 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
             {
                 lblMaDonHang.Text = row["MaDH"].ToString();
 
-                lblNhanVien.Text = row["TenNV"].ToString();
+                lblNhanVien.Text = row["MaNV"].ToString();
                 cboNhanVien.SelectedValue = row["MaNV"].ToString();
 
                 lblKhachHang.Text = row["TenKH"].ToString();
                 cboKhachHang.SelectedValue = row["MaKH"].ToString();
+
+                int trangThai = Convert.ToInt32(row["TrangThai"]);
+                if (trangThai == 0)
+                {
+                    lblTrangThai.ForeColor = Color.Blue;
+                    lblTrangThai.Text = "Chưa giao";
+                    cboTrangThai.SelectedIndex= 0;
+                    
+                }
+                else if (trangThai == 1)
+                {
+                    lblTrangThai.ForeColor = Color.Yellow;
+                    lblTrangThai.Text = "Đang giao";
+                    cboTrangThai.SelectedIndex = 1;
+                }
+                else if (trangThai == 2)
+                {
+                    lblTrangThai.ForeColor = Color.Green;
+                    lblTrangThai.Text = "Giao thành công";
+                    cboTrangThai.SelectedIndex = 2;
+                }
+                else if (trangThai == 3)
+                {
+                    lblTrangThai.ForeColor = Color.Red;
+                    lblTrangThai.Text = "Đã hủy";
+                    cboTrangThai.SelectedIndex = 3;
+                }
+
             }
             #endregion
 
             XuLiGioHang();
-            
-
-
         }
 
 

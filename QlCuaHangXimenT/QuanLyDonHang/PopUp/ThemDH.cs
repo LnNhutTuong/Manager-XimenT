@@ -115,6 +115,9 @@ namespace DTO.QuanLyDonHang
 
                     flpDanhSachSanPham.Controls.Add(cardTren);
                     flpGioHang.Controls.Add(cardDuoi);
+                    tinhTongTien();
+                    CapNhatSoLuongTrongGio();
+
                 }
             }
         }

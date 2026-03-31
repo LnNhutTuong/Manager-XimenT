@@ -61,5 +61,23 @@ namespace BUS.QuanLyDonHang
         {
             return DonHang_DAO.ChiTietDonHangTheoMa(maDH);
         }
+
+        public static bool SuaDonHang(DonHang_DTO dh, List<CtDonHang_DTO> ctdh, string maDH,out string message)
+        {
+            message = "";
+
+            if (ctdh == null || ctdh.Count == 0)
+            {
+                message = "Vui lòng thêm sản phẩm vào giỏ hàng!";
+                return false;
+            }
+
+            return DonHang_DAO.SuaDonHang(dh, ctdh, maDH);
+        }
+
+        public static DataTable TimKiemDonHang(string tuKhoa, string trangThai)
+        {
+            return DonHang_DAO.TimKiemDonHang(tuKhoa, trangThai);
+        }
     }
 }
