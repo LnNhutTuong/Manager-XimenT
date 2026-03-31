@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QuanLyDonHang\PopUp\ChiTietDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyDonHang\PopUp\ChiTietDH.Designer.cs">
+      <DependentUpon>ChiTietDH.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyDonHang\PopUp\ThemDH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     <Compile Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.Designer.cs">
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QuanLyDonHang\PopUp\ChiTietDH.resx">
+      <DependentUpon>ChiTietDH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyDonHang\PopUp\ThemDH.resx">
       <DependentUpon>ThemDH.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +327,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\noImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecommerce %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecommerce.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace DTO.QuanLyDonHang
 {
-    public class DonHang_DTO
+    public  class CtDonHang_DTO
     {
         public string MaDH { get; set; }
-        public string MaKH { get; set; }
-        public string   MaNV { get; set; }
-        public DateTime NgayTao { get; set; }
+        public string MaSP { get; set; }
+        public int DonGia { get; set; }
+        public int SoLuong { get; set; }
+        public int ThanhTien => SoLuong * DonGia;
+
     }
 }

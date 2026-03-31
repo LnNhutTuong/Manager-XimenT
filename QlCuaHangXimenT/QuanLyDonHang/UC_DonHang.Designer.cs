@@ -175,6 +175,7 @@
             this.btnThem.Size = new System.Drawing.Size(211, 49);
             this.btnThem.TabIndex = 130;
             this.btnThem.Text = "Thêm đơn hàng";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
@@ -268,6 +269,7 @@
             this.dgvDonHang.ThemeStyle.RowsStyle.Height = 24;
             this.dgvDonHang.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDonHang.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvDonHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDonHang_CellContentClick);
             this.dgvDonHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDonHang_CellFormatting);
             // 
             // MaDH

@@ -1,5 +1,6 @@
 ﻿using DTO;
 using DTO.QuanLyDonHang;
+using QlCuaHangXimenT.QuanLyDonHang.PopUp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace QlCuaHangXimenT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThemDH());
+            Application.Run(new main());
         }
     }
 }

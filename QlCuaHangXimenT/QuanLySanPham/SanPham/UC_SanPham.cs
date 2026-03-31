@@ -17,16 +17,24 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 {
     public partial class UC_SanPham : UserControl
     {
+
+        void TongSoLuong()
+        {
+            DataTable TongSoLuong = SanPham_BUS.DanhSachSanPham();
+            lblSoLuongSanPham.Text = TongSoLuong.Rows.Count.ToString();
+
+        }
+
         public UC_SanPham()
         {
             InitializeComponent();
+            TongSoLuong();
             LayDuLieuCBO();
             LoadFlowTheoDK();
 
             dtpBatDau.MaxDate = DateTime.Now;
 
             dtpKetThuc.MaxDate = DateTime.Now;
-
         }
 
         public void LayDuLieuCBO()
@@ -72,7 +80,6 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
             string tuKhoa = string.IsNullOrEmpty(txtTimKiem.Text) ? null : txtTimKiem.Text;
             DataTable dsSanPham = SanPham_BUS.LocSanPham(maDM, maTH, tuNgay, denNgay, tuKhoa);
-
 
             if (dsSanPham.Rows.Count > 0)
             {
