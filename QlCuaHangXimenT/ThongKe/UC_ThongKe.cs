@@ -29,11 +29,11 @@ namespace QlCuaHangXimenT.ThongKe
             #endregion
 
             #region tab Tổng hợp
-            tab_Tonghop th = new tab_Tonghop();
-            th.TopLevel = false; // luwu ys
-            th.Dock = DockStyle.Fill;
-            tabTongHop.Controls.Add(th);
-            th.Show();
+            //tab_Tonghop th = new tab_Tonghop();
+            //th.TopLevel = false; // luwu ys
+            //th.Dock = DockStyle.Fill;
+            //tabTongHop.Controls.Add(th);
+            //th.Show();
             #endregion
 
 

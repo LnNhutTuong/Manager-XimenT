@@ -51,6 +51,7 @@
     <Compile Include="QuanLySanPham\DanhMuc_BUS.cs" />
     <Compile Include="QuanLySanPham\SanPham_BUS.cs" />
     <Compile Include="QuanLySanPham\ThuongHieu_BUS.cs" />
+    <Compile Include="ThongKe\ThongKe_BUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">

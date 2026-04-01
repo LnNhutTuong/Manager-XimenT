@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS.ThongKe;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,29 @@ namespace QlCuaHangXimenT.ThongKe.tab
         public tab_Tonghop()
         {
             InitializeComponent();
+        }
+
+        private void tab_Tonghop_Load(object sender, EventArgs e)
+        {
+            DataTable ThongKe = ThongKe_BUS.DoanhThuVaSoLuongSanPham();
+
+            DataRow row = ThongKe.Rows[0];
+
+            var doanhThu = row["TongTien"] == DBNull.Value ? 0 : row["TongTien"];
+
+            lblDoanhThu.Text = Convert.ToInt32(doanhThu).ToString("N0") + " VNĐ";
+            lblSanPhamDaBan.Text = doanhThu.ToString() + " sản phẩm";
+
+            DataTable DonHangThanhCong = ThongKe_BUS.DonHangTheoTrangThai(2);
+
+            DataRow rowThanhCong = DonHangThanhCong.Rows[0];
+            lblThanhCong.Text = rowThanhCong["SoDonHang"].ToString() + " đơn";
+
+            DataTable DonHangThatBai = ThongKe_BUS.DonHangTheoTrangThai(3);
+            DataRow rowThatBai = DonHangThatBai.Rows[0];
+            lblBiHuy.Text = rowThatBai["SoDonHang"].ToString() + " đơn";
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }
