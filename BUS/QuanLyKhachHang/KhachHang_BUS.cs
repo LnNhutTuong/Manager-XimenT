@@ -110,5 +110,10 @@ namespace BUS.QuanLyKhachHang
         {       
             return KhachHang_DAO.TimKiemKhachHang(tuKhoa);
         }
+
+        public static DataTable Top3KhachHang()
+        {
+            return KhachHang_DAO.Top3KhachHang();
+        }
     }
 }

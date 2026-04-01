@@ -101,5 +101,21 @@ namespace DAO.QuanLyKhachHang
 
             return table;
         }
+
+        public static DataTable Top3KhachHang()
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  select top 3 with ties kh.*, Sum(ct.Thanh_tien) as TongTien
+                                                from KhachHang as kh 
+                                                Join DonHang as dh On dh.MaKH = kh.MaKH
+                                                Join CtDonHang as ct On ct.MaDH = dh.MaDH
+                                                group by kh.MaKH, kh.Dia_chi, kh.Dien_Thoai, kh.TenKH
+                                                order by TongTien asc");
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
     }
 }

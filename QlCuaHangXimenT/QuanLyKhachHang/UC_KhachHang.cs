@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace QlCuaHangXimenT.KhachHang
             InitializeComponent();
             //LoadDataTest(chartTopKH);
             LayDuLieu();
+            BieuDoKhachHang();
             OnOff(false);
         }
 
@@ -38,6 +40,50 @@ namespace QlCuaHangXimenT.KhachHang
         {
             dgvKhachHang.DataSource = KhachHang_BUS.DanhSachKhachHang();
             lblTongSoKhachHang.Text = dgvKhachHang.Rows.Count.ToString();
+        }
+
+        public void BieuDoKhachHang()
+        {
+            chartTopKH.Series.Clear();
+
+            Series s = new Series("Khách hàng");
+
+            s.ChartType = SeriesChartType.Bar;
+            s.Color = Color.Black;
+            s["PixelPointWidth"] = "20";
+
+            var area = chartTopKH.ChartAreas[0];
+
+            double maxTotal = 0;
+
+            DataTable top3 = KhachHang_BUS.Top3KhachHang();
+
+            foreach (DataRow row in top3.Rows)
+            {
+                string tenKH = row["TenKH"].ToString();
+                double tongTien = Convert.ToDouble(row["TongTien"]);
+
+                if (tongTien > maxTotal) maxTotal = tongTien;
+
+                int index = s.Points.AddXY(tenKH, tongTien);
+
+                s.Points[index].Label = $"{tenKH}\n{tongTien:N0} VNĐ";
+
+                s.Points[index]["BarLabelStyle"] = "OutSide";
+
+                s.Points[index].Font = new Font("Arial", 9, FontStyle.Bold);
+
+            }
+
+            if (maxTotal > 0)
+            {
+                area.AxisY.Maximum = maxTotal * 1.3;
+                area.AxisY.LabelStyle.Enabled = false; 
+            }
+
+            area.AxisX.Interval = 1;
+
+            chartTopKH.Series.Add(s);
         }
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)

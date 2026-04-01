@@ -25,7 +25,7 @@ namespace DAO.QuanLyDonHang
             DataTable table = dp.TruyVanLayDuLieu(cmd);
 
             return table;
-        }
+        }   
 
         public static List<string> DanhSachMaDH()
         {
@@ -194,5 +194,6 @@ namespace DAO.QuanLyDonHang
 
             return table;
         }
+
     }
 }
