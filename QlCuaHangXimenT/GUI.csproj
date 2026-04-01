@@ -191,6 +191,18 @@
     <Compile Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.Designer.cs">
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongKe\tab\tab_Tonghop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\tab\tab_Tonghop.Designer.cs">
+      <DependentUpon>tab_Tonghop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe\UC_ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThongKe\UC_ThongKe.Designer.cs">
+      <DependentUpon>UC_ThongKe.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="QuanLyDonHang\PopUp\ChiTietDH.resx">
       <DependentUpon>ChiTietDH.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +272,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.resx">
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\tab\tab_Tonghop.resx">
+      <DependentUpon>tab_Tonghop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\UC_ThongKe.resx">
+      <DependentUpon>UC_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

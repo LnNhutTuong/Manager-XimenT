@@ -6,6 +6,7 @@ using QlCuaHangXimenT.QuanLiSanPham;
 using QlCuaHangXimenT.QuanLyDonHang;
 using QlCuaHangXimenT.QuanLySanPham.SanPham;
 using QlCuaHangXimenT.QuanLySanPham.ThuongHieu;
+using QlCuaHangXimenT.ThongKe;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,7 +36,7 @@ namespace QlCuaHangXimenT
         private void ResetBtn()
         {
             //nut to
-            Guna.UI2.WinForms.Guna2GradientButton[] btns = { btnTrangChu, btnNhanVien, btnQuanliSanPham, btnKhachHang, btnDonHang };
+            Guna.UI2.WinForms.Guna2GradientButton[] btns = { btnTrangChu, btnNhanVien, btnQuanliSanPham, btnKhachHang, btnDonHang, btnThongKe };
             foreach (var b in btns)
             {
                 b.CustomBorderThickness = new Padding(0);
@@ -144,6 +145,14 @@ namespace QlCuaHangXimenT
             UC_DonHang dh = new UC_DonHang();
             dh.Dock = DockStyle.Fill;
             content.Controls.Add(dh);
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            ActiveBtn(btnThongKe);
+            UC_ThongKe tk = new UC_ThongKe();
+            tk.Dock = DockStyle.Fill;
+            content.Controls.Add(tk);
         }
     }
 }
