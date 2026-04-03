@@ -32,7 +32,8 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             //txtMaDanhMuc.Enabled = isEdit;
             txtTenSanPham.Visible = isEdit;
             txtSize.Visible = isEdit;
-            txtGia.Visible = isEdit;
+            txtGiaBan.Visible = isEdit;
+            txtGiaNhap.Visible = isEdit;
             txtSoLuongTon.Visible = isEdit;
 
             cboDanhMuc.Visible = isEdit;
@@ -46,7 +47,8 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             lblDanhMuc.Visible = !isEdit;
             lblThuongHieu.Visible = !isEdit;
             lblSize.Visible = !isEdit;
-            lblGia.Visible = !isEdit;
+            lblGiaBan.Visible = !isEdit;
+            lblGiaNhap.Visible = !isEdit;
 
             lblMaNV.Visible = !isEdit;
             lblSoLuongTon.Visible = !isEdit;
@@ -59,6 +61,29 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             btnHuy.Visible = isEdit;
             btnThayAnh.Visible = isEdit;
         }
+
+        public ProductMode Context;
+        public void SetContext(ProductMode context)
+        {
+            Context = context;
+
+            if(Context == ProductMode.DonHang)
+            {
+                lbltieudeGN.Text= "Giá bán:" ;
+                txtGiaNhap.Visible = false;
+                lblGiaNhap.Text = Convert.ToInt32(sanPham["GiaBan"]).ToString("N0") + " VNĐ";
+
+                lbltieudeGB.Visible = false;
+                txtGiaBan.Visible = false;
+                lblGiaBan.Visible = false;
+
+                btnSua.Visible = false;
+                btnXoa.Visible = false;
+                btnHuy.Visible = false;
+                btnLuu.Visible = false;
+            }
+        }
+
 
         private void LayDuLieuCBO()
         {
@@ -118,8 +143,11 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
                 lblSize.Text = sanPham["Size"].ToString();
 
-                decimal gia = Convert.ToInt32(sanPham["Gia"]);
-                lblGia.Text = gia.ToString("N0") + " VNĐ";
+                decimal giaBan = Convert.ToInt32(sanPham["GiaBan"]);
+                lblGiaBan.Text = giaBan.ToString("N0") + " VNĐ";
+
+                decimal giaNhap = Convert.ToInt32(sanPham["GiaNhap"]);
+                lblGiaNhap.Text = giaNhap.ToString("N0") + " VNĐ";
 
                 lblMaSanPham.Text = sanPham["MaSP"].ToString();
 
@@ -179,7 +207,8 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
             txtTenSanPham.Text = sanPham["TenSP"].ToString();
             txtSize.Text = sanPham["Size"].ToString();
-            txtGia.Text = sanPham["Gia"].ToString(); 
+            txtGiaNhap.Text = sanPham["GiaNhap"].ToString();
+            txtGiaBan.Text = sanPham["GiaBan"].ToString();
             txtSoLuongTon.Text = sanPham["SoLuongTon"].ToString();
 
             cboDanhMuc.SelectedValue = sanPham["MaDM"].ToString();
@@ -210,7 +239,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
 
                 string message = "";
-                bool kq = SanPham_BUS.SuaSanPham(sp, maSP, txtGia.Text, txtSoLuongTon.Text, out message);
+                bool kq = SanPham_BUS.SuaSanPham(sp, maSP, txtGiaBan.Text,txtGiaNhap.Text, txtSoLuongTon.Text, out message);
 
                 if (kq)
                 {

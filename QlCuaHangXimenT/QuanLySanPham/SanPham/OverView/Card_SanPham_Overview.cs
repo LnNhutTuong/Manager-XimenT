@@ -93,7 +93,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.OverView
         {
             string maSP = lblMaSanPham.Text;
             ChiTietSP ctsp = new ChiTietSP(maSP);
-
+            ctsp.SetContext(ProductMode.DonHang);
             ctsp.Show();
         }
 

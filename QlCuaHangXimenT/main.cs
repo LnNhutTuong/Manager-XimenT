@@ -1,4 +1,7 @@
 ﻿    using BUS;
+using BUS.Auth;
+using DTO;
+using QlCuaHangXimenT.CaiDat.HuongDanSuDung;
 using QlCuaHangXimenT.KhachHang;
 using QlCuaHangXimenT.NhanVien;
 using QlCuaHangXimenT.Properties;
@@ -7,6 +10,7 @@ using QlCuaHangXimenT.QuanLyDonHang;
 using QlCuaHangXimenT.QuanLySanPham.SanPham;
 using QlCuaHangXimenT.QuanLySanPham.ThuongHieu;
 using QlCuaHangXimenT.ThongKe;
+using QlCuaHangXimenT.ThongKe.tab;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +20,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BC = BCrypt.Net.BCrypt;
 
 namespace QlCuaHangXimenT
 {
@@ -128,7 +133,7 @@ namespace QlCuaHangXimenT
 
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
-            
+            //DangNhap();
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
@@ -153,6 +158,97 @@ namespace QlCuaHangXimenT
             UC_ThongKe tk = new UC_ThongKe();
             tk.Dock = DockStyle.Fill;
             content.Controls.Add(tk);
+        }
+
+
+        void PhanQuyen()
+        {
+            string chucvu = nguoiDangNhap.MaCV;
+
+            if (chucvu == "ADMIN") 
+            {
+                btnNhanVien.Visible = true;
+                btnSanPham.Visible = true;
+                btnKhachHang.Visible = true;
+                btnDonHang.Visible = true;
+                btnThongKe.Visible = true;
+            }
+
+            else if (chucvu == "CV001")
+            {
+                btnSanPham.Visible = true;
+                btnThongKe.Visible = true;
+            }
+
+            else if (chucvu == "CV002")
+            {
+                btnKhachHang.Visible = true;
+                btnThongKe.Visible = true;
+            }
+
+            else if (chucvu == "CV003")
+            {
+                btnDonHang.Visible = true;
+                btnThongKe.Visible = true;
+            }
+
+        }
+
+        private NhanVien_DTO nguoiDangNhap;
+
+        private bool DangNhap()
+        {
+          using(Login login = new Login())
+            {
+                if(login.ShowDialog() == DialogResult.OK)
+                {
+                    this.nguoiDangNhap = login.NhanVienHienTai;
+
+                    this.Show();
+
+                    PhanQuyen();
+                    MessageBox.Show("Chào bạn!");
+
+                    if (Properties.Settings.Default.ShowGuide == true)
+                    {
+                        thongBaoHuongDan ThongBaoHD = new thongBaoHuongDan();
+                        ThongBaoHD.ShowDialog();
+                    }
+
+                    btnDangXuat.Visible = true;
+                    return true;                    
+                }
+                
+                
+                    return false;
+                
+            }
+        }
+
+
+        private void main_Load(object sender, EventArgs e)
+        {
+            this.Hide();
+            if (!DangNhap())
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn đăng xuất không?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.nguoiDangNhap = null;
+                content.Controls.Clear();
+                this.Hide();
+
+                if (!DangNhap())
+                {
+                    Application.Exit();
+                }
+            }
+
         }
     }
 }

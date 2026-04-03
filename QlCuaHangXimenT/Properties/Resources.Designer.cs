@@ -63,9 +63,29 @@ namespace QlCuaHangXimenT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap a {
+            get {
+                object obj = ResourceManager.GetObject("a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Adobe_Express___file {
             get {
                 object obj = ResourceManager.GetObject("Adobe Express - file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap b {
+            get {
+                object obj = ResourceManager.GetObject("b", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +116,16 @@ namespace QlCuaHangXimenT.Properties {
         internal static System.Drawing.Bitmap ecommerce__1_ {
             get {
                 object obj = ResourceManager.GetObject("ecommerce (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gemini_Generated_Image_n3gj0ln3gj0ln3gj {
+            get {
+                object obj = ResourceManager.GetObject("Gemini_Generated_Image_n3gj0ln3gj0ln3gj", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +186,36 @@ namespace QlCuaHangXimenT.Properties {
         internal static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap setnAGUfQrPdNo {
+            get {
+                object obj = ResourceManager.GetObject("setnAGUfQrPdNo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap setnAGUfQrPdNo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("setnAGUfQrPdNo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap setnAGUfQrPdNo1 {
+            get {
+                object obj = ResourceManager.GetObject("setnAGUfQrPdNo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

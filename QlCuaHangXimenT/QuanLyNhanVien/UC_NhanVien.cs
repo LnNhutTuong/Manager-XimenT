@@ -74,7 +74,7 @@ namespace QlCuaHangXimenT.NhanVien
 
         private void dgvNhanVien_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == 0)
+            if (e.RowIndex < 0)
                 return;
 
             if (dgvNhanVien.Columns[e.ColumnIndex].Name == "XemChiTiet")

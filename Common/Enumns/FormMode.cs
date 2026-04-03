@@ -24,4 +24,10 @@ namespace QlCuaHangXimenT.Common.Enums
         ChuaVaoGio,
         TrongGioHang
     }
+
+    public enum ProductMode
+    {
+        QuanLy,
+        DonHang
+    }
 }

@@ -151,7 +151,7 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
                 {
 
                     Card_SanPham_Overview cardTren = new Card_SanPham_Overview();
-                    cardTren.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]), Convert.ToInt32(dr["SoLuongTon"]));
+                    cardTren.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["GiaBan"]), Convert.ToInt32(dr["SoLuongTon"]));
                     cardTren.SetMode(this.CurrentMode);
                     cardTren.SetContext(CardContext.ChuaVaoGio);
                     if (cardTren.SoLuongTon < 0)
@@ -161,7 +161,7 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
 
 
                     Card_SanPham_Overview cardDuoi = new Card_SanPham_Overview();
-                    cardDuoi.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]), 0); // phải gán là 1 vì nó bị ăn theo cái SetData
+                    cardDuoi.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["GiaBan"]), 0); // phải gán là 1 vì nó bị ăn theo cái SetData
                     cardDuoi.SetMode(this.CurrentMode);
                     cardDuoi.SetContext(CardContext.TrongGioHang);
                     cardDuoi.Visible = false; //ẩn                 
@@ -319,14 +319,14 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
                 if (trangThai == 0)
                 {
                     lblTrangThai.ForeColor = Color.Blue;
-                    lblTrangThai.Text = "Chưa giao";
+                    lblTrangThai.Text = "Chưa GiaBano";
                     cboTrangThai.SelectedIndex= 0;
                     
                 }
                 else if (trangThai == 1)
                 {
                     lblTrangThai.ForeColor = Color.Yellow;
-                    lblTrangThai.Text = "Đang giao";
+                    lblTrangThai.Text = "Đang GiaBano";
                     cboTrangThai.SelectedIndex = 1;
                 }
                 else if (trangThai == 2)

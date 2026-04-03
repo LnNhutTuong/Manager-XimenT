@@ -54,7 +54,7 @@ namespace DAO
             cmd.Parameters.Add("@TenNV", SqlDbType.NVarChar, 100).Value = nv.TenNV;
             cmd.Parameters.Add("@MaCV", SqlDbType.VarChar, 5).Value = nv.MaCV;
             cmd.Parameters.Add("@Ten_dang_nhap", SqlDbType.VarChar, 30).Value = nv.Ten_dang_nhap;
-            cmd.Parameters.Add("@Mat_khau", SqlDbType.VarChar, 50).Value = BC.HashPassword(nv.Mat_khau);
+            cmd.Parameters.Add("@Mat_khau", SqlDbType.VarChar, 250).Value = BC.HashPassword(nv.Mat_khau);
             cmd.Parameters.Add("@HinhAnh", SqlDbType.NVarChar, 255).Value = (object)nv.HinhAnh ?? DBNull.Value;
             
             int kq = dp.TruyVanKhongLayDuLieu(cmd);
@@ -97,7 +97,7 @@ namespace DAO
             cmd.Parameters.Add("@TenNV", SqlDbType.NVarChar, 100).Value = nv.TenNV;
             cmd.Parameters.Add("@MaCV", SqlDbType.VarChar, 5).Value = nv.MaCV;
             cmd.Parameters.Add("@Ten_dang_nhap", SqlDbType.VarChar, 30).Value = nv.Ten_dang_nhap;
-            cmd.Parameters.Add("@Mat_khau", SqlDbType.VarChar, 50).Value = BC.HashPassword(nv.Mat_khau);
+            cmd.Parameters.Add("@Mat_khau", SqlDbType.VarChar, 250).Value = BC.HashPassword(nv.Mat_khau);
             cmd.Parameters.Add("@MaNVCu", SqlDbType.VarChar, 5).Value = maNVcu;
             cmd.Parameters.Add("@HinhAnh", SqlDbType.NVarChar, 255).Value = (object)nv.HinhAnh ?? DBNull.Value;
 

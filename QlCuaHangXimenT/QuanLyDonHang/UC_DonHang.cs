@@ -31,6 +31,8 @@ namespace QlCuaHangXimenT.QuanLyDonHang
             dgvDonHang.Columns["MaNV"].Visible = false;
 
             lblSoLuong.Text = dgvDonHang.Rows.Count.ToString();
+
+            cboTrangThai.SelectedIndex = 0;
         }
 
         public UC_DonHang()
@@ -41,7 +43,6 @@ namespace QlCuaHangXimenT.QuanLyDonHang
 
         private void dgvDonHang_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            dgvDonHang.AutoGenerateColumns = false;
 
             dgvDonHang.Columns["NgayTao"].DefaultCellStyle.Format = "dd-MM-yyyy";
 

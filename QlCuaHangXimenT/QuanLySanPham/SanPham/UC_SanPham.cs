@@ -87,7 +87,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
                 {
                     card_SanPham sanpham = new card_SanPham();
 
-                    sanpham.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]), dr["HinhAnh"].ToString());
+                    sanpham.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["GiaBan"]), dr["HinhAnh"].ToString());
 
                     sanpham.added = () =>
                     {

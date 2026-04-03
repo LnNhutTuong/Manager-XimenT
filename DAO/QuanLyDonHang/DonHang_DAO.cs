@@ -20,7 +20,7 @@ namespace DAO.QuanLyDonHang
                                                 from DonHang as dh
                                                 Join CtDonHang as ct On ct.MaDH = dh.MaDH
                                                 Join KhachHang as kh On dh.MaKH = kh.MaKH
-                                                group by dh.MaDH, dh.MaKH, dh.MaNV, dh.NgayTao, dh.TrangThai, kh.TenKH");
+                                                group by dh.MaDH, dh.MaKH, dh.MaNV, dh.NgayTao, dh.TrangThai, dh.TongTien, kh.TenKH");
 
             DataTable table = dp.TruyVanLayDuLieu(cmd);
 
@@ -47,15 +47,19 @@ namespace DAO.QuanLyDonHang
 
         public static bool ThemDonHang(DonHang_DTO dh, List<CtDonHang_DTO> ctdh)
         {
+            decimal TongTien = 0;
+
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmdDH = new SqlCommand(@"INSERT INTO DonHang (MaDH, MaKH, MaNV, NgayTao)
-                                             VALUES (@MaDH, @MaKH, @MaNV, @NgayTao)");
+            SqlCommand cmdDH = new SqlCommand(@"INSERT INTO DonHang (MaDH, MaKH, MaNV, NgayTao, TongTien)
+                                             VALUES (@MaDH, @MaKH, @MaNV, @NgayTao, @TongTien)");
 
             cmdDH.Parameters.Add("@MaDH", SqlDbType.VarChar, 5).Value = dh.MaDH;
             cmdDH.Parameters.Add("@MaKH", SqlDbType.VarChar, 5).Value = dh.MaKH;
             cmdDH.Parameters.Add("@MaNV", SqlDbType.VarChar, 5).Value = dh.MaNV;
             cmdDH.Parameters.Add("@NgayTao", SqlDbType.DateTime).Value = DateTime.Now;
+            cmdDH.Parameters.Add("@TongTien", SqlDbType.Decimal).Value = TongTien;
+
 
             int stop = dp.TruyVanKhongLayDuLieu(cmdDH);
              
@@ -66,6 +70,8 @@ namespace DAO.QuanLyDonHang
 
             foreach (var ct in ctdh)
             {
+                TongTien += (ct.SoLuong * ct.DonGia);
+
                 SqlCommand cmdCT = new SqlCommand(@"INSERT INTO CtDonHang (MaDH, MaSP, Don_gia, So_Luong, Thanh_tien) 
                                                    VALUES (@MaDH, @MaSP, @DonGia, @SoLuong, @ThanhTien)");
                 cmdCT.Parameters.AddWithValue("@MaDH", dh.MaDH);
@@ -97,7 +103,7 @@ namespace DAO.QuanLyDonHang
                                                 Join KhachHang as kh On kh.MaKH = dh.MaKH
                                                 Join NhanVien as nv On nv.MaNV = dh.MaNV
                                                 Where dh.MaDH = @MaDH
-                                                group by dh.MaDH, dh.MaKH, dh.MaNV, dh.NgayTao, kh.TenKH, nv.TenNV,  dh.TrangThai");
+                                                group by dh.MaDH, dh.MaKH, dh.MaNV, dh.NgayTao, kh.TenKH, nv.TenNV, dh.TongTien, dh.TrangThai");
 
             cmd.Parameters.Add("@MaDH", SqlDbType.VarChar, 5).Value = maDH;
             DataTable table = dp.TruyVanLayDuLieu(cmd);
@@ -123,16 +129,19 @@ namespace DAO.QuanLyDonHang
         {
             DataProvider dp = new DataProvider();
 
+            decimal TongTien = 0;
             SqlCommand cmdDH = new SqlCommand(@"Update DonHang
                                                 Set MaKH = @MaKH,
                                                     MaNV = @MaNV,
-                                                    TrangThai = @TrangThai
+                                                    TrangThai = @TrangThai,
+                                                    TongTien = @TongTien
                                                 Where MaDH = @MaDH");
 
             cmdDH.Parameters.Add("@MaDH", SqlDbType.VarChar, 5).Value = maDH;
             cmdDH.Parameters.Add("@MaKH", SqlDbType.VarChar, 5).Value = dh.MaKH;
             cmdDH.Parameters.Add("@MaNV", SqlDbType.VarChar, 5).Value = dh.MaNV;
             cmdDH.Parameters.Add("@TrangThai", SqlDbType.Int).Value = dh.TrangThai;
+            cmdDH.Parameters.Add("@TongTien", SqlDbType.Decimal).Value = TongTien;
 
             int stop = dp.TruyVanKhongLayDuLieu(cmdDH);
 
@@ -155,6 +164,8 @@ namespace DAO.QuanLyDonHang
 
             foreach (var ct in ctdh)
             {
+                TongTien += (ct.SoLuong * ct.DonGia);
+
                 SqlCommand cmdCT = new SqlCommand(@"INSERT INTO CtDonHang (MaDH, MaSP, Don_gia, So_Luong, Thanh_tien) 
                                                    VALUES (@MaDH, @MaSP, @DonGia, @SoLuong, @ThanhTien)");
                 cmdCT.Parameters.AddWithValue("@MaDH", maDH);
@@ -186,7 +197,7 @@ namespace DAO.QuanLyDonHang
                                                 Join KhachHang as kh On dh.MaKH = kh.MaKH
                                                 Where (@tuKhoa is null or dh.MaDH Like  '%' + @tuKhoa + '%' or kh.TenKH Like '%' + @tuKhoa + '%')
                                                   And (@TrangThai is null or dh.TrangThai = @TrangThai)    
-                                                group by dh.MaDH, dh.MaKH, dh.MaNV, dh.NgayTao, dh.TrangThai, kh.TenKH");
+                                                group by dh.MaDH, dh.MaKH, dh.MaNV, dh.NgayTao, dh.TrangThai, kh.TenKH, dh.TongTien");
             cmd.Parameters.Add("@tuKhoa", SqlDbType.NVarChar).Value = (object)tuKhoa ?? DBNull.Value;
             cmd.Parameters.Add("@TrangThai", SqlDbType.NVarChar).Value = (object)trangThai ?? DBNull.Value;
 

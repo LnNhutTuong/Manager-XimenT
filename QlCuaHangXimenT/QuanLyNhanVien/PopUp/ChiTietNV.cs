@@ -32,7 +32,6 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
 
             bool isEdit = (mode == FormMode.Edit);
 
-            txtMaNhanVien.Enabled = isEdit;
             txtTenNhanVien.Enabled = isEdit;
             cboChucVu.Enabled = isEdit;
             txtTenDangNhap.Enabled = isEdit;
@@ -243,6 +242,11 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
 
         }
 
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+
         private void txtMatKhau_IconRightClick(object sender, EventArgs e)
         {
             if (txtMatKhau.UseSystemPasswordChar)
@@ -260,12 +264,5 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
                 txtMatKhau.IconRight = Properties.Resources.hide;
             }
         }
-
-        private void guna2ControlBox1_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-        }
-
-
     }
 }

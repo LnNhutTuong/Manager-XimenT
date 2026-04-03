@@ -74,8 +74,8 @@ namespace DAO.QuanLySanPham
             DataProvider dp = new DataProvider();
 
             SqlCommand cmd = new SqlCommand(@"  INSERT INTO SanPham 
-                                                (MaSP, TenSP, Size, MaDM, MaTH, MaNV, SoLuongTon, NgayThem, HinhAnh, Gia, NgaySua)
-                                                Values (@MaSP, @TenSP, @Size, @MaDM, @MaTH, @MaNV, @SoLuongTon, @NgayThem, @HinhAnh, @Gia, @NgaySua)");
+                                                (MaSP, TenSP, Size, MaDM, MaTH, MaNV, SoLuongTon, NgayThem, HinhAnh, GiaNhap, NgaySua, GiaBan)
+                                                Values (@MaSP, @TenSP, @Size, @MaDM, @MaTH, @MaNV, @SoLuongTon, @NgayThem, @HinhAnh, @GiaNhap, @NgaySua, @GiaBan)");
             cmd.Parameters.Add("@MaSP", SqlDbType.VarChar, 5).Value = sp.MaSP;
             cmd.Parameters.Add("@TenSP", SqlDbType.NVarChar, 100).Value = sp.TenSP;
             cmd.Parameters.Add("@Size", SqlDbType.NVarChar, 100).Value = sp.Size;
@@ -86,8 +86,10 @@ namespace DAO.QuanLySanPham
             cmd.Parameters.Add("@NgayThem", SqlDbType.DateTime).Value = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
             cmd.Parameters.Add("@NgaySua", SqlDbType.DateTime).Value = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
             cmd.Parameters.Add("@HinhAnh", SqlDbType.NVarChar, 255).Value = (object)sp.HinhAnh ?? DBNull.Value;
-            cmd.Parameters.Add("@Gia", SqlDbType.Int).Value = sp.Gia;
-                
+            cmd.Parameters.Add("@GiaBan", SqlDbType.Int).Value = sp.GiaBan;
+            cmd.Parameters.Add("@GiaNhap", SqlDbType.Int).Value = sp.GiaNhap;
+
+
             int kq = dp.TruyVanKhongLayDuLieu(cmd);
 
             return kq > 0;
@@ -106,7 +108,8 @@ namespace DAO.QuanLySanPham
                                                      SoLuongTon = @SoLuongTon,
                                                      NgaySua = @NgaySua,
                                                      HinhAnh = @HinhAnh,
-                                                     Gia = @Gia
+                                                     GiaBan = @GiaBan,
+                                                     GiaNhap = @GiaNhap
                                                 Where MaSP = @oldMaSP ");
             cmd.Parameters.Add("@oldMaSP", SqlDbType.VarChar, 5).Value = maSP;
             cmd.Parameters.Add("@TenSP", SqlDbType.NVarChar, 100).Value = sp.TenSP;
@@ -117,8 +120,8 @@ namespace DAO.QuanLySanPham
             cmd.Parameters.Add("@SoLuongTon", SqlDbType.SmallInt).Value = sp.SoLuongTon;
             cmd.Parameters.Add("@NgaySua", SqlDbType.DateTime).Value = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
             cmd.Parameters.Add("@HinhAnh", SqlDbType.NVarChar, 255).Value = (object)sp.HinhAnh ?? DBNull.Value;
-            cmd.Parameters.Add("@Gia", SqlDbType.Int).Value = sp.Gia;
-
+            cmd.Parameters.Add("@GiaBan", SqlDbType.Int).Value = sp.GiaBan;
+            cmd.Parameters.Add("@GiaNhap", SqlDbType.Int).Value = sp.GiaNhap;
             int kq = dp.TruyVanKhongLayDuLieu(cmd);
 
             return kq > 0;

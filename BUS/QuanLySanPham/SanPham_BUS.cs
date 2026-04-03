@@ -38,7 +38,7 @@ namespace BUS.QuanLySanPham
             return SanPham_DAO.SanPhamTheoMa(maSP);
         }
 
-        public static bool ThemSanPham(SanPham_DTO sp, string giaRaw, string soLuongTonRaw, out string message)
+        public static bool ThemSanPham(SanPham_DTO sp, string giaBanRaw, string giaNhapRaw, string soLuongTonRaw, out string message)
         {
             message = "";
 
@@ -60,25 +60,46 @@ namespace BUS.QuanLySanPham
                 return false;
             }
 
-            #region Giá sản phẩm
-            if (string.IsNullOrWhiteSpace(giaRaw)) 
+            #region Giá nhập sản phẩm
+            if (string.IsNullOrWhiteSpace(giaNhapRaw)) 
             { 
                 message = "Giá không được để trống"; 
                 return false; 
             }
 
-            if (!int.TryParse(giaRaw, out int gia)) 
+            if (!int.TryParse(giaNhapRaw, out int giaNhap)) 
             { 
                 message = "Giá phải là số nguyên"; 
                 return false; 
             }
 
-            if (gia <= 0) 
+            if (giaNhap <= 0) 
             { 
                 message = "Giá phải lớn hơn 0"; 
                 return false; 
             }
-            sp.Gia = gia;
+            sp.GiaNhap = giaNhap;
+            #endregion
+
+            #region Giá bán sản phẩm
+            if (string.IsNullOrWhiteSpace(giaBanRaw))
+            {
+                message = "Giá không được để trống";
+                return false;
+            }
+
+            if (!int.TryParse(giaBanRaw, out int giaBan))
+            {
+                message = "Giá phải là số nguyên";
+                return false;
+            }
+
+            if (giaBan <= 0)
+            {
+                message = "Giá phải lớn hơn 0";
+                return false;
+            }
+            sp.GiaBan = giaBan;
             #endregion
 
             #region Sò lương tốns
@@ -105,7 +126,7 @@ namespace BUS.QuanLySanPham
             return SanPham_DAO.ThemSanPham(sp);
         }
 
-        public static bool SuaSanPham(SanPham_DTO sp,string maSP, string giaRaw, string soLuongTonRaw, out string message)
+        public static bool SuaSanPham(SanPham_DTO sp,string maSP, string giaBanRaw, string giaNhapRaw, string soLuongTonRaw, out string message)
         {
             message = "";
 
@@ -120,26 +141,46 @@ namespace BUS.QuanLySanPham
                 message = "Size không được để trống";
                 return false;
             }
-
-            #region Giá sản phẩm
-            if (string.IsNullOrWhiteSpace(giaRaw))
+            #region Giá nhập sản phẩm
+            if (string.IsNullOrWhiteSpace(giaNhapRaw))
             {
                 message = "Giá không được để trống";
                 return false;
             }
 
-            if (!int.TryParse(giaRaw, out int gia))
+            if (!int.TryParse(giaNhapRaw, out int giaNhap))
             {
                 message = "Giá phải là số nguyên";
                 return false;
             }
 
-            if (gia <= 0)
+            if (giaNhap <= 0)
             {
                 message = "Giá phải lớn hơn 0";
                 return false;
             }
-            sp.Gia = gia;
+            sp.GiaNhap = giaNhap;
+            #endregion
+
+            #region Giá bán sản phẩm
+            if (string.IsNullOrWhiteSpace(giaBanRaw))
+            {
+                message = "Giá không được để trống";
+                return false;
+            }
+
+            if (!int.TryParse(giaBanRaw, out int giaBan))
+            {
+                message = "Giá phải là số nguyên";
+                return false;
+            }
+
+            if (giaBan <= 0)
+            {
+                message = "Giá phải lớn hơn 0";
+                return false;
+            }
+            sp.GiaBan = giaBan;
             #endregion
 
             #region Sò lương tốns

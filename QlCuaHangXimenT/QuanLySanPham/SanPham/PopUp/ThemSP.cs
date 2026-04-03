@@ -66,7 +66,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp
 
             string message;
 
-            bool kq = SanPham_BUS.ThemSanPham(sp,txtGia.Text, txtSoLuongTon.Text, out message);
+            bool kq = SanPham_BUS.ThemSanPham(sp,txtGiaBan.Text,txtGiaNhap.Text, txtSoLuongTon.Text, out message);
 
             if (kq)
             {
@@ -130,7 +130,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp
             txtMaSanPham.Clear();
             txtTenSanPham.Clear();
             txtSize.Clear();
-            txtGia.Clear();
+            txtGiaNhap.Clear();
             txtSoLuongTon.Clear();
             ptbSanPham.Image = Resources.noImg;
         }

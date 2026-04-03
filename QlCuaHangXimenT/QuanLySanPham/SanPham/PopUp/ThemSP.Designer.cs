@@ -39,7 +39,7 @@
             this.txtTenSanPham = new Guna.UI2.WinForms.Guna2TextBox();
             this.cboThuongHieu = new System.Windows.Forms.ComboBox();
             this.cboDanhMuc = new System.Windows.Forms.ComboBox();
-            this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtGiaNhap = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSize = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,6 +58,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.ptbSanPham = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnThayAnh = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.txtGiaBan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -138,10 +140,12 @@
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.BorderThickness = 0;
+            this.guna2GroupBox2.Controls.Add(this.txtGiaBan);
+            this.guna2GroupBox2.Controls.Add(this.label1);
             this.guna2GroupBox2.Controls.Add(this.txtTenSanPham);
             this.guna2GroupBox2.Controls.Add(this.cboThuongHieu);
             this.guna2GroupBox2.Controls.Add(this.cboDanhMuc);
-            this.guna2GroupBox2.Controls.Add(this.txtGia);
+            this.guna2GroupBox2.Controls.Add(this.txtGiaNhap);
             this.guna2GroupBox2.Controls.Add(this.txtSize);
             this.guna2GroupBox2.Controls.Add(this.label3);
             this.guna2GroupBox2.Controls.Add(this.label5);
@@ -154,7 +158,7 @@
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(402, 60);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(596, 330);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(596, 390);
             this.guna2GroupBox2.TabIndex = 62;
             this.guna2GroupBox2.Text = "Chi tiết sản phẩm";
             // 
@@ -197,26 +201,26 @@
             this.cboDanhMuc.Size = new System.Drawing.Size(214, 31);
             this.cboDanhMuc.TabIndex = 21;
             // 
-            // txtGia
+            // txtGiaNhap
             // 
-            this.txtGia.BorderColor = System.Drawing.Color.Black;
-            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGia.DefaultText = "";
-            this.txtGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGia.ForeColor = System.Drawing.Color.Black;
-            this.txtGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGia.Location = new System.Drawing.Point(367, 259);
-            this.txtGia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.PlaceholderText = "Giá niêm yết";
-            this.txtGia.SelectedText = "";
-            this.txtGia.Size = new System.Drawing.Size(215, 29);
-            this.txtGia.TabIndex = 17;
+            this.txtGiaNhap.BorderColor = System.Drawing.Color.Black;
+            this.txtGiaNhap.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGiaNhap.DefaultText = "";
+            this.txtGiaNhap.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGiaNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGiaNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaNhap.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaNhap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaNhap.ForeColor = System.Drawing.Color.Black;
+            this.txtGiaNhap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaNhap.Location = new System.Drawing.Point(367, 259);
+            this.txtGiaNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGiaNhap.Name = "txtGiaNhap";
+            this.txtGiaNhap.PlaceholderText = "Giá nhập";
+            this.txtGiaNhap.SelectedText = "";
+            this.txtGiaNhap.Size = new System.Drawing.Size(215, 29);
+            this.txtGiaNhap.TabIndex = 17;
             // 
             // txtSize
             // 
@@ -246,9 +250,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(364, 234);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 20);
+            this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Giá niêm yết:";
+            this.label3.Text = "Giá nhập:";
             // 
             // label5
             // 
@@ -461,6 +465,38 @@
             this.btnThayAnh.Text = "Thay ảnh";
             this.btnThayAnh.Click += new System.EventHandler(this.btnThayAnh_Click);
             // 
+            // txtGiaBan
+            // 
+            this.txtGiaBan.BorderColor = System.Drawing.Color.Black;
+            this.txtGiaBan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGiaBan.DefaultText = "";
+            this.txtGiaBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGiaBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGiaBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaBan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaBan.ForeColor = System.Drawing.Color.Black;
+            this.txtGiaBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaBan.Location = new System.Drawing.Point(367, 342);
+            this.txtGiaBan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGiaBan.Name = "txtGiaBan";
+            this.txtGiaBan.PlaceholderText = "Giá bán";
+            this.txtGiaBan.SelectedText = "";
+            this.txtGiaBan.Size = new System.Drawing.Size(215, 29);
+            this.txtGiaBan.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(364, 317);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Giá bán:";
+            // 
             // ThemSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -510,7 +546,7 @@
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2PictureBox ptbSanPham;
         private Guna.UI2.WinForms.Guna2GradientButton btnThayAnh;
-        private Guna.UI2.WinForms.Guna2TextBox txtGia;
+        private Guna.UI2.WinForms.Guna2TextBox txtGiaNhap;
         private Guna.UI2.WinForms.Guna2TextBox txtSize;
         private System.Windows.Forms.ComboBox cboThuongHieu;
         private System.Windows.Forms.ComboBox cboDanhMuc;
@@ -519,5 +555,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMaSanPham;
         private System.Windows.Forms.Label lblNgayThem;
         private Guna.UI2.WinForms.Guna2TextBox txtTenSanPham;
+        private Guna.UI2.WinForms.Guna2TextBox txtGiaBan;
+        private System.Windows.Forms.Label label1;
     }
 }

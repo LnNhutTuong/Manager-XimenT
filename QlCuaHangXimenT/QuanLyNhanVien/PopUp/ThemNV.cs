@@ -38,8 +38,8 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             nv.MaNV = txtMaNhanVien.Text.ToUpper();
             nv.TenNV = txtTenNhanVien.Text;
             nv.MaCV = cboChucVu.SelectedValue.ToString();
-            nv.Ten_dang_nhap = txtTenDangNhap.Text;
-            nv.Mat_khau = txtMatKhau.Text;
+            nv.Ten_dang_nhap = txtTenDangNhap.Text.Trim();
+            nv.Mat_khau = txtMatKhau.Text.Trim();
 
             #region Kiến thức không mới ( đừng dùng kiểu này, tốn dung lượng quán nhiều)
             //MemoryStream ms = new MemoryStream();

@@ -50,7 +50,7 @@ namespace DTO.QuanLyDonHang
                 {
 
                     Card_SanPham_Overview cardTren = new Card_SanPham_Overview();
-                    cardTren.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]), Convert.ToInt32(dr["SoLuongTon"]));
+                    cardTren.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["GiaBan"]), Convert.ToInt32(dr["SoLuongTon"]));
                     cardTren.SetContext(CardContext.ChuaVaoGio);
                     if(cardTren.SoLuongTon < 0)
                     {
@@ -58,7 +58,7 @@ namespace DTO.QuanLyDonHang
                     }
 
                     Card_SanPham_Overview cardDuoi = new Card_SanPham_Overview();
-                    cardDuoi.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]), 1); // phải gán là 1 vì nó bị ăn theo cái SetData
+                    cardDuoi.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["GiaBan"]), 1); // phải gán là 1 vì nó bị ăn theo cái SetData
                     cardDuoi.SetContext(CardContext.TrongGioHang);
                     cardDuoi.Visible = false; //ẩn                 
 
@@ -128,7 +128,7 @@ namespace DTO.QuanLyDonHang
             #region Danh sách nhân viên
             cboNhanVien.DisplayMember = "MaNV";
             cboNhanVien.ValueMember = "MaNV";
-            cboNhanVien.DataSource = NhanVien_BUS.DsNvTheoCv("CV004");
+            cboNhanVien.DataSource = NhanVien_BUS.DsNvTheoCv("CV003");
             #endregion
 
 

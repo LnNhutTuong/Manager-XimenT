@@ -47,16 +47,19 @@
             this.cboNhanVien = new System.Windows.Forms.ComboBox();
             this.txtSoLuongTon = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lblGiaNhap = new System.Windows.Forms.Label();
+            this.txtGiaNhap = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbltieudeGN = new System.Windows.Forms.Label();
             this.txtTenSanPham = new Guna.UI2.WinForms.Guna2TextBox();
             this.cboThuongHieu = new System.Windows.Forms.ComboBox();
-            this.lblGia = new System.Windows.Forms.Label();
+            this.lblGiaBan = new System.Windows.Forms.Label();
             this.cboDanhMuc = new System.Windows.Forms.ComboBox();
             this.lblSize = new System.Windows.Forms.Label();
-            this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtGiaBan = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblThuongHieu = new System.Windows.Forms.Label();
             this.txtSize = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblDanhMuc = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbltieudeGB = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -294,16 +297,19 @@
             // 
             this.guna2GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2GroupBox2.BorderThickness = 0;
+            this.guna2GroupBox2.Controls.Add(this.lblGiaNhap);
+            this.guna2GroupBox2.Controls.Add(this.txtGiaNhap);
+            this.guna2GroupBox2.Controls.Add(this.lbltieudeGN);
             this.guna2GroupBox2.Controls.Add(this.txtTenSanPham);
             this.guna2GroupBox2.Controls.Add(this.cboThuongHieu);
-            this.guna2GroupBox2.Controls.Add(this.lblGia);
+            this.guna2GroupBox2.Controls.Add(this.lblGiaBan);
             this.guna2GroupBox2.Controls.Add(this.cboDanhMuc);
             this.guna2GroupBox2.Controls.Add(this.lblSize);
-            this.guna2GroupBox2.Controls.Add(this.txtGia);
+            this.guna2GroupBox2.Controls.Add(this.txtGiaBan);
             this.guna2GroupBox2.Controls.Add(this.lblThuongHieu);
             this.guna2GroupBox2.Controls.Add(this.txtSize);
             this.guna2GroupBox2.Controls.Add(this.lblDanhMuc);
-            this.guna2GroupBox2.Controls.Add(this.label2);
+            this.guna2GroupBox2.Controls.Add(this.lbltieudeGB);
             this.guna2GroupBox2.Controls.Add(this.label3);
             this.guna2GroupBox2.Controls.Add(this.label5);
             this.guna2GroupBox2.Controls.Add(this.label1);
@@ -315,9 +321,52 @@
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(403, 65);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(578, 310);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(578, 346);
             this.guna2GroupBox2.TabIndex = 45;
             this.guna2GroupBox2.Text = "Chi tiết sản phẩm";
+            // 
+            // lblGiaNhap
+            // 
+            this.lblGiaNhap.AutoSize = true;
+            this.lblGiaNhap.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGiaNhap.ForeColor = System.Drawing.Color.Red;
+            this.lblGiaNhap.Location = new System.Drawing.Point(365, 253);
+            this.lblGiaNhap.Name = "lblGiaNhap";
+            this.lblGiaNhap.Size = new System.Drawing.Size(164, 25);
+            this.lblGiaNhap.TabIndex = 78;
+            this.lblGiaNhap.Text = "1.000.000 VNĐ";
+            // 
+            // txtGiaNhap
+            // 
+            this.txtGiaNhap.BorderColor = System.Drawing.Color.Black;
+            this.txtGiaNhap.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGiaNhap.DefaultText = "";
+            this.txtGiaNhap.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGiaNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGiaNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaNhap.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaNhap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaNhap.ForeColor = System.Drawing.Color.Black;
+            this.txtGiaNhap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaNhap.Location = new System.Drawing.Point(359, 249);
+            this.txtGiaNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGiaNhap.Name = "txtGiaNhap";
+            this.txtGiaNhap.PlaceholderText = "Giá niêm yết";
+            this.txtGiaNhap.SelectedText = "";
+            this.txtGiaNhap.Size = new System.Drawing.Size(215, 29);
+            this.txtGiaNhap.TabIndex = 79;
+            // 
+            // lbltieudeGN
+            // 
+            this.lbltieudeGN.AutoSize = true;
+            this.lbltieudeGN.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltieudeGN.ForeColor = System.Drawing.Color.Black;
+            this.lbltieudeGN.Location = new System.Drawing.Point(371, 222);
+            this.lbltieudeGN.Name = "lbltieudeGN";
+            this.lbltieudeGN.Size = new System.Drawing.Size(78, 20);
+            this.lbltieudeGN.TabIndex = 77;
+            this.lbltieudeGN.Text = "Giá nhập:";
             // 
             // txtTenSanPham
             // 
@@ -333,7 +382,7 @@
             this.txtTenSanPham.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenSanPham.ForeColor = System.Drawing.Color.Black;
             this.txtTenSanPham.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenSanPham.Location = new System.Drawing.Point(14, 30);
+            this.txtTenSanPham.Location = new System.Drawing.Point(14, 48);
             this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtTenSanPham.Name = "txtTenSanPham";
             this.txtTenSanPham.PlaceholderText = "Tên sản phẩm";
@@ -350,16 +399,16 @@
             this.cboThuongHieu.Size = new System.Drawing.Size(214, 31);
             this.cboThuongHieu.TabIndex = 75;
             // 
-            // lblGia
+            // lblGiaBan
             // 
-            this.lblGia.AutoSize = true;
-            this.lblGia.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGia.ForeColor = System.Drawing.Color.Red;
-            this.lblGia.Location = new System.Drawing.Point(369, 257);
-            this.lblGia.Name = "lblGia";
-            this.lblGia.Size = new System.Drawing.Size(164, 25);
-            this.lblGia.TabIndex = 12;
-            this.lblGia.Text = "1.000.000 VNĐ";
+            this.lblGiaBan.AutoSize = true;
+            this.lblGiaBan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGiaBan.ForeColor = System.Drawing.Color.Red;
+            this.lblGiaBan.Location = new System.Drawing.Point(365, 316);
+            this.lblGiaBan.Name = "lblGiaBan";
+            this.lblGiaBan.Size = new System.Drawing.Size(164, 25);
+            this.lblGiaBan.TabIndex = 12;
+            this.lblGiaBan.Text = "1.000.000 VNĐ";
             // 
             // cboDanhMuc
             // 
@@ -381,26 +430,26 @@
             this.lblSize.TabIndex = 11;
             this.lblSize.Text = "Free Size";
             // 
-            // txtGia
+            // txtGiaBan
             // 
-            this.txtGia.BorderColor = System.Drawing.Color.Black;
-            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGia.DefaultText = "";
-            this.txtGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGia.ForeColor = System.Drawing.Color.Black;
-            this.txtGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGia.Location = new System.Drawing.Point(358, 249);
-            this.txtGia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.PlaceholderText = "Giá niêm yết";
-            this.txtGia.SelectedText = "";
-            this.txtGia.Size = new System.Drawing.Size(215, 29);
-            this.txtGia.TabIndex = 70;
+            this.txtGiaBan.BorderColor = System.Drawing.Color.Black;
+            this.txtGiaBan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGiaBan.DefaultText = "";
+            this.txtGiaBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGiaBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGiaBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaBan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaBan.ForeColor = System.Drawing.Color.Black;
+            this.txtGiaBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaBan.Location = new System.Drawing.Point(359, 312);
+            this.txtGiaBan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGiaBan.Name = "txtGiaBan";
+            this.txtGiaBan.PlaceholderText = "Giá niêm yết";
+            this.txtGiaBan.SelectedText = "";
+            this.txtGiaBan.Size = new System.Drawing.Size(215, 29);
+            this.txtGiaBan.TabIndex = 70;
             // 
             // lblThuongHieu
             // 
@@ -445,16 +494,16 @@
             this.lblDanhMuc.TabIndex = 9;
             this.lblDanhMuc.Text = "Áo";
             // 
-            // label2
+            // lbltieudeGB
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(370, 222);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Giá niêm yết:";
+            this.lbltieudeGB.AutoSize = true;
+            this.lbltieudeGB.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltieudeGB.ForeColor = System.Drawing.Color.Black;
+            this.lbltieudeGB.Location = new System.Drawing.Point(371, 285);
+            this.lbltieudeGB.Name = "lbltieudeGB";
+            this.lbltieudeGB.Size = new System.Drawing.Size(69, 20);
+            this.lbltieudeGB.TabIndex = 8;
+            this.lbltieudeGB.Text = "Giá bán:";
             // 
             // label3
             // 
@@ -525,9 +574,9 @@
             this.guna2GroupBox3.FillColor = System.Drawing.Color.Black;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox3.Location = new System.Drawing.Point(417, 417);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(417, 424);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(578, 152);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(578, 145);
             this.guna2GroupBox3.TabIndex = 46;
             this.guna2GroupBox3.Text = "Doanh thu sản phẩm";
             // 
@@ -791,12 +840,12 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Label lblTenSP;
         private System.Windows.Forms.Label lblDanhMuc;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbltieudeGB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label line;
-        private System.Windows.Forms.Label lblGia;
+        private System.Windows.Forms.Label lblGiaBan;
         private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.Label lblThuongHieu;
         private System.Windows.Forms.Label label9;
@@ -825,10 +874,13 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTenSanPham;
         private System.Windows.Forms.ComboBox cboThuongHieu;
         private System.Windows.Forms.ComboBox cboDanhMuc;
-        private Guna.UI2.WinForms.Guna2TextBox txtGia;
+        private Guna.UI2.WinForms.Guna2TextBox txtGiaBan;
         private Guna.UI2.WinForms.Guna2TextBox txtSize;
         private System.Windows.Forms.ComboBox cboNhanVien;
         private Guna.UI2.WinForms.Guna2TextBox txtSoLuongTon;
         private Guna.UI2.WinForms.Guna2GradientButton btnThayAnh;
+        private System.Windows.Forms.Label lblGiaNhap;
+        private Guna.UI2.WinForms.Guna2TextBox txtGiaNhap;
+        private System.Windows.Forms.Label lbltieudeGN;
     }
 }

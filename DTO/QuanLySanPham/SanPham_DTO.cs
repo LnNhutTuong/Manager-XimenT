@@ -18,6 +18,7 @@ namespace DTO.QuanLySanPham
         public DateTime NgayThem { get; set; }
         public DateTime NgaySua { get; set; }
         public string HinhAnh  { get; set; }
-        public int Gia { get; set; }
+        public int GiaBan { get; set; }
+        public int GiaNhap { get; set; }
     }
 }

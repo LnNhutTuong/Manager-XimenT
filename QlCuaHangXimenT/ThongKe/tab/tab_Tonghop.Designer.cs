@@ -66,9 +66,9 @@
             this.guna2Panel1.Controls.Add(this.label9);
             this.guna2Panel1.Controls.Add(this.lblDoanhThu);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Location = new System.Drawing.Point(89, 12);
+            this.guna2Panel1.Location = new System.Drawing.Point(85, 12);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(255, 100);
+            this.guna2Panel1.Size = new System.Drawing.Size(274, 100);
             this.guna2Panel1.TabIndex = 0;
             // 
             // label9
@@ -108,9 +108,9 @@
             this.guna2Panel2.Controls.Add(this.label10);
             this.guna2Panel2.Controls.Add(this.lblSanPhamDaBan);
             this.guna2Panel2.Controls.Add(this.label4);
-            this.guna2Panel2.Location = new System.Drawing.Point(376, 12);
+            this.guna2Panel2.Location = new System.Drawing.Point(372, 12);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(255, 100);
+            this.guna2Panel2.Size = new System.Drawing.Size(274, 100);
             this.guna2Panel2.TabIndex = 4;
             // 
             // label10
@@ -126,9 +126,9 @@
             // 
             this.lblSanPhamDaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSanPhamDaBan.ForeColor = System.Drawing.Color.Black;
-            this.lblSanPhamDaBan.Location = new System.Drawing.Point(12, 58);
+            this.lblSanPhamDaBan.Location = new System.Drawing.Point(3, 58);
             this.lblSanPhamDaBan.Name = "lblSanPhamDaBan";
-            this.lblSanPhamDaBan.Size = new System.Drawing.Size(230, 29);
+            this.lblSanPhamDaBan.Size = new System.Drawing.Size(249, 29);
             this.lblSanPhamDaBan.TabIndex = 5;
             this.lblSanPhamDaBan.Text = "100,000+";
             this.lblSanPhamDaBan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -151,9 +151,9 @@
             this.guna2Panel3.Controls.Add(this.label12);
             this.guna2Panel3.Controls.Add(this.lblBiHuy);
             this.guna2Panel3.Controls.Add(this.label8);
-            this.guna2Panel3.Location = new System.Drawing.Point(947, 12);
+            this.guna2Panel3.Location = new System.Drawing.Point(943, 12);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(255, 100);
+            this.guna2Panel3.Size = new System.Drawing.Size(274, 100);
             this.guna2Panel3.TabIndex = 6;
             // 
             // label13
@@ -202,9 +202,9 @@
             this.guna2Panel4.Controls.Add(this.label11);
             this.guna2Panel4.Controls.Add(this.lblThanhCong);
             this.guna2Panel4.Controls.Add(this.label6);
-            this.guna2Panel4.Location = new System.Drawing.Point(662, 12);
+            this.guna2Panel4.Location = new System.Drawing.Point(658, 12);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(255, 100);
+            this.guna2Panel4.Size = new System.Drawing.Size(274, 100);
             this.guna2Panel4.TabIndex = 5;
             // 
             // label11
@@ -239,6 +239,7 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QlCuaHangXimenT.ThongKe.BaoCao.BieuDoDoanhThu.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(39, 141);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
