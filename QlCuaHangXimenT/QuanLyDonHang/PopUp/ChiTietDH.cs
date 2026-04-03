@@ -319,14 +319,14 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
                 if (trangThai == 0)
                 {
                     lblTrangThai.ForeColor = Color.Blue;
-                    lblTrangThai.Text = "Chưa GiaBano";
+                    lblTrangThai.Text = "Chưa Giao";
                     cboTrangThai.SelectedIndex= 0;
                     
                 }
                 else if (trangThai == 1)
                 {
                     lblTrangThai.ForeColor = Color.Yellow;
-                    lblTrangThai.Text = "Đang GiaBano";
+                    lblTrangThai.Text = "Đang Giao";
                     cboTrangThai.SelectedIndex = 1;
                 }
                 else if (trangThai == 2)

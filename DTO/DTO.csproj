@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\NguoiDung_DTO.cs" />
     <Compile Include="QuanLyDonHang\CtDonHang_DTO.cs" />
     <Compile Include="QuanLyDonHang\DonHang_DTO.cs" />
     <Compile Include="QuanLyKhachHang\KhachHang_DTO.cs" />

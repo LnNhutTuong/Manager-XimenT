@@ -111,6 +111,21 @@ namespace DAO.ThongKe
 
             return table;
         }
+
+        public static DataTable SoSanPhamBanTheoThang()
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  select MONTH(dh.NgayTao) as Thang, YEAR(dh.NgayTao) as Nam, Sum(ct.So_Luong) as SoLuongSanPham
+                                                from DonHang as dh
+                                                Join CtDonHang as ct On dh.MaDH = ct.MaDH
+                                                group by MONTH(dh.NgayTao), YEAR(dh.NgayTao)
+                                                order by Thang, Nam");
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
     }
 }
 

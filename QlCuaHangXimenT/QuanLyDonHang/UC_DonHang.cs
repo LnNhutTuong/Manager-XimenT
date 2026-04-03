@@ -25,10 +25,11 @@ namespace QlCuaHangXimenT.QuanLyDonHang
             string tuKhoa = string.IsNullOrEmpty(txtTimKiem.Text) ? null : txtTimKiem.Text;
             DataTable dsDonHang = DonHang_BUS.TimKiemDonHang(tuKhoa, trangThai);
 
+            dgvDonHang.AutoGenerateColumns = false;
             dgvDonHang.DataSource = dsDonHang;
 
-            dgvDonHang.Columns["MaKH"].Visible = false;
-            dgvDonHang.Columns["MaNV"].Visible = false;
+            //dgvDonHang.Columns["MaKH"].Visible = false;
+            //dgvDonHang.Columns["MaNV"].Visible = false;
 
             lblSoLuong.Text = dgvDonHang.Rows.Count.ToString();
 
@@ -53,7 +54,7 @@ namespace QlCuaHangXimenT.QuanLyDonHang
             dgvDonHang.Columns["TrangThai"].DisplayIndex = 4;
             dgvDonHang.Columns["XemChiTiet"].DisplayIndex = 5;
 
-            if (dgvDonHang.Columns[e.ColumnIndex].Name == "Tongtien" && e.Value != null)
+            if (dgvDonHang.Columns[e.ColumnIndex].Name == "TongTien" && e.Value != null)
             {
                 e.Value = string.Format("{0:N0} VNĐ", e.Value);
                 e.FormattingApplied = true;

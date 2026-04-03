@@ -1,7 +1,8 @@
 ﻿    using BUS;
 using BUS.Auth;
 using DTO;
-using QlCuaHangXimenT.CaiDat.HuongDanSuDung;
+using DTO.Auth;
+using QlCuaHangXimenT.CaiDat;
 using QlCuaHangXimenT.KhachHang;
 using QlCuaHangXimenT.NhanVien;
 using QlCuaHangXimenT.Properties;
@@ -16,6 +17,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +43,7 @@ namespace QlCuaHangXimenT
         private void ResetBtn()
         {
             //nut to
-            Guna.UI2.WinForms.Guna2GradientButton[] btns = { btnTrangChu, btnNhanVien, btnQuanliSanPham, btnKhachHang, btnDonHang, btnThongKe };
+            Guna.UI2.WinForms.Guna2GradientButton[] btns = { btnTrangChu, btnNhanVien, btnQuanliSanPham, btnKhachHang, btnDonHang, btnThongKe, btnCaiDat };
             foreach (var b in btns)
             {
                 b.CustomBorderThickness = new Padding(0);
@@ -160,6 +162,13 @@ namespace QlCuaHangXimenT
             content.Controls.Add(tk);
         }
 
+        private void btnCaiDat_Click(object sender, EventArgs e)
+        {
+            ActiveBtn(btnCaiDat);
+            UC_CaiDat cd = new UC_CaiDat(this.nguoiDangNhap.Ten_dang_nhap);
+            cd.Dock = DockStyle.Fill;
+            content.Controls.Add(cd);
+        }
 
         void PhanQuyen()
         {
@@ -194,7 +203,7 @@ namespace QlCuaHangXimenT
 
         }
 
-        private NhanVien_DTO nguoiDangNhap;
+        private NguoiDung_DTO nguoiDangNhap;
 
         private bool DangNhap()
         {
@@ -202,18 +211,37 @@ namespace QlCuaHangXimenT
             {
                 if(login.ShowDialog() == DialogResult.OK)
                 {
-                    this.nguoiDangNhap = login.NhanVienHienTai;
+                    this.nguoiDangNhap = login.NguoiDungHienTai;
 
                     this.Show();
 
                     PhanQuyen();
-                    MessageBox.Show("Chào bạn!");
 
-                    if (Properties.Settings.Default.ShowGuide == true)
+                    lblTenNV.Text = this.nguoiDangNhap.TenNV.ToString();
+                    lblChucVu.Text = this.nguoiDangNhap.TenCV.ToString();
+
+                    if (this.nguoiDangNhap.HinhAnh == null)
                     {
-                        thongBaoHuongDan ThongBaoHD = new thongBaoHuongDan();
-                        ThongBaoHD.ShowDialog();
+                        ptbNhanVien.Image = Resources.nonePicture;
                     }
+                    else
+                    {
+                        string pathAnh = this.nguoiDangNhap.HinhAnh.ToString();
+
+                        string fullPath = Path.Combine(Application.StartupPath, pathAnh);
+
+                        if (File.Exists(fullPath))
+                        {
+                            ptbNhanVien.Image = Image.FromFile(fullPath);
+                            ptbNhanVien.Tag = pathAnh;
+                        }
+                        else
+                        {
+                            ptbNhanVien.Image = Resources.nonePicture;
+                            MessageBox.Show(" ảnh không tồn tại nữa!");
+                        }
+                    }
+
 
                     btnDangXuat.Visible = true;
                     return true;                    
@@ -225,7 +253,6 @@ namespace QlCuaHangXimenT
             }
         }
 
-
         private void main_Load(object sender, EventArgs e)
         {
             this.Hide();
@@ -233,6 +260,10 @@ namespace QlCuaHangXimenT
             {
                 Application.Exit();
             }
+            guna2HtmlToolTip1.SetToolTip(lblHoTro, "<b style='color:Black'>Mẹo:</b> Click để xem hướng dẫn chi tiết!");
+
+            lblNgay.Text = DateTime.Today.ToString("dd-MM-yyyy");
+
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -250,5 +281,7 @@ namespace QlCuaHangXimenT
             }
 
         }
+
+      
     }
 }

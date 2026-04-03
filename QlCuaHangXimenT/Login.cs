@@ -1,5 +1,6 @@
 ﻿using BUS.Auth;
 using DTO;
+using DTO.Auth;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace QlCuaHangXimenT
     public partial class Login : Form
     {
 
-        public NhanVien_DTO NhanVienHienTai { get; private set; }
+        public NguoiDung_DTO NguoiDungHienTai { get; private set; }
         public Login()
         {
             InitializeComponent();
@@ -28,11 +29,11 @@ namespace QlCuaHangXimenT
             string matKhau = txtMatKhau.Text.Trim();
             string mess;
 
-            NhanVien_DTO user = Auth_BUS.DangNhap(tenDangNhap, matKhau, out mess);
+            NguoiDung_DTO user = Auth_BUS.DangNhap(tenDangNhap, matKhau, out mess);
 
             if (user != null)
             {
-                this.NhanVienHienTai = user;
+                this.NguoiDungHienTai = user;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -42,12 +43,44 @@ namespace QlCuaHangXimenT
             }
         }
 
-        private void btnDangNhap_KeyDown(object sender, KeyEventArgs e)
+        private void Login_KeyDown(object sender, KeyEventArgs e)
         {
-           if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                MessageBox.Show("skibidi");
-                btnDangNhap_Click(sender, e);
+                string tenDangNhap = txtTenDangNhap.Text.Trim();
+                string matKhau = txtMatKhau.Text.Trim();
+                string mess;
+
+                NguoiDung_DTO user = Auth_BUS.DangNhap(tenDangNhap, matKhau, out mess);
+
+                if (user != null)
+                {
+                    this.NguoiDungHienTai = user;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(mess, "Thông báo lỗi!");
+                }
+            }
+        }
+
+        private void txtMatKhau_IconRightClick(object sender, EventArgs e)
+        {
+            if (txtMatKhau.UseSystemPasswordChar)
+            {
+                // Hiện mật khẩu
+                txtMatKhau.UseSystemPasswordChar = false;
+                txtMatKhau.PasswordChar = '\0';
+                txtMatKhau.IconRight = Properties.Resources.view;
+            }
+            else
+            {
+                // Ẩn mật khẩu
+                txtMatKhau.UseSystemPasswordChar = true;
+                txtMatKhau.PasswordChar = '*';
+                txtMatKhau.IconRight = Properties.Resources.hide;
             }
         }
     }

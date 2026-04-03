@@ -16,13 +16,31 @@ namespace DTO.Auth
         {
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(@"Select * from NhanVien where Ten_dang_nhap = @tenDangNhap");
+            SqlCommand cmd = new SqlCommand(@"  Select *, cv.TenCV from NhanVien as nv
+                                                Join ChucVu as cv On cv.MaCV = nv.MaCV
+                                                where Ten_dang_nhap = @tenDangNhap");
 
             cmd.Parameters.Add("@tenDangNhap", SqlDbType.VarChar, 30).Value = tenDangNhap;
 
             DataTable table = dp.TruyVanLayDuLieu(cmd);
 
             return table;
+        }
+
+        public static bool DoiMatKhau(string tenDangNhap, string matKhauMoi)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Update NhanVien
+                                            Set Mat_khau = @MatKhauMoi
+                                            where Ten_dang_nhap = @tenDangNhap");
+
+            cmd.Parameters.Add("@MatKhauMoi", SqlDbType.VarChar, 250).Value = BC.HashPassword(matKhauMoi);
+            cmd.Parameters.Add("@tenDangNhap", SqlDbType.VarChar, 30).Value = tenDangNhap;
+
+            int kq = dp.TruyVanKhongLayDuLieu(cmd);
+
+            return kq > 0;
         }
 
 

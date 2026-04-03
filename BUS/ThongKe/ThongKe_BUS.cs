@@ -49,5 +49,10 @@ namespace BUS.ThongKe
         {
             return ThongKe_DAO.DoanThuTungThang();
         }
+
+        public static DataTable SoSanPhamBanTheoThang()
+        {
+            return ThongKe_DAO.SoSanPhamBanTheoThang();
+        }
     }
 }

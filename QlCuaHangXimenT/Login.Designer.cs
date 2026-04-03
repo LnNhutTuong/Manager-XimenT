@@ -34,11 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.txtTenDangNhap = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.btnDong = new Guna.UI2.WinForms.Guna2ControlBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -93,25 +93,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Mật khẩu";
             // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.BorderColor = System.Drawing.Color.White;
-            this.btnDangNhap.BorderThickness = 1;
-            this.btnDangNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDangNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDangNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangNhap.FillColor = System.Drawing.Color.Black;
-            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Location = new System.Drawing.Point(139, 418);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(136, 39);
-            this.btnDangNhap.TabIndex = 2;
-            this.btnDangNhap.Text = "Đăng nhập";
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            this.btnDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDangNhap_KeyDown);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -148,6 +129,7 @@
             this.txtMatKhau.Size = new System.Drawing.Size(339, 34);
             this.txtMatKhau.TabIndex = 1;
             this.txtMatKhau.UseSystemPasswordChar = true;
+            this.txtMatKhau.IconRightClick += new System.EventHandler(this.txtMatKhau_IconRightClick);
             // 
             // guna2ShadowPanel1
             // 
@@ -190,6 +172,24 @@
             this.txtTenDangNhap.Size = new System.Drawing.Size(339, 34);
             this.txtTenDangNhap.TabIndex = 0;
             // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.BorderColor = System.Drawing.Color.White;
+            this.btnDangNhap.BorderThickness = 1;
+            this.btnDangNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangNhap.FillColor = System.Drawing.Color.Black;
+            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangNhap.ForeColor = System.Drawing.Color.White;
+            this.btnDangNhap.Location = new System.Drawing.Point(139, 418);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(136, 39);
+            this.btnDangNhap.TabIndex = 2;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            // 
             // btnDong
             // 
             this.btnDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -206,6 +206,7 @@
             // 
             // Login
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -217,6 +218,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
@@ -231,11 +233,11 @@
         private Guna.UI2.WinForms.Guna2ControlBox btnDong;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2Button btnDangNhap;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public Guna.UI2.WinForms.Guna2TextBox txtMatKhau;
         private Guna.UI2.WinForms.Guna2TextBox txtTenDangNhap;
+        private Guna.UI2.WinForms.Guna2Button btnDangNhap;
     }
 }

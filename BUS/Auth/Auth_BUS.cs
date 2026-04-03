@@ -13,7 +13,7 @@ namespace BUS.Auth
 {
     public class Auth_BUS
     {
-        public static NhanVien_DTO DangNhap(string tenDangNhap, string matKhau, out string mess)
+        public static NguoiDung_DTO DangNhap(string tenDangNhap, string matKhau, out string mess)
         {
             mess = "";
 
@@ -25,9 +25,9 @@ namespace BUS.Auth
 
             DataTable tt = Auth_DAO.LayThongTin(tenDangNhap);
 
-            if(tt == null)
+            if(tt == null || tt.Rows.Count == 0)
             {
-                mess = "Không tồn tại nhân viên này!";
+                mess = "Tên đăng nhập không đúng!";
                 return null;
             }
             else
@@ -40,15 +40,17 @@ namespace BUS.Auth
                     {
                         mess = "Đăng nhập thành công";
 
-                        NhanVien_DTO nv = new NhanVien_DTO();
+                        NguoiDung_DTO nd = new NguoiDung_DTO();
                         DataRow row = tt.Rows[0];
 
-                        nv.MaNV = row["MaNV"].ToString();
-                        nv.TenNV = row["TenNV"].ToString();
-                        nv.MaCV = row["MaCV"].ToString();
-                        nv.HinhAnh = row["HinhAnh"].ToString();
+                        nd.MaNV = row["MaNV"].ToString();
+                        nd.TenNV = row["TenNV"].ToString();
+                        nd.MaCV = row["MaCV"].ToString();
+                        nd.TenCV = row["TenCV"].ToString();
+                        nd.HinhAnh = row["HinhAnh"].ToString();
+                        nd.Ten_dang_nhap = row["Ten_dang_nhap"].ToString();
 
-                        return nv;
+                        return nd;
                     }
                     else
                     {
@@ -67,7 +69,60 @@ namespace BUS.Auth
                 }
             }
         }
-               
 
+        public static bool DoiMatKhau(string tenDangNhap, string matKhauCu, string matKhauMoi, out string mess)
+        {
+            mess = "";
+
+            if(string.IsNullOrEmpty(matKhauMoi) || string.IsNullOrEmpty(matKhauCu))
+            {
+                mess = "Vui lòng nhập đủ mật khẩu!";
+                return false;
+            }
+            DataTable tt = Auth_DAO.LayThongTin(tenDangNhap);
+
+            if (tt == null)
+            {
+                mess = "Không tồn tại nhân viên này!";
+                return false;
+            }
+            else
+            {
+                string passwordHash = tt.Rows[0]["Mat_khau"].ToString();
+
+                try
+                {
+                    if (BC.Verify(matKhauCu, passwordHash))
+                    {
+
+                        bool kq = Auth_DAO.DoiMatKhau(tenDangNhap, matKhauMoi);
+
+                        if (kq)
+                        {
+                            mess = "Đổi mật khẩu thành công";
+                            return true;
+                        }
+                        else
+                        {
+                            mess = "Lỗi hệ thống khi cập nhật mật khẩu!";
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        mess = "Mật khẩu không chính xác !";
+                    }
+                }
+
+                catch (Exception ex) {
+                {
+                    mess = ex.ToString();
+                    return false;
+                }
+            }
+                return false;
+
+            }
+        }
     }
 }
