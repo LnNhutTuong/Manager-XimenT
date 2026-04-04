@@ -28,17 +28,14 @@ namespace QlCuaHangXimenT.QuanLyDonHang
             dgvDonHang.AutoGenerateColumns = false;
             dgvDonHang.DataSource = dsDonHang;
 
-            //dgvDonHang.Columns["MaKH"].Visible = false;
-            //dgvDonHang.Columns["MaNV"].Visible = false;
 
             lblSoLuong.Text = dgvDonHang.Rows.Count.ToString();
-
-            cboTrangThai.SelectedIndex = 0;
         }
 
         public UC_DonHang()
         {
             InitializeComponent();
+            cboTrangThai.SelectedIndex = 0;
             LayDuLieu();
         }
 

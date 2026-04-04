@@ -120,6 +120,7 @@ namespace QlCuaHangXimenT.KhachHang
             {
                 MessageBox.Show("Thêm thành công!");
                 LayDuLieu();
+                btnTaiLai_Click(sender,e);
             }
             else
             {
@@ -155,6 +156,8 @@ namespace QlCuaHangXimenT.KhachHang
             {
                 MessageBox.Show("Sửa thành công!");
                 LayDuLieu();
+                btnTaiLai_Click(sender, e);
+
             }
             else
             {

@@ -18,10 +18,8 @@ namespace QlCuaHangXimenT.ThongKe
             InitializeComponent();
         }
 
-
         tab_Tonghop th;
         tab_SanPham sp;
-        tab_DoanhThu dh;
 
         private void UC_ThongKe_Load(object sender, EventArgs e)
         {
@@ -40,20 +38,16 @@ namespace QlCuaHangXimenT.ThongKe
             #endregion
 
             #region tab Sản phẩm
-            sp = new tab_SanPham();
+            sp = new tab_SanPham(tuNgay, denNgay);
             sp.TopLevel = false; // luwu ys
             sp.Dock = DockStyle.Fill;
             tabSanPham.Controls.Add(sp);
             sp.Show();
+
+            sp.LayDuLieuTren(tuNgay, denNgay);
+            sp.LayDuLieuDuoi();
             #endregion
 
-            #region tab Doanh Thu
-            dh = new tab_DoanhThu();
-            dh.TopLevel = false; // luwu ys
-            dh.Dock = DockStyle.Fill;
-            tabDoanhThu.Controls.Add(dh);
-            dh.Show();
-            #endregion
         }
 
         private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
@@ -70,6 +64,9 @@ namespace QlCuaHangXimenT.ThongKe
             DateTime denNgay = dtpDenNgay.Value.Date;
 
             th.LayDuLieuTren(tuNgay, denNgay);
+
+            sp.LayDuLieuTren(tuNgay, denNgay);
+
 
         }
     }

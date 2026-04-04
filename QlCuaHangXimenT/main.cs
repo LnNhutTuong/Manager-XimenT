@@ -20,10 +20,13 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using BC = BCrypt.Net.BCrypt;
-
+using System.Windows.Forms;
+using System.Threading;
 namespace QlCuaHangXimenT
 {
     public partial class main : Form
@@ -177,7 +180,7 @@ namespace QlCuaHangXimenT
             if (chucvu == "ADMIN") 
             {
                 btnNhanVien.Visible = true;
-                btnSanPham.Visible = true;
+                btnQuanliSanPham.Visible = true;
                 btnKhachHang.Visible = true;
                 btnDonHang.Visible = true;
                 btnThongKe.Visible = true;
@@ -185,7 +188,7 @@ namespace QlCuaHangXimenT
 
             else if (chucvu == "CV001")
             {
-                btnSanPham.Visible = true;
+                btnQuanliSanPham.Visible = true;
                 btnThongKe.Visible = true;
             }
 
@@ -282,6 +285,5 @@ namespace QlCuaHangXimenT
 
         }
 
-      
     }
 }

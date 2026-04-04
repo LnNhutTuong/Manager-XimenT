@@ -69,7 +69,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.ThuongHieu
                 {
                     short_SanPham spSort = new short_SanPham();
 
-                    spSort.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["Gia"]));
+                    spSort.SetData(dr["MaSP"].ToString(), dr["TenSP"].ToString(), Convert.ToInt32(dr["GiaBan"]));
                     flpSanPham.Controls.Add(spSort);
                 }
             }

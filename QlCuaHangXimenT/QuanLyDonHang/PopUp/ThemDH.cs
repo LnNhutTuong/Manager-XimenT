@@ -129,7 +129,7 @@ namespace DTO.QuanLyDonHang
             #region Danh sách nhân viên
             cboNhanVien.DisplayMember = "MaNV";
             cboNhanVien.ValueMember = "MaNV";
-            cboNhanVien.DataSource = NhanVien_BUS.DsNvTheoCv("CV003");
+            cboNhanVien.DataSource = NhanVien_BUS.DsNvTheoCv("CV002");
             #endregion
 
 

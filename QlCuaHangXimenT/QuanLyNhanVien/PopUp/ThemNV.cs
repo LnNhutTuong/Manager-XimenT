@@ -39,7 +39,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             nv.TenNV = txtTenNhanVien.Text;
             nv.MaCV = cboChucVu.SelectedValue.ToString();
             nv.Ten_dang_nhap = txtTenDangNhap.Text.Trim();
-            nv.Mat_khau = txtMatKhau.Text.Trim();
+            nv.Mat_khau = "123";
 
             #region Kiến thức không mới ( đừng dùng kiểu này, tốn dung lượng quán nhiều)
             //MemoryStream ms = new MemoryStream();

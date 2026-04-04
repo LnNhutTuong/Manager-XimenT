@@ -40,8 +40,14 @@
             this.txtTenDangNhap = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.btnDong = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.pnlSplash = new Guna.UI2.WinForms.Guna2Panel();
+            this.picLoader = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
+            this.pnlSplash.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoader)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -204,6 +210,43 @@
             this.btnDong.Size = new System.Drawing.Size(45, 29);
             this.btnDong.TabIndex = 3;
             // 
+            // lblStatus
+            // 
+            this.lblStatus.Font = new System.Drawing.Font("MV Boli", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(33, 548);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(1121, 57);
+            this.lblStatus.TabIndex = 1;
+            this.lblStatus.Text = "Đang chuẩn bị cái gì";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlSplash
+            // 
+            this.pnlSplash.Controls.Add(this.lblStatus);
+            this.pnlSplash.Controls.Add(this.picLoader);
+            this.pnlSplash.FillColor = System.Drawing.Color.White;
+            this.pnlSplash.Location = new System.Drawing.Point(0, 0);
+            this.pnlSplash.Name = "pnlSplash";
+            this.pnlSplash.Size = new System.Drawing.Size(1186, 693);
+            this.pnlSplash.TabIndex = 4;
+            // 
+            // picLoader
+            // 
+            this.picLoader.BackColor = System.Drawing.Color.Transparent;
+            this.picLoader.FillColor = System.Drawing.Color.Transparent;
+            this.picLoader.ImageRotate = 0F;
+            this.picLoader.Location = new System.Drawing.Point(443, 196);
+            this.picLoader.Name = "picLoader";
+            this.picLoader.Size = new System.Drawing.Size(300, 300);
+            this.picLoader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLoader.TabIndex = 0;
+            this.picLoader.TabStop = false;
+            this.picLoader.Paint += new System.Windows.Forms.PaintEventHandler(this.picLoader_Paint_1);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Login
             // 
             this.AcceptButton = this.btnDangNhap;
@@ -211,6 +254,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1186, 693);
+            this.Controls.Add(this.pnlSplash);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.guna2PictureBox1);
@@ -218,10 +262,13 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Shown += new System.EventHandler(this.Login_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
+            this.pnlSplash.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLoader)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,5 +286,9 @@
         public Guna.UI2.WinForms.Guna2TextBox txtMatKhau;
         private Guna.UI2.WinForms.Guna2TextBox txtTenDangNhap;
         private Guna.UI2.WinForms.Guna2Button btnDangNhap;
+        private Guna.UI2.WinForms.Guna2Panel pnlSplash;
+        private System.Windows.Forms.Label lblStatus;
+        private Guna.UI2.WinForms.Guna2PictureBox picLoader;
+        private System.Windows.Forms.Timer timer1;
     }
 }

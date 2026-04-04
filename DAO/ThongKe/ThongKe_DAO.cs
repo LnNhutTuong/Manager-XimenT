@@ -13,25 +13,21 @@ namespace DAO.ThongKe
         #region TRÊN TRÊN TRÊN TRÊN
 
             #region THỐNG KÊ FULL (Doanh Thu và số lượng SP đã bán )NHƯNG THEO THỜI GIAN CHỌN TỪ DATEPICK
-        public static DataTable ThongKeTheoKhoangThoiGian(DateTime tuNgay, DateTime denNgay)
-        {
-            DataProvider dp = new DataProvider();
-            string sql = @"SELECT 
-                                CAST(dh.NgayTao AS DATE) as Ngay, 
-                                SUM(ct.Thanh_tien) as DoanhThu,
-                                SUM(ct.So_Luong) as SoLuong
-                            FROM DonHang as dh
-                            JOIN CtDonHang as ct On dh.MaDH = ct.MaDH
-                            WHERE CAST(dh.NgayTao AS DATE) BETWEEN @TuNgay AND @DenNgay and dh.TrangThai = '2'
-                            GROUP BY CAST(dh.NgayTao AS DATE)
-                            ORDER BY Ngay ASC";
+            public static DataTable ThongKeTheoKhoangThoiGian(DateTime tuNgay, DateTime denNgay)
+            {
+                DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(sql);
-            cmd.Parameters.AddWithValue("@TuNgay", tuNgay);
-            cmd.Parameters.AddWithValue("@DenNgay", denNgay);
+                SqlCommand cmd = new SqlCommand(@"SELECT SUM(ct.Thanh_tien) as DoanhThu,
+                                    SUM(ct.So_Luong) as SoLuong
+                                FROM DonHang as dh
+                                JOIN CtDonHang as ct On dh.MaDH = ct.MaDH
+                                WHERE CAST(dh.NgayTao AS DATE) BETWEEN @TuNgay AND @DenNgay and dh.TrangThai = '2'");
 
-            return dp.TruyVanLayDuLieu(cmd);
-        }
+                cmd.Parameters.AddWithValue("@TuNgay", tuNgay);
+                cmd.Parameters.AddWithValue("@DenNgay", denNgay);
+
+                return dp.TruyVanLayDuLieu(cmd);
+            }
             #endregion        
 
             #region TỔNG SỐ ĐƠN HÀNG FULL
@@ -53,24 +49,64 @@ namespace DAO.ThongKe
             }
         #endregion
 
-            #region TỔNG SỐ LƯỢNG SẢN PHẨM THEO THỜI GIAN
-            public static DataTable TongSoSanPhamTheoThoiGian(DateTime tuNgay, DateTime denNgay)
+            #region TỔNG SỐ LƯỢNG SẢN PHẨM 
+            public static DataTable TongSoSanPham()
             {
                 DataProvider dp = new DataProvider();
 
-                SqlCommand cmd = new SqlCommand(@"  Select sum(sp.SoLuongTon) as Conlai, sum(ct.So_Luong) as daban ,sum(sp.SoLuongTon + ct.So_Luong) as TongSoLuong
-                                                    from SanPham as sp 
-                                                    Join CtDonHang as ct On ct.MaSP = sp.MaSP
-                                                    where sp.MaSP = ct.MaSP adn CAST(dh.NgayTao AS DATE) BETWEEN @TuNgay AND @DenNgay");
-
-                cmd.Parameters.AddWithValue("@TuNgay", tuNgay);
-                cmd.Parameters.AddWithValue("@DenNgay", denNgay);
+                SqlCommand cmd = new SqlCommand(@"  SELECT sum (sp.SoLuongTon + ct.So_Luong) as TongSoLuong
+                                                    FROM SanPham as sp
+                                                    JOIN CtDonHang as ct On sp.MaSP = ct.MaSP");
 
                 DataTable table = dp.TruyVanLayDuLieu(cmd);
 
                 return table;
             }
-            #endregion
+        #endregion
+
+            #region TỔNG SỐ LƯỢNG SẢN PHẨM ĐÃ BÁN THEO THỜI GIAN
+        public static DataTable TongSoSanPhamDaBanTheoThoiGian(DateTime tuNgay, DateTime denNgay)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  SELECT sum (ct.So_Luong) as TongSoLuong
+                                                    From CtDonHang as ct
+                                                    Join DonHang as dh On ct.MaDH = dh.MaDH
+                                                    WHERE CAST(dh.NgayTao AS DATE) BETWEEN @TuNgay AND @DenNgay and dh.TrangThai = 2"); 
+            cmd.Parameters.AddWithValue("@TuNgay", tuNgay);
+            cmd.Parameters.AddWithValue("@DenNgay", denNgay);
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
+        #endregion
+
+            #region TỔNG SỐ THƯƠNG HIỆU
+        public static DataTable TongSoThuongHieu()
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Select Count(MaTH) as TongSoLuong from  ThuongHieu");
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
+        #endregion
+
+           #region TỔNG SỐ DANH MỤC
+        public static DataTable TongSoDanhMuc()
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"Select Count(MaDM) as TongSoLuong from  DanhMuc");
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table;
+        }
+        #endregion
 
         #endregion
 
@@ -111,21 +147,16 @@ namespace DAO.ThongKe
 
                 return table;
             }
-            #endregion
-
         #endregion
 
-
-
-        #region TỔNG SỐ LƯỢNG SẢN PHẨM ( LẪN BÁN VÀ CHƯA BÁN)
-        public static DataTable TongSoSanPham()
+        #region top 5 sản phẩm pro vip
+        public static DataTable Top5SanPham()
         {
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(@"  Select sum(sp.SoLuongTon) as Conlai, sum(ct.So_Luong) as daban ,sum(sp.SoLuongTon + ct.So_Luong) as TongSoLuong
-                                                from SanPham as sp 
-                                                Join CtDonHang as ct On ct.MaSP = sp.MaSP
-                                                where sp.MaSP = ct.MaSP");
+            SqlCommand cmd = new SqlCommand(@"  SELECT TOP 5 with ties sp.TenSP, SUM(ct.So_Luong) as SoLuong 
+                                                FROM CtDonHang ct JOIN SanPham sp ON ct.MaSP = sp.MaSP 
+                                                GROUP BY sp.TenSP ORDER BY SoLuong DESC");
 
             DataTable table = dp.TruyVanLayDuLieu(cmd);
 
@@ -133,13 +164,16 @@ namespace DAO.ThongKe
         }
         #endregion
 
-      
-        #region TỔNG SỐ THƯƠNG HIỆU
-        public static DataTable TongSoThuongHieu()
+        #region top 3 Danh Muc 
+        public static DataTable Top3DanhMuc()
         {
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(@"Select Count(MaTH) as TongSoThuongHieu from  ThuongHieu");
+            SqlCommand cmd = new SqlCommand(@"  SELECT TOP 3 with ties dm.TenDM, SUM(ct.So_Luong) as SoLuong 
+                                                FROM CtDonHang ct 
+                                                JOIN SanPham sp ON ct.MaSP = sp.MaSP 
+                                                JOIN DanhMuc dm ON sp.MaDM = dm.MaDM
+                                                GROUP BY dm.TenDM ORDER BY SoLuong DESC");
 
             DataTable table = dp.TruyVanLayDuLieu(cmd);
 
@@ -147,18 +181,25 @@ namespace DAO.ThongKe
         }
         #endregion
 
-        #region TỔNG SỐ DANH MỤC
-        public static DataTable TongSoDanhMuc()
+        #region top 3 Thuong hiu 
+        public static DataTable Top3ThuongHieu()
         {
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(@"Select Count(MaDM) as TongSoDanhMuc from  DanhMuc");
+            SqlCommand cmd = new SqlCommand(@"  SELECT TOP 3 with ties th.TenTH, SUM(ct.So_Luong) as SoLuong 
+                                                FROM CtDonHang ct 
+                                                JOIN SanPham sp ON ct.MaSP = sp.MaSP 
+                                                JOIN ThuongHieu th ON sp.MaTH = th.MaTH
+                                                GROUP BY th.TenTH ORDER BY SoLuong DESC");
 
             DataTable table = dp.TruyVanLayDuLieu(cmd);
 
             return table;
         }
         #endregion
+        #endregion
+
+
 
         #region TỔNG SỐ TIỀN NHẬP SẢN PHẨM
         public static DataTable TongSoTienNhapSP()

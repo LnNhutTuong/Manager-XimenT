@@ -54,6 +54,7 @@
             this.btnCaiDat = new Guna.UI2.WinForms.Guna2GradientButton();
             this.content = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.nav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lblHoTro)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -68,6 +69,7 @@
             // 
             // guna2ControlBox1
             // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.AutoRoundedCorners = true;
             this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.BorderRadius = 14;
@@ -82,6 +84,7 @@
             // 
             // guna2ControlBox3
             // 
+            this.guna2ControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox3.AutoRoundedCorners = true;
             this.guna2ControlBox3.BackColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox3.BorderRadius = 14;
@@ -512,5 +515,6 @@
         private System.Windows.Forms.Label lblNgay;
         private Guna.UI2.WinForms.Guna2PictureBox lblHoTro;
         private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

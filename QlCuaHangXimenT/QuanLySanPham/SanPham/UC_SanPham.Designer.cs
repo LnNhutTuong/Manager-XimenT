@@ -60,12 +60,11 @@
             // 
             // flpSanPham
             // 
-            this.flpSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpSanPham.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flpSanPham.AutoScroll = true;
             this.flpSanPham.BackColor = System.Drawing.Color.White;
             this.flpSanPham.Location = new System.Drawing.Point(0, 288);
-            this.flpSanPham.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.flpSanPham.Name = "flpSanPham";
             this.flpSanPham.Padding = new System.Windows.Forms.Padding(46, 2, 46, 2);
             this.flpSanPham.Size = new System.Drawing.Size(983, 348);
@@ -86,7 +85,7 @@
             this.cboDanhMuc.Items.AddRange(new object[] {
             "..."});
             this.cboDanhMuc.Location = new System.Drawing.Point(101, 38);
-            this.cboDanhMuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboDanhMuc.Margin = new System.Windows.Forms.Padding(2);
             this.cboDanhMuc.Name = "cboDanhMuc";
             this.cboDanhMuc.Size = new System.Drawing.Size(169, 36);
             this.cboDanhMuc.TabIndex = 161;
@@ -111,7 +110,7 @@
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.Location = new System.Drawing.Point(13, 20);
-            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(926, 93);
             this.guna2GroupBox2.TabIndex = 168;
@@ -188,7 +187,7 @@
             this.btnResetFilter.ForeColor = System.Drawing.Color.White;
             this.btnResetFilter.Image = global::QlCuaHangXimenT.Properties.Resources.undo;
             this.btnResetFilter.Location = new System.Drawing.Point(842, 40);
-            this.btnResetFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetFilter.Name = "btnResetFilter";
             this.btnResetFilter.Size = new System.Drawing.Size(26, 23);
             this.btnResetFilter.TabIndex = 168;
@@ -209,7 +208,7 @@
             this.cboThuongHieu.Items.AddRange(new object[] {
             "..."});
             this.cboThuongHieu.Location = new System.Drawing.Point(301, 38);
-            this.cboThuongHieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboThuongHieu.Margin = new System.Windows.Forms.Padding(2);
             this.cboThuongHieu.Name = "cboThuongHieu";
             this.cboThuongHieu.Size = new System.Drawing.Size(169, 36);
             this.cboThuongHieu.TabIndex = 174;
@@ -220,7 +219,7 @@
             this.dtpKetThuc.CustomFormat = "dd-MM-yyyy";
             this.dtpKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpKetThuc.Location = new System.Drawing.Point(678, 38);
-            this.dtpKetThuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpKetThuc.Margin = new System.Windows.Forms.Padding(2);
             this.dtpKetThuc.Name = "dtpKetThuc";
             this.dtpKetThuc.Size = new System.Drawing.Size(151, 29);
             this.dtpKetThuc.TabIndex = 180;
@@ -231,7 +230,7 @@
             this.dtpBatDau.CustomFormat = "dd-MM-yyyy";
             this.dtpBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBatDau.Location = new System.Drawing.Point(500, 40);
-            this.dtpBatDau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpBatDau.Margin = new System.Windows.Forms.Padding(2);
             this.dtpBatDau.Name = "dtpBatDau";
             this.dtpBatDau.Size = new System.Drawing.Size(151, 29);
             this.dtpBatDau.TabIndex = 179;
@@ -265,7 +264,7 @@
             // 
             // filterContent
             // 
-            this.filterContent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.filterContent.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.filterContent.BackColor = System.Drawing.Color.Transparent;
             this.filterContent.BorderColor = System.Drawing.Color.Silver;
             this.filterContent.BorderRadius = 15;
@@ -276,7 +275,7 @@
             this.filterContent.Controls.Add(this.label9);
             this.filterContent.FillColor = System.Drawing.Color.White;
             this.filterContent.Location = new System.Drawing.Point(16, 82);
-            this.filterContent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.filterContent.Margin = new System.Windows.Forms.Padding(2);
             this.filterContent.Name = "filterContent";
             this.filterContent.Size = new System.Drawing.Size(951, 202);
             this.filterContent.TabIndex = 172;
@@ -315,7 +314,7 @@
             this.guna2VScrollBar1.InUpdate = false;
             this.guna2VScrollBar1.LargeChange = 10;
             this.guna2VScrollBar1.Location = new System.Drawing.Point(965, 288);
-            this.guna2VScrollBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2VScrollBar1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2VScrollBar1.Name = "guna2VScrollBar1";
             this.guna2VScrollBar1.ScrollbarSize = 18;
             this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 348);
@@ -323,7 +322,7 @@
             // 
             // header
             // 
-            this.header.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.header.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.header.BackColor = System.Drawing.Color.Transparent;
             this.header.BorderColor = System.Drawing.Color.Silver;
             this.header.BorderRadius = 15;
@@ -335,7 +334,7 @@
             this.header.Controls.Add(this.btnThem);
             this.header.FillColor = System.Drawing.Color.White;
             this.header.Location = new System.Drawing.Point(16, 16);
-            this.header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.header.Margin = new System.Windows.Forms.Padding(2);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(951, 61);
             this.header.TabIndex = 171;
@@ -354,7 +353,7 @@
             this.btnXoaSanPham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaSanPham.ForeColor = System.Drawing.Color.Black;
             this.btnXoaSanPham.Location = new System.Drawing.Point(650, 10);
-            this.btnXoaSanPham.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaSanPham.Name = "btnXoaSanPham";
             this.btnXoaSanPham.Size = new System.Drawing.Size(158, 40);
             this.btnXoaSanPham.TabIndex = 159;
@@ -398,7 +397,7 @@
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
             this.guna2GroupBox1.Location = new System.Drawing.Point(812, 11);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(127, 40);
             this.guna2GroupBox1.TabIndex = 158;
@@ -446,7 +445,7 @@
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = global::QlCuaHangXimenT.Properties.Resources.plus;
             this.btnThem.Location = new System.Drawing.Point(487, 10);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(158, 40);
             this.btnThem.TabIndex = 152;
@@ -462,7 +461,7 @@
             this.Controls.Add(this.flpSanPham);
             this.Controls.Add(this.header);
             this.Controls.Add(this.filterContent);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_SanPham";
             this.Size = new System.Drawing.Size(983, 636);
             this.guna2GroupBox2.ResumeLayout(false);

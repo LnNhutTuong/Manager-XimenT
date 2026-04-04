@@ -249,12 +249,6 @@
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="ThongKe\tab\tab_DoanhThu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThongKe\tab\tab_DoanhThu.Designer.cs">
-      <DependentUpon>tab_DoanhThu.cs</DependentUpon>
-    </Compile>
     <Compile Include="ThongKe\tab\tab_SanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,9 +346,6 @@
     <EmbeddedResource Include="ThongKe\tab\tab_SanPham.resx">
       <DependentUpon>tab_SanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongKe\tab\tab_DoanhThu.resx">
-      <DependentUpon>tab_DoanhThu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ThongKe\tab\tab_Tonghop.resx">
       <DependentUpon>tab_Tonghop.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,9 +382,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Adobe Express - file.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\home.png" />
   </ItemGroup>
   <ItemGroup>
@@ -421,12 +409,6 @@
     <None Include="Resources\plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\temp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\temp1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\noImg.png" />
   </ItemGroup>
   <ItemGroup>
@@ -436,10 +418,6 @@
     <None Include="Resources\ecommerce.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\a.png" />
-    <None Include="Resources\b.png" />
-    <None Include="Resources\setnAGUfQrPdNo.png" />
-    <None Include="Resources\setnAGUfQrPdNo.jpg" />
     <None Include="Resources\Gemini_Generated_Image_n3gj0ln3gj0ln3gj.png" />
     <None Include="Resources\setnAGUfQrPdNo %281%29.png" />
     <None Include="Resources\question-sign.png" />
@@ -469,9 +447,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ThongKe\BaoCao\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3856.49\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3856.49\build\Microsoft.Web.WebView2.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

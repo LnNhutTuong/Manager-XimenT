@@ -40,7 +40,6 @@
             this.tcThongKe = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabTongHop = new System.Windows.Forms.TabPage();
             this.tabSanPham = new System.Windows.Forms.TabPage();
-            this.tabDoanhThu = new System.Windows.Forms.TabPage();
             this.guna2Panel5.SuspendLayout();
             this.tcThongKe.SuspendLayout();
             this.SuspendLayout();
@@ -178,7 +177,6 @@
             // 
             this.tcThongKe.Controls.Add(this.tabTongHop);
             this.tcThongKe.Controls.Add(this.tabSanPham);
-            this.tcThongKe.Controls.Add(this.tabDoanhThu);
             this.tcThongKe.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tcThongKe.ItemSize = new System.Drawing.Size(180, 50);
             this.tcThongKe.Location = new System.Drawing.Point(0, 126);
@@ -229,17 +227,6 @@
             this.tabSanPham.Text = "Thông kế Sản phẩm";
             this.tabSanPham.UseVisualStyleBackColor = true;
             // 
-            // tabDoanhThu
-            // 
-            this.tabDoanhThu.Location = new System.Drawing.Point(4, 54);
-            this.tabDoanhThu.Margin = new System.Windows.Forms.Padding(2);
-            this.tabDoanhThu.Name = "tabDoanhThu";
-            this.tabDoanhThu.Padding = new System.Windows.Forms.Padding(2);
-            this.tabDoanhThu.Size = new System.Drawing.Size(975, 452);
-            this.tabDoanhThu.TabIndex = 2;
-            this.tabDoanhThu.Text = "Thống kê Doanh thu";
-            this.tabDoanhThu.UseVisualStyleBackColor = true;
-            // 
             // UC_ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,6 +263,5 @@
         private Guna.UI2.WinForms.Guna2TabControl tcThongKe;
         private System.Windows.Forms.TabPage tabSanPham;
         private System.Windows.Forms.TabPage tabTongHop;
-        private System.Windows.Forms.TabPage tabDoanhThu;
     }
 }
