@@ -55,9 +55,7 @@ namespace BUS.Auth
                     else
                     {
 
-                        mess = "Mật khẩu không chính xác!" +
-                                "pass hash:" + passwordHash + " " +
-                                "pass bth: " + matKhau;
+                        mess = "Mật khẩu không chính xác!";
                         return null;
                     }
                 }

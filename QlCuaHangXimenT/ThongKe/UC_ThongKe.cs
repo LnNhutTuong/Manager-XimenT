@@ -35,7 +35,8 @@ namespace QlCuaHangXimenT.ThongKe
             tabTongHop.Controls.Add(th);
             th.Show();
 
-            th.LayDuLieu(tuNgay, denNgay);
+            th.LayDuLieuTren(tuNgay, denNgay);
+            th.LayDuLieuDuoi();
             #endregion
 
             #region tab Sản phẩm
@@ -68,7 +69,7 @@ namespace QlCuaHangXimenT.ThongKe
             DateTime tuNgay = dtpTuNgay.Value.Date;
             DateTime denNgay = dtpDenNgay.Value.Date;
 
-            th.LayDuLieu(tuNgay, denNgay);
+            th.LayDuLieuTren(tuNgay, denNgay);
 
         }
     }
