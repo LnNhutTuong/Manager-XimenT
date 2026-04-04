@@ -25,10 +25,10 @@ namespace QlCuaHangXimenT.ThongKe.tab
             int tienNhap = Convert.ToInt32(rowTienNhap["GiaNhap"]);
             lblTongTienNhapHang.Text = tienNhap.ToString("N0") + " VNĐ";
 
-            DataTable ThongKe = ThongKe_BUS.DoanhThuVaSoLuongSanPham();
-            DataRow row = ThongKe.Rows[0];
-            var doanhThu = row["TongTien"] == DBNull.Value ? 0 : row["TongTien"];
-            lblDoanhThu.Text = Convert.ToInt32(doanhThu).ToString("N0") + " VNĐ";
+            //DataTable ThongKe = ThongKe_BUS.DoanhThuVaSoLuongSanPham();
+            //DataRow row = ThongKe.Rows[0];
+            //var doanhThu = row["TongTien"] == DBNull.Value ? 0 : row["TongTien"];
+            //lblDoanhThu.Text = Convert.ToInt32(doanhThu).ToString("N0") + " VNĐ";
 
             DataTable DonHangThanhCong = ThongKe_BUS.DonHangTheoTrangThai(2);
             DataRow rowThanhCong = DonHangThanhCong.Rows[0];
@@ -36,7 +36,7 @@ namespace QlCuaHangXimenT.ThongKe.tab
 
             DataTable LoiNhuan = ThongKe_BUS.LoiNhuan();
             DataRow rowLoiNhuan = LoiNhuan.Rows[0];
-            var loiNhuan = rowLoiNhuan["LoiNhuan"] == DBNull.Value ? 0 : row["LoiNhuan"];
+            var loiNhuan = rowLoiNhuan["LoiNhuan"] == DBNull.Value ? 0 : rowLoiNhuan["LoiNhuan"];
             lblLoiNhuan.Text = Convert.ToInt32(loiNhuan).ToString("N0") + " VNĐ";
 
             this.reportViewer2.RefreshReport();

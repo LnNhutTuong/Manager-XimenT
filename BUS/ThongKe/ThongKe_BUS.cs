@@ -10,9 +10,13 @@ namespace BUS.ThongKe
 {
     public class ThongKe_BUS
     {
-        public static DataTable DoanhThuVaSoLuongSanPham()
+        public static DataTable ThongKeFull()
         {
-            return ThongKe_DAO.DoanhThuVaSoLuongSanPham();
+            return ThongKe_DAO.ThongKeFull();
+        }
+        public static DataTable ThongKeTheoKhoangThoiGian(DateTime tuNgay, DateTime denNgay)
+        {
+            return ThongKe_DAO.ThongKeTheoKhoangThoiGian(tuNgay,denNgay);
         }
 
         public static DataTable DonHangTheoTrangThai(int trangThai)
@@ -45,14 +49,11 @@ namespace BUS.ThongKe
             return ThongKe_DAO.LoiNhuan();
         }
 
-        public static DataTable DoanhThuTungThang()
+        public static DataTable ThongKeTheoThang()
         {
-            return ThongKe_DAO.DoanThuTungThang();
+            return ThongKe_DAO.ThongKeTheoThang();
         }
 
-        public static DataTable SoSanPhamBanTheoThang()
-        {
-            return ThongKe_DAO.SoSanPhamBanTheoThang();
-        }
+
     }
 }

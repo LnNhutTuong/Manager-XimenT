@@ -10,17 +10,39 @@ namespace DAO.ThongKe
 {
     public class ThongKe_DAO
     {
-        public static DataTable DoanhThuVaSoLuongSanPham()
+        public static DataTable ThongKeFull()
         {
             DataProvider dp = new DataProvider();
+            string sql = @"    SELECT 
+                                SUM(ct.Thanh_tien) as DoanhThu,
+                                SUM(ct.So_Luong) as SoLuong
+                            FROM DonHang as dh
+                            JOIN CtDonHang as ct On dh.MaDH = ct.MaDH
+                             WHERE  dh.TrangThai = '2'";
 
-            SqlCommand cmd = new SqlCommand(@"  Select Sum(ct.Thanh_tien) as TongTien, sum(ct.So_Luong) as SoLuongSanPhamBanRa 
-                                                from CtDonHang as ct
-                                                join DonHang as dh On ct.MaDH = dh.MaDH
-                                                Where dh.TrangThai = '2'");
-            DataTable table = dp.TruyVanLayDuLieu(cmd);
+            SqlCommand cmd = new SqlCommand(sql);
 
-            return table;
+            return dp.TruyVanLayDuLieu(cmd);
+        }
+
+        public static DataTable ThongKeTheoKhoangThoiGian(DateTime tuNgay, DateTime denNgay)
+        {
+            DataProvider dp = new DataProvider();
+            string sql = @"SELECT 
+                                CAST(dh.NgayTao AS DATE) as Ngay, 
+                                SUM(ct.Thanh_tien) as DoanhThu,
+                                SUM(ct.So_Luong) as SoLuong
+                            FROM DonHang as dh
+                            JOIN CtDonHang as ct On dh.MaDH = ct.MaDH
+                            WHERE CAST(dh.NgayTao AS DATE) BETWEEN @TuNgay AND @DenNgay and dh.TrangThai = '2'
+                            GROUP BY CAST(dh.NgayTao AS DATE)
+                            ORDER BY Ngay ASC";
+
+            SqlCommand cmd = new SqlCommand(sql);
+            cmd.Parameters.AddWithValue("@TuNgay", tuNgay);
+            cmd.Parameters.AddWithValue("@DenNgay", denNgay);
+
+            return dp.TruyVanLayDuLieu(cmd);
         }
 
         public static DataTable LayDonHangTheoTrangThai(int trangThai)
@@ -95,36 +117,25 @@ namespace DAO.ThongKe
             DataTable table = dp.TruyVanLayDuLieu(cmd);
 
             return table; 
-        } 
-
-        public static DataTable DoanThuTungThang()
-        {
-            DataProvider dp = new DataProvider();
-
-            SqlCommand cmd = new SqlCommand(@"  select MONTH(dh.NgayTao) as Thang, YEAR(dh.NgayTao) as Nam, Sum(ct.Thanh_tien) as thanhTien
-                                                from DonHang as dh
-                                                Join CtDonHang as ct On dh.MaDH = ct.MaDH
-                                                group by MONTH(dh.NgayTao), YEAR(dh.NgayTao)
-                                                order by Thang, Nam");
-
-            DataTable table = dp.TruyVanLayDuLieu(cmd);
-
-            return table;
         }
 
-        public static DataTable SoSanPhamBanTheoThang()
+        public static DataTable ThongKeTheoThang()
         {
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(@"  select MONTH(dh.NgayTao) as Thang, YEAR(dh.NgayTao) as Nam, Sum(ct.So_Luong) as SoLuongSanPham
-                                                from DonHang as dh
-                                                Join CtDonHang as ct On dh.MaDH = ct.MaDH
-                                                group by MONTH(dh.NgayTao), YEAR(dh.NgayTao)
-                                                order by Thang, Nam");
+            string sql = @"SELECT 
+                                MONTH(dh.NgayTao) AS Thang, 
+                                YEAR(dh.NgayTao) AS Nam, 
+                                SUM(ct.Thanh_tien) AS DoanhThu, 
+                                SUM(ct.So_Luong) AS SoLuongSanPham
+                           FROM DonHang AS dh
+                           JOIN CtDonHang AS ct ON dh.MaDH = ct.MaDH
+                           GROUP BY MONTH(dh.NgayTao), YEAR(dh.NgayTao)
+                           ORDER BY Nam ASC, Thang ASC";
 
-            DataTable table = dp.TruyVanLayDuLieu(cmd);
+            SqlCommand cmd = new SqlCommand(sql);
 
-            return table;
+            return dp.TruyVanLayDuLieu(cmd);
         }
     }
 }

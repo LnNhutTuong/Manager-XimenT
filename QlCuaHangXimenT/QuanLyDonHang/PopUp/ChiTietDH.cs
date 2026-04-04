@@ -64,11 +64,10 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
 
         public void LayDuLieuCBO()
         {
-
             #region Danh sách nhân viên
             cboNhanVien.DisplayMember = "MaNV";
             cboNhanVien.ValueMember = "MaNV";
-            cboNhanVien.DataSource = NhanVien_BUS.DsNvTheoCv("CV004");
+            cboNhanVien.DataSource = NhanVien_BUS.DsNvTheoCv("CV003");
             #endregion
 
 
@@ -86,6 +85,7 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
             this.ctDonHang = ctDonHang; 
 
             InitializeComponent();
+
             LayDuLieuCBO();
 
         }
@@ -254,13 +254,14 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            decimal TongTien = 0;
+
             #region dữ liệu Đơn hàng
             DonHang_DTO dh = new DonHang_DTO();
             dh.MaDH = lblMaDonHang.Text.ToUpper();
             dh.MaNV = cboNhanVien.SelectedValue.ToString();
             dh.MaKH = cboKhachHang.SelectedValue.ToString();
             dh.TrangThai = Convert.ToInt32(cboTrangThai.SelectedIndex);
-            //dh.TrangThai = 
             #endregion
 
             #region dữ liệu Danh sách đơn hàng
@@ -278,8 +279,13 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
                     ct.SoLuong = item.SoLuongMua;
 
                     ctdh.Add(ct);
+
+                    TongTien += item.giaTien * item.SoLuongMua;
                 }
             }
+
+            dh.TongTien = Convert.ToInt32(TongTien);
+
 
             #endregion
             string message;
@@ -305,7 +311,7 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
             #region Thông tin chi tiết 
             DataRow row = donHang.Rows[0];
 
-            if(donHang.Rows.Count >0)
+            if(donHang.Rows.Count > 0)
             {
                 lblMaDonHang.Text = row["MaDH"].ToString();
 
@@ -314,6 +320,8 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
 
                 lblKhachHang.Text = row["TenKH"].ToString();
                 cboKhachHang.SelectedValue = row["MaKH"].ToString();
+
+                lblNgayLap.Text = row["NgayTao"].ToString();
 
                 int trangThai = Convert.ToInt32(row["TrangThai"]);
                 if (trangThai == 0)

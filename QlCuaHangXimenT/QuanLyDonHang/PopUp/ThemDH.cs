@@ -29,6 +29,7 @@ namespace DTO.QuanLyDonHang
         void tinhTongTien()
         {
             decimal TongTien = 0;
+
             foreach (Control sanpham in flpGioHang.Controls)
             {
                 if (sanpham is Card_SanPham_Overview item && sanpham.Visible == true)
@@ -153,12 +154,14 @@ namespace DTO.QuanLyDonHang
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            decimal TongTien= 0;
+
             #region dữ liệu Đơn hàng
             DonHang_DTO dh = new DonHang_DTO();
             dh.MaDH = txtMaDonHang.Text.ToUpper();
             dh.MaNV = cboNhanVien.SelectedValue.ToString();
             dh.MaKH = cboKhachHang.SelectedValue.ToString();
-            dh.NgayTao = DateTime.Today;
+            dh.NgayTao = DateTime.Today.Date;
             #endregion
 
             #region dữ liệu Danh sách đơn hàng
@@ -172,13 +175,16 @@ namespace DTO.QuanLyDonHang
                     CtDonHang_DTO ct = new CtDonHang_DTO();
                     ct.MaDH = dh.MaDH;
                     ct.MaSP = item.maSP;
-                    ct.MaSP = item.maSP;
                     ct.DonGia = item.giaTien;
                     ct.SoLuong = item.SoLuongMua;
-
                     ctdh.Add(ct);
+
+                    TongTien += item.giaTien * item.SoLuongMua;
                 }
             }
+
+            dh.TongTien = Convert.ToInt32(TongTien);
+
 
             #endregion
             string message;

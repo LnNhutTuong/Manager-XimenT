@@ -41,10 +41,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabHDSD = new System.Windows.Forms.TabPage();
+            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.content.SuspendLayout();
             this.tabHuongDanSuDung.SuspendLayout();
             this.tabDoiMatKhau.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
+            this.tabHDSD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
             // content
@@ -100,6 +103,9 @@
             // 
             // guna2ShadowPanel1
             // 
+            this.guna2ShadowPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel1.Controls.Add(this.txtNhapLai);
             this.guna2ShadowPanel1.Controls.Add(this.txtMatKhauMoi);
@@ -254,6 +260,7 @@
             // 
             // tabHDSD
             // 
+            this.tabHDSD.Controls.Add(this.webView21);
             this.tabHDSD.Location = new System.Drawing.Point(4, 44);
             this.tabHDSD.Name = "tabHDSD";
             this.tabHDSD.Padding = new System.Windows.Forms.Padding(3);
@@ -262,6 +269,18 @@
             this.tabHDSD.Text = "Hướng dẫn sử dụng";
             this.tabHDSD.UseVisualStyleBackColor = true;
             // 
+            // webView21
+            // 
+            this.webView21.AllowExternalDrop = true;
+            this.webView21.CreationProperties = null;
+            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webView21.Location = new System.Drawing.Point(3, 3);
+            this.webView21.Name = "webView21";
+            this.webView21.Size = new System.Drawing.Size(928, 582);
+            this.webView21.TabIndex = 0;
+            this.webView21.ZoomFactor = 1D;
+            // 
             // UC_CaiDat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,11 +288,14 @@
             this.Controls.Add(this.content);
             this.Name = "UC_CaiDat";
             this.Size = new System.Drawing.Size(942, 636);
+            this.Load += new System.EventHandler(this.UC_CaiDat_Load);
             this.content.ResumeLayout(false);
             this.tabHuongDanSuDung.ResumeLayout(false);
             this.tabDoiMatKhau.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
+            this.tabHDSD.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,5 +315,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtNhapLai;
         private Guna.UI2.WinForms.Guna2TextBox txtMatKhauMoi;
         private Guna.UI2.WinForms.Guna2TextBox txtMatKhauCu;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
     }
 }

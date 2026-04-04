@@ -19,7 +19,8 @@ namespace QlCuaHangXimenT.CaiDat
             InitializeComponent();
             this.tenDangNhap = tenDangNhap;
 
-            //MessageBox.Show(tenDangNhap);
+
+            
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -103,6 +104,18 @@ namespace QlCuaHangXimenT.CaiDat
                 txtNhapLai.UseSystemPasswordChar = true;
                 txtNhapLai.PasswordChar = '*';
                 txtNhapLai.IconRight = Properties.Resources.hide;
+            }
+        }
+
+        private async void  UC_CaiDat_Load(object sender, EventArgs e)
+        {
+            string pdfPath = Application.StartupPath + @"\HuongDan.pdf";
+            if (System.IO.File.Exists(pdfPath))
+            {
+                await webView21.EnsureCoreWebView2Async(null);
+
+                // Navigate thẳng tới file PDF
+                webView21.CoreWebView2.Navigate(pdfPath);
             }
         }
     }

@@ -13,42 +13,78 @@ namespace QlCuaHangXimenT.ThongKe.tab
 {
     public partial class tab_Tonghop : Form
     {
-        public tab_Tonghop()
+        DateTime tuNgay;
+        DateTime denNgay;
+        public tab_Tonghop(DateTime tuNgay, DateTime denNgay)
         {
             InitializeComponent();
+
+            this.tuNgay = tuNgay;
+            this.denNgay = denNgay;
         }
 
-        void LayDuLieu()
+        public void LayDuLieu(DateTime tuNgay, DateTime denNgay)
         {
-            DataTable doanhThu12Thang = ThongKe_BUS.DoanhThuTungThang();
+            this.tuNgay = tuNgay;
+            this.denNgay = denNgay;
 
+            #region thống kê theo ngay
+            DataTable ThongKeFull = ThongKe_BUS.ThongKeFull();
+            if (ThongKeFull != null && ThongKeFull.Rows.Count > 0)
+            {
+                DataRow row = ThongKeFull.Rows[0];
+                var doanhThu = row["DoanhThu"] == DBNull.Value ? 0 : row["DoanhThu"];
+                var soSanPhamDaBan = row["SoLuong"] == DBNull.Value ? 0 : row["SoLuong"];
+
+                lblDoanhThu.Text = Convert.ToDecimal(doanhThu).ToString("N0") + " VNĐ";
+                lblSanPhamDaBan.Text = soSanPhamDaBan.ToString() + " sản phẩm";
+            }
+            else
+            {
+                lblDoanhThu.Text = "0 VNĐ";
+                lblSanPhamDaBan.Text = "0 sản phẩm";
+            }
+            #endregion
+
+
+            //#region thống kê theo ngay
+            //DataTable ThongKeTheoNgay = ThongKe_BUS.ThongKeTheoKhoangThoiGian(tuNgay, denNgay);
+            //if (ThongKeTheoNgay != null && ThongKeTheoNgay.Rows.Count > 0)
+            //{
+            //    DataRow row = ThongKeTheoNgay.Rows[0];
+            //    var doanhThu = row["DoanhThu"] == DBNull.Value ? 0 : row["DoanhThu"];
+            //    var soSanPhamDaBan = row["SoLuong"] == DBNull.Value ? 0 : row["SoLuong"];
+
+            //    lblDoanhThu.Text = Convert.ToDecimal(doanhThu).ToString("N0") + " VNĐ";
+            //    lblSanPhamDaBan.Text = soSanPhamDaBan.ToString() + " sản phẩm";
+            //}
+            //else
+            //{
+            //    lblDoanhThu.Text = "0 VNĐ";
+            //    lblSanPhamDaBan.Text = "0 sản phẩm";
+            //}
+            //#endregion
+
+            #region thống kê đơn xanh
+            DataTable DonHangThanhCong = ThongKe_BUS.DonHangTheoTrangThai(2); 
+            if (DonHangThanhCong != null && DonHangThanhCong.Rows.Count > 0)
+            {
+                lblThanhCong.Text = DonHangThanhCong.Rows[0]["SoDonHang"].ToString() + " đơn";
+            }
+            else { lblThanhCong.Text = "0 đơn"; }
+            #endregion
+
+            #region thống kê đơn đỏ
+            DataTable DonHangThatBai = ThongKe_BUS.DonHangTheoTrangThai(3); 
+            if (DonHangThatBai != null && DonHangThatBai.Rows.Count > 0)
+            {
+                lblBiHuy.Text = DonHangThatBai.Rows[0]["SoDonHang"].ToString() + " đơn";
+            }
+            else { lblBiHuy.Text = "0 đơn"; }
+            #endregion
+            // this.reportViewer1.RefreshReport(); 
         }
 
-        private void tab_Tonghop_Load(object sender, EventArgs e)
-        {
-            DataTable ThongKe = ThongKe_BUS.DoanhThuVaSoLuongSanPham();
 
-            DataRow row = ThongKe.Rows[0];
-
-            var doanhThu = row["TongTien"] == DBNull.Value ? 0 : row["TongTien"];
-
-            var soSanPhamDaBan = row["SoLuongSanPhamBanRa"] == DBNull.Value ? 0 : row["SoLuongSanPhamBanRa"];
-
-            lblDoanhThu.Text = Convert.ToInt32(doanhThu).ToString("N0") + " VNĐ";
-            lblSanPhamDaBan.Text = soSanPhamDaBan.ToString() + " sản phẩm";
-
-            DataTable DonHangThanhCong = ThongKe_BUS.DonHangTheoTrangThai(2);
-            DataRow rowThanhCong = DonHangThanhCong.Rows[0];
-            lblThanhCong.Text = rowThanhCong["SoDonHang"].ToString() + " đơn";
-
-            DataTable DonHangThatBai = ThongKe_BUS.DonHangTheoTrangThai(3);
-            DataRow rowThatBai = DonHangThatBai.Rows[0];
-            lblBiHuy.Text = rowThatBai["SoDonHang"].ToString() + " đơn";
-
-
-
-
-            this.reportViewer1.RefreshReport();
-        }
     }
 }

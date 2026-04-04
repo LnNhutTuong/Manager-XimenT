@@ -43,7 +43,7 @@ namespace QlCuaHangXimenT
         private void ResetBtn()
         {
             //nut to
-            Guna.UI2.WinForms.Guna2GradientButton[] btns = { btnTrangChu, btnNhanVien, btnQuanliSanPham, btnKhachHang, btnDonHang, btnThongKe, btnCaiDat };
+            Guna.UI2.WinForms.Guna2GradientButton[] btns = { btnNhanVien, btnQuanliSanPham, btnKhachHang, btnDonHang, btnThongKe, btnCaiDat };
             foreach (var b in btns)
             {
                 b.CustomBorderThickness = new Padding(0);

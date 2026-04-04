@@ -32,8 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dtpKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.dtpBatDau = new System.Windows.Forms.DateTimePicker();
+            this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
+            this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -51,9 +51,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 25);
+            this.label1.Location = new System.Drawing.Point(35, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 50);
+            this.label1.Size = new System.Drawing.Size(156, 40);
             this.label1.TabIndex = 158;
             this.label1.Text = "Thống kê";
             // 
@@ -63,9 +64,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(53, 76);
+            this.label2.Location = new System.Drawing.Point(40, 62);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 16);
+            this.label2.Size = new System.Drawing.Size(161, 13);
             this.label2.TabIndex = 159;
             this.label2.Text = "Thống kê và báo cáo doanh thu";
             // 
@@ -76,9 +78,10 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(244, 17);
+            this.label8.Location = new System.Drawing.Point(183, 14);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 23);
+            this.label8.Size = new System.Drawing.Size(95, 19);
             this.label8.TabIndex = 182;
             this.label8.Text = "Ngày kết thúc";
             // 
@@ -89,47 +92,54 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(7, 17);
+            this.label7.Location = new System.Drawing.Point(5, 14);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 23);
+            this.label7.Size = new System.Drawing.Size(95, 19);
             this.label7.TabIndex = 181;
             this.label7.Text = "Ngày bắt đầu:";
             // 
-            // dtpKetThuc
+            // dtpDenNgay
             // 
-            this.dtpKetThuc.CustomFormat = "dd-MM-yyyy";
-            this.dtpKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpKetThuc.Location = new System.Drawing.Point(248, 35);
-            this.dtpKetThuc.Name = "dtpKetThuc";
-            this.dtpKetThuc.Size = new System.Drawing.Size(200, 27);
-            this.dtpKetThuc.TabIndex = 184;
+            this.dtpDenNgay.CustomFormat = "dd-MM-yyyy";
+            this.dtpDenNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDenNgay.Location = new System.Drawing.Point(186, 28);
+            this.dtpDenNgay.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDenNgay.Name = "dtpDenNgay";
+            this.dtpDenNgay.Size = new System.Drawing.Size(151, 23);
+            this.dtpDenNgay.TabIndex = 184;
+            this.dtpDenNgay.ValueChanged += new System.EventHandler(this.dtpTuNgay_ValueChanged);
             // 
-            // dtpBatDau
+            // dtpTuNgay
             // 
-            this.dtpBatDau.CustomFormat = "dd-MM-yyyy";
-            this.dtpBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBatDau.Location = new System.Drawing.Point(11, 35);
-            this.dtpBatDau.Name = "dtpBatDau";
-            this.dtpBatDau.Size = new System.Drawing.Size(200, 27);
-            this.dtpBatDau.TabIndex = 183;
-            this.dtpBatDau.Value = new System.DateTime(2022, 2, 22, 0, 0, 0, 0);
+            this.dtpTuNgay.CustomFormat = "dd-MM-yyyy";
+            this.dtpTuNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTuNgay.Location = new System.Drawing.Point(8, 28);
+            this.dtpTuNgay.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpTuNgay.Name = "dtpTuNgay";
+            this.dtpTuNgay.Size = new System.Drawing.Size(151, 23);
+            this.dtpTuNgay.TabIndex = 183;
+            this.dtpTuNgay.Value = new System.DateTime(2022, 2, 22, 0, 0, 0, 0);
+            this.dtpTuNgay.ValueChanged += new System.EventHandler(this.dtpTuNgay_ValueChanged);
             // 
             // guna2Panel5
             // 
+            this.guna2Panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Panel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel5.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel5.BorderRadius = 15;
             this.guna2Panel5.BorderThickness = 1;
             this.guna2Panel5.Controls.Add(this.label8);
             this.guna2Panel5.Controls.Add(this.label7);
-            this.guna2Panel5.Controls.Add(this.dtpKetThuc);
-            this.guna2Panel5.Controls.Add(this.dtpBatDau);
+            this.guna2Panel5.Controls.Add(this.dtpDenNgay);
+            this.guna2Panel5.Controls.Add(this.dtpTuNgay);
             this.guna2Panel5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Panel5.Location = new System.Drawing.Point(799, 30);
+            this.guna2Panel5.Location = new System.Drawing.Point(599, 24);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(455, 75);
+            this.guna2Panel5.Size = new System.Drawing.Size(341, 61);
             this.guna2Panel5.TabIndex = 1;
             // 
             // label3
@@ -139,14 +149,16 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(795, 14);
+            this.label3.Location = new System.Drawing.Point(596, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 23);
+            this.label3.Size = new System.Drawing.Size(78, 19);
             this.label3.TabIndex = 185;
             this.label3.Text = "Lọc dữ liệu:";
             // 
             // guna2Button1
             // 
+            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Button1.BorderRadius = 10;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -155,9 +167,10 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Black;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(1116, 111);
+            this.guna2Button1.Location = new System.Drawing.Point(797, 90);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(138, 38);
+            this.guna2Button1.Size = new System.Drawing.Size(144, 31);
             this.guna2Button1.TabIndex = 186;
             this.guna2Button1.Text = "Xuất báo cáo";
             // 
@@ -168,10 +181,11 @@
             this.tcThongKe.Controls.Add(this.tabDoanhThu);
             this.tcThongKe.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tcThongKe.ItemSize = new System.Drawing.Size(180, 50);
-            this.tcThongKe.Location = new System.Drawing.Point(0, 155);
+            this.tcThongKe.Location = new System.Drawing.Point(0, 126);
+            this.tcThongKe.Margin = new System.Windows.Forms.Padding(2);
             this.tcThongKe.Name = "tcThongKe";
             this.tcThongKe.SelectedIndex = 0;
-            this.tcThongKe.Size = new System.Drawing.Size(1311, 628);
+            this.tcThongKe.Size = new System.Drawing.Size(983, 510);
             this.tcThongKe.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tcThongKe.TabButtonHoverState.FillColor = System.Drawing.Color.White;
             this.tcThongKe.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -196,9 +210,10 @@
             // 
             this.tabTongHop.ForeColor = System.Drawing.Color.White;
             this.tabTongHop.Location = new System.Drawing.Point(4, 54);
+            this.tabTongHop.Margin = new System.Windows.Forms.Padding(2);
             this.tabTongHop.Name = "tabTongHop";
-            this.tabTongHop.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTongHop.Size = new System.Drawing.Size(1303, 570);
+            this.tabTongHop.Padding = new System.Windows.Forms.Padding(2);
+            this.tabTongHop.Size = new System.Drawing.Size(975, 452);
             this.tabTongHop.TabIndex = 0;
             this.tabTongHop.Text = "Tổng hợp";
             this.tabTongHop.UseVisualStyleBackColor = true;
@@ -206,9 +221,10 @@
             // tabSanPham
             // 
             this.tabSanPham.Location = new System.Drawing.Point(4, 54);
+            this.tabSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.tabSanPham.Name = "tabSanPham";
-            this.tabSanPham.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSanPham.Size = new System.Drawing.Size(1303, 570);
+            this.tabSanPham.Padding = new System.Windows.Forms.Padding(2);
+            this.tabSanPham.Size = new System.Drawing.Size(975, 452);
             this.tabSanPham.TabIndex = 1;
             this.tabSanPham.Text = "Thông kế Sản phẩm";
             this.tabSanPham.UseVisualStyleBackColor = true;
@@ -216,16 +232,17 @@
             // tabDoanhThu
             // 
             this.tabDoanhThu.Location = new System.Drawing.Point(4, 54);
+            this.tabDoanhThu.Margin = new System.Windows.Forms.Padding(2);
             this.tabDoanhThu.Name = "tabDoanhThu";
-            this.tabDoanhThu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDoanhThu.Size = new System.Drawing.Size(1303, 570);
+            this.tabDoanhThu.Padding = new System.Windows.Forms.Padding(2);
+            this.tabDoanhThu.Size = new System.Drawing.Size(975, 452);
             this.tabDoanhThu.TabIndex = 2;
             this.tabDoanhThu.Text = "Thống kê Doanh thu";
             this.tabDoanhThu.UseVisualStyleBackColor = true;
             // 
             // UC_ThongKe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tcThongKe);
@@ -234,8 +251,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.guna2Panel5);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_ThongKe";
-            this.Size = new System.Drawing.Size(1311, 783);
+            this.Size = new System.Drawing.Size(983, 636);
             this.Load += new System.EventHandler(this.UC_ThongKe_Load);
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
@@ -250,8 +268,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dtpKetThuc;
-        private System.Windows.Forms.DateTimePicker dtpBatDau;
+        private System.Windows.Forms.DateTimePicker dtpDenNgay;
+        private System.Windows.Forms.DateTimePicker dtpTuNgay;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;

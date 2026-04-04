@@ -24,10 +24,10 @@ namespace QlCuaHangXimenT.ThongKe.tab
             DataRow rowTongSoSP = tongSoSanPham.Rows[0];
             lblTongSoSanPham.Text = rowTongSoSP["TongSoLuong"].ToString() + " sản phẩm";
 
-            DataTable ThongKe = ThongKe_BUS.DoanhThuVaSoLuongSanPham();
-            DataRow row = ThongKe.Rows[0];
-            var sanPhamDaban = row["SoLuongSanPhamBanRa"] == DBNull.Value ? 0 : row["SoLuongSanPhamBanRa"];
-            lblSanPhamDaBan.Text = sanPhamDaban.ToString() + " sản phẩm";
+            //DataTable ThongKe = ThongKe_BUS.DoanhThuVaSoLuongSanPham();
+            //DataRow row = ThongKe.Rows[0];
+            //var sanPhamDaban = row["SoLuongSanPhamBanRa"] == DBNull.Value ? 0 : row["SoLuongSanPhamBanRa"];
+            //lblSanPhamDaBan.Text = sanPhamDaban.ToString() + " sản phẩm";
 
             DataTable tongSoDanhMuc = ThongKe_BUS.TongSoDanhMuc();
             DataRow rowDanhMuc = tongSoDanhMuc.Rows[0];

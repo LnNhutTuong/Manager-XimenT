@@ -54,7 +54,7 @@ namespace QlCuaHangXimenT.QuanLyDonHang
             dgvDonHang.Columns["TrangThai"].DisplayIndex = 4;
             dgvDonHang.Columns["XemChiTiet"].DisplayIndex = 5;
 
-            if (dgvDonHang.Columns[e.ColumnIndex].Name == "TongTien" && e.Value != null)
+            if (dgvDonHang.Columns[e.ColumnIndex].Name == "Tongtien" && e.Value != null)
             {
                 e.Value = string.Format("{0:N0} VNĐ", e.Value);
                 e.FormattingApplied = true;

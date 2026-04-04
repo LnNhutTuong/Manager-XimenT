@@ -16,11 +16,9 @@ namespace DAO.QuanLyDonHang
         {
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(@" Select dh.*, Sum(ct.Thanh_tien) as Tongtien, kh.TenKH
+            SqlCommand cmd = new SqlCommand(@" Select dh.*, kh.TenKH
                                                 from DonHang as dh
-                                                Join CtDonHang as ct On ct.MaDH = dh.MaDH
-                                                Join KhachHang as kh On dh.MaKH = kh.MaKH
-                                                group by dh.MaDH, dh.MaKH, dh.MaNV, dh.NgayTao, dh.TrangThai, dh.TongTien, kh.TenKH");
+                                                Join KhachHang as kh On dh.MaKH = kh.MaKH");
 
             DataTable table = dp.TruyVanLayDuLieu(cmd);
 
@@ -46,8 +44,7 @@ namespace DAO.QuanLyDonHang
         }
 
         public static bool ThemDonHang(DonHang_DTO dh, List<CtDonHang_DTO> ctdh)
-        {
-            decimal TongTien = 0;
+        {            
 
             DataProvider dp = new DataProvider();
 
@@ -58,7 +55,7 @@ namespace DAO.QuanLyDonHang
             cmdDH.Parameters.Add("@MaKH", SqlDbType.VarChar, 5).Value = dh.MaKH;
             cmdDH.Parameters.Add("@MaNV", SqlDbType.VarChar, 5).Value = dh.MaNV;
             cmdDH.Parameters.Add("@NgayTao", SqlDbType.DateTime).Value = DateTime.Now;
-            cmdDH.Parameters.Add("@TongTien", SqlDbType.Decimal).Value = TongTien;
+            cmdDH.Parameters.Add("@TongTien", SqlDbType.Decimal).Value = dh.TongTien;
 
 
             int stop = dp.TruyVanKhongLayDuLieu(cmdDH);
@@ -69,8 +66,7 @@ namespace DAO.QuanLyDonHang
             }
 
             foreach (var ct in ctdh)
-            {
-                TongTien += (ct.SoLuong * ct.DonGia);
+            {                
 
                 SqlCommand cmdCT = new SqlCommand(@"INSERT INTO CtDonHang (MaDH, MaSP, Don_gia, So_Luong, Thanh_tien) 
                                                    VALUES (@MaDH, @MaSP, @DonGia, @SoLuong, @ThanhTien)");
@@ -97,7 +93,7 @@ namespace DAO.QuanLyDonHang
         {
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(@"  Select dh.*, Sum(ct.Thanh_tien) as Tongtien, kh.TenKH, nv.TenNV
+            SqlCommand cmd = new SqlCommand(@"  Select dh.*, kh.TenKH, nv.TenNV
                                                 from DonHang as dh
                                                 Join CtDonHang as ct On ct.MaDH = dh.MaDH
                                                 Join KhachHang as kh On kh.MaKH = dh.MaKH
@@ -128,8 +124,7 @@ namespace DAO.QuanLyDonHang
         public static bool SuaDonHang(DonHang_DTO dh, List<CtDonHang_DTO> ctdh, string maDH)
         {
             DataProvider dp = new DataProvider();
-
-            decimal TongTien = 0;
+    
             SqlCommand cmdDH = new SqlCommand(@"Update DonHang
                                                 Set MaKH = @MaKH,
                                                     MaNV = @MaNV,
@@ -141,7 +136,7 @@ namespace DAO.QuanLyDonHang
             cmdDH.Parameters.Add("@MaKH", SqlDbType.VarChar, 5).Value = dh.MaKH;
             cmdDH.Parameters.Add("@MaNV", SqlDbType.VarChar, 5).Value = dh.MaNV;
             cmdDH.Parameters.Add("@TrangThai", SqlDbType.Int).Value = dh.TrangThai;
-            cmdDH.Parameters.Add("@TongTien", SqlDbType.Decimal).Value = TongTien;
+            cmdDH.Parameters.Add("@TongTien", SqlDbType.Decimal).Value = dh.TongTien;
 
             int stop = dp.TruyVanKhongLayDuLieu(cmdDH);
 
@@ -164,8 +159,6 @@ namespace DAO.QuanLyDonHang
 
             foreach (var ct in ctdh)
             {
-                TongTien += (ct.SoLuong * ct.DonGia);
-
                 SqlCommand cmdCT = new SqlCommand(@"INSERT INTO CtDonHang (MaDH, MaSP, Don_gia, So_Luong, Thanh_tien) 
                                                    VALUES (@MaDH, @MaSP, @DonGia, @SoLuong, @ThanhTien)");
                 cmdCT.Parameters.AddWithValue("@MaDH", maDH);
@@ -191,13 +184,12 @@ namespace DAO.QuanLyDonHang
         {
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(@"  Select dh.*, Sum(ct.Thanh_tien) as Tongtien, kh.TenKH
+            SqlCommand cmd = new SqlCommand(@"  Select dh.*, kh.TenKH
                                                 from DonHang as dh
-                                                Join CtDonHang as ct On ct.MaDH = dh.MaDH
                                                 Join KhachHang as kh On dh.MaKH = kh.MaKH
                                                 Where (@tuKhoa is null or dh.MaDH Like  '%' + @tuKhoa + '%' or kh.TenKH Like '%' + @tuKhoa + '%')
-                                                  And (@TrangThai is null or dh.TrangThai = @TrangThai)    
-                                                group by dh.MaDH, dh.MaKH, dh.MaNV, dh.NgayTao, dh.TrangThai, kh.TenKH, dh.TongTien");
+                                                  And (@TrangThai is null or dh.TrangThai = @TrangThai)");
+                
             cmd.Parameters.Add("@tuKhoa", SqlDbType.NVarChar).Value = (object)tuKhoa ?? DBNull.Value;
             cmd.Parameters.Add("@TrangThai", SqlDbType.NVarChar).Value = (object)trangThai ?? DBNull.Value;
 

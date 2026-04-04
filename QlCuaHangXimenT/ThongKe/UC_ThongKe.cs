@@ -18,18 +18,28 @@ namespace QlCuaHangXimenT.ThongKe
             InitializeComponent();
         }
 
+
+        tab_Tonghop th;
+        tab_SanPham sp;
+        tab_DoanhThu dh;
+
         private void UC_ThongKe_Load(object sender, EventArgs e)
         {
+            DateTime tuNgay = dtpTuNgay.Value.Date;
+            DateTime denNgay = dtpDenNgay.Value.Date;
+
             #region tab Tổng hợp
-            tab_Tonghop th = new tab_Tonghop();
+            th = new tab_Tonghop(tuNgay, denNgay);
             th.TopLevel = false; // luwu ys
             th.Dock = DockStyle.Fill;
             tabTongHop.Controls.Add(th);
             th.Show();
+
+            th.LayDuLieu(tuNgay, denNgay);
             #endregion
 
             #region tab Sản phẩm
-            tab_SanPham sp = new tab_SanPham();
+            sp = new tab_SanPham();
             sp.TopLevel = false; // luwu ys
             sp.Dock = DockStyle.Fill;
             tabSanPham.Controls.Add(sp);
@@ -37,12 +47,29 @@ namespace QlCuaHangXimenT.ThongKe
             #endregion
 
             #region tab Doanh Thu
-            tab_DoanhThu dh = new tab_DoanhThu();
+            dh = new tab_DoanhThu();
             dh.TopLevel = false; // luwu ys
             dh.Dock = DockStyle.Fill;
             tabDoanhThu.Controls.Add(dh);
             dh.Show();
             #endregion
+        }
+
+        private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
+        {
+
+            if(dtpTuNgay.Value.Date > dtpDenNgay.Value.Date)
+            {
+                MessageBox.Show("Ngày bắt đầu không thể lớn hơn kết thúc!");
+                dtpTuNgay.Value = dtpDenNgay.Value;
+                return;
+            }
+
+            DateTime tuNgay = dtpTuNgay.Value.Date;
+            DateTime denNgay = dtpDenNgay.Value.Date;
+
+            th.LayDuLieu(tuNgay, denNgay);
+
         }
     }
 }
