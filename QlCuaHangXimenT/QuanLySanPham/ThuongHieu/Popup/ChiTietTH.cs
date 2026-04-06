@@ -110,23 +110,32 @@ namespace QlCuaHangXimenT.QuanLySanPham.ThuongHieu
             ThuongHieu_DTO th = new ThuongHieu_DTO();
 
             th.MaTH = txtMaThuongHieu.Text;
+            bool KiemTra = ThuongHieu_BUS.KiemTraTHCoDinhSP(th.MaTH);
 
-            DialogResult ans;
-            ans = MessageBox.Show("Bạn có muốn xóa TH: " + th.MaTH + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (ans == DialogResult.Yes)
+            if (KiemTra)
             {
-                bool kq = ThuongHieu_BUS.XoaThuongHieu(th);
+                MessageBox.Show("Thương hiệu này đang có Sản phẩm", "Không thể xóa!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
-                if (kq)
+            }
+            else
+            {
+                DialogResult ans;
+                ans = MessageBox.Show("Bạn có muốn xóa TH: " + th.MaTH + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ans == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xóa thành công");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa không thành công");
+                    bool kq = ThuongHieu_BUS.XoaThuongHieu(th);
+
+                    if (kq)
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công");
+                    }
                 }
             }
         }

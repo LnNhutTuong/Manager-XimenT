@@ -162,6 +162,16 @@ namespace DAO.QuanLySanPham
             return table;
         }
 
-      
+        public static bool KiemTraSPCoDinhCTDH(string maSP)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  Select top 1 1 From CtDonHang Where MaSP = @MaSP");
+            cmd.Parameters.Add("@MaSP", SqlDbType.VarChar, 5).Value = maSP;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table.Rows.Count > 0;
+        }
     }
 }

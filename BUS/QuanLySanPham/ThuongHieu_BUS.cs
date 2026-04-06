@@ -94,5 +94,11 @@ namespace BUS.QuanLySanPham
         {
             return ThuongHieu_DAO.TimKiemThuongHieu(tuKhoa);
         }
+
+        public static bool KiemTraTHCoDinhSP(string maTH)
+        {
+            return ThuongHieu_DAO.KiemTraTHCoDinhSP(maTH);
+
+        }
     }
 }

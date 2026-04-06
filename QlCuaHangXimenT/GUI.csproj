@@ -243,16 +243,16 @@
     <Compile Include="QuanLySanPham\SanPham\UC_SanPham.Designer.cs">
       <DependentUpon>UC_SanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySanPham\ThuongHieu\ChiTietTH.cs">
+    <Compile Include="QuanLySanPham\ThuongHieu\Popup\ChiTietTH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLySanPham\ThuongHieu\ChiTietTH.Designer.cs">
+    <Compile Include="QuanLySanPham\ThuongHieu\Popup\ChiTietTH.Designer.cs">
       <DependentUpon>ChiTietTH.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySanPham\ThuongHieu\ThemTH.cs">
+    <Compile Include="QuanLySanPham\ThuongHieu\Popup\ThemTH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLySanPham\ThuongHieu\ThemTH.Designer.cs">
+    <Compile Include="QuanLySanPham\ThuongHieu\Popup\ThemTH.Designer.cs">
       <DependentUpon>ThemTH.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.cs">
@@ -347,10 +347,10 @@
     <EmbeddedResource Include="QuanLySanPham\SanPham\UC_SanPham.resx">
       <DependentUpon>UC_SanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanPham\ThuongHieu\ChiTietTH.resx">
+    <EmbeddedResource Include="QuanLySanPham\ThuongHieu\Popup\ChiTietTH.resx">
       <DependentUpon>ChiTietTH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanPham\ThuongHieu\ThemTH.resx">
+    <EmbeddedResource Include="QuanLySanPham\ThuongHieu\Popup\ThemTH.resx">
       <DependentUpon>ThemTH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.resx">

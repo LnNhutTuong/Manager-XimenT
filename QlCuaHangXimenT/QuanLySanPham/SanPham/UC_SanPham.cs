@@ -140,8 +140,27 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             List<string> dsDaChon = DsSpChon();
-            if ( dsSpChon.Count == 0){
+
+            int errorCount = 0;
+
+            foreach (string sanPham in dsDaChon)
+            {
+                bool kiemTra = SanPham_BUS.KiemTraSPCoDinhCTDH(sanPham);
+                if (kiemTra)
+                {
+                    errorCount++;
+                }
+            }
+
+            if (errorCount > 0)
+            {
+                MessageBox.Show("Có sản phẩm đang có đơn", "Không thể xóa!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            else if (dsSpChon.Count == 0)
+            {
                 MessageBox.Show("Vui lòng chọn sản phẩm đế xóa");
+                return;
             }
             else
             {
@@ -152,16 +171,16 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
                     int flag = 0;
                     foreach (string maSP in dsDaChon)
                     {
-                       bool kq = SanPham_BUS.XoaSanPham(maSP);
+                        bool kq = SanPham_BUS.XoaSanPham(maSP);
 
                         if (!kq)
-                        {                            
+                        {
                             flag++;
                             break;
                         }
                     }
 
-                    if(flag != 0)
+                    if (flag != 0)
                     {
                         MessageBox.Show("Xóa không thành công");
                     }
@@ -171,7 +190,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
                         MessageBox.Show("Xóa thành công");
                     }
                 }
-                       
+
             }
         }
 

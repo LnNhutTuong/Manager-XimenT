@@ -218,7 +218,10 @@ namespace BUS.QuanLySanPham
             return SanPham_DAO.LocSanPham(maDM, maTH, tuNgay, denNgay, tuKhoa);
         }
 
-    
+        public static bool KiemTraSPCoDinhCTDH(string maSP)
+        {
+            return SanPham_DAO.KiemTraSPCoDinhCTDH(maSP);
+        }
 
     }
 }

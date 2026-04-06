@@ -122,5 +122,17 @@ namespace DAO.QuanLySanPham
 
             return table;
         }
+
+        public static bool KiemTraTHCoDinhSP(string maTH)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  Select top 1 1 From ThuongHieu Where MaTH = @MaTH");
+            cmd.Parameters.Add("@MaTH", SqlDbType.VarChar, 5).Value = maTH;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table.Rows.Count > 0;
+        }
     }
 }

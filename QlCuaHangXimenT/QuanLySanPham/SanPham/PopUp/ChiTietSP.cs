@@ -326,23 +326,36 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult ans = MessageBox.Show($"Bạn có muốn xóa {lblMaSanPham.Text} sản phẩm?", "Xác nhận", MessageBoxButtons.YesNo);
 
-            if (ans == DialogResult.Yes)
+            bool KiemTra = SanPham_BUS.KiemTraSPCoDinhCTDH(maSP);
+
+            if (KiemTra)
             {
-                bool kq = SanPham_BUS.XoaSanPham(maSP);
-                if (kq)
-                {
-                    MessageBox.Show("Xóa thành công");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa không thành công");
-
-                }
+                MessageBox.Show("Sản phẩm đang có đơn", "Không thể xóa!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
             }
+            else
+            {
+                DialogResult ans = MessageBox.Show($"Bạn có muốn xóa {lblMaSanPham.Text} sản phẩm?", "Xác nhận", MessageBoxButtons.YesNo);
+
+                if (ans == DialogResult.Yes)
+                {
+                    bool kq = SanPham_BUS.XoaSanPham(maSP);
+                    if (kq)
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công");
+
+                    }
+                }
+
+            }
+
         }      
         
     }
