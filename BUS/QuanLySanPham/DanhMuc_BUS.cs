@@ -4,6 +4,7 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,6 +93,12 @@ namespace BUS.QuanLySanPham
         public static DataTable TimKiemDanhMuc(string tuKhoa)
         {
             return DanhMuc_DAO.TimKiemDanhMuc(tuKhoa);
+        }
+
+        public static bool KiemTraDMCoDinhSP(string maDM)
+        {
+            return DanhMuc_DAO.KiemTraDMCoDinhSP(maDM);
+
         }
     }
 }

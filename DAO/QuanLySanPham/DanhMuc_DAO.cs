@@ -124,5 +124,18 @@ namespace DAO
             return table;
         }
 
+
+        public static bool KiemTraDMCoDinhSP(string maDM)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  Select top 1 1 From SanPham Where MaDM = @MaDM");
+            cmd.Parameters.Add("@MaDM", SqlDbType.VarChar, 5).Value = maDM;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table.Rows.Count > 0;
+        }
+
     }
 }

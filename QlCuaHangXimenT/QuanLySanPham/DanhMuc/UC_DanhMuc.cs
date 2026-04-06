@@ -45,21 +45,30 @@ namespace QlCuaHangXimenT.QuanLiSanPham
 
             dm.MaDM = dgvDanhMuc.CurrentRow.Cells["MaDM"].Value.ToString();
 
-            DialogResult ans;
-            ans = MessageBox.Show("Bạn có muốn xóa DM: " + dm.MaDM + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            bool KiemTra = DanhMuc_BUS.KiemTraDMCoDinhSP(dm.MaDM);
 
-            if (ans == DialogResult.Yes)
+            if (KiemTra)
             {
-                bool kq = DanhMuc_BUS.XoaDanhMuc(dm);
+                MessageBox.Show("Danh mục này đang có sản phẩm", "Không thể xóa!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                DialogResult ans;
+                ans = MessageBox.Show("Bạn có muốn xóa DM: " + dm.MaDM + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (kq)
+                if (ans == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xóa thành công");
-                    LayDuLieu();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa không thành công");
+                    bool kq = DanhMuc_BUS.XoaDanhMuc(dm);
+
+                    if (kq)
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        LayDuLieu();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công");
+                    }
                 }
             }
         }

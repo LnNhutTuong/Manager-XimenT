@@ -112,23 +112,33 @@ namespace QlCuaHangXimenT.QuanLySanPham.DanhMuc.PopUp
 
             dm.MaDM = maDM;
 
-            DialogResult ans;
-            ans = MessageBox.Show("Bạn có muốn xóa DM: " + dm.MaDM + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (ans == DialogResult.Yes)
+            bool KiemTra = DanhMuc_BUS.KiemTraDMCoDinhSP(dm.MaDM);
+
+            if (KiemTra)
             {
-                bool kq = DanhMuc_BUS.XoaDanhMuc(dm);
-
-                if (kq)
-                {
-                    MessageBox.Show("Xóa thành công");
-                    this.DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    MessageBox.Show("Xóa không thành công");
-                }
+                MessageBox.Show("Danh mục này đang có sản phẩm", "Không thể xóa!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+            else
+            {
+                DialogResult ans;
+                ans = MessageBox.Show("Bạn có muốn xóa DM: " + dm.MaDM + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ans == DialogResult.Yes)
+                {
+                    bool kq = DanhMuc_BUS.XoaDanhMuc(dm);
+
+                    if (kq)
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công");
+                    }
+                }
+            }   
         }
 
         private void btnSua_Click_1(object sender, EventArgs e)
