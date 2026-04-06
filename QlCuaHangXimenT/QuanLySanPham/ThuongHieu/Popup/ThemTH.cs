@@ -25,7 +25,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.ThuongHieu
         {
             ThuongHieu_DTO th = new ThuongHieu_DTO();
 
-            th.MaTH = txtMaThuongHieu.Text.ToUpper();
+            th.MaTH = txtMaThuongHieu.Text.ToUpper().Trim();
             th.TenTH = txtTenThuongHieu.Text;
 
             string message = "";

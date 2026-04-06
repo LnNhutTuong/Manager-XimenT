@@ -91,7 +91,12 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
 
                     if (File.Exists(fullPath))
                     {
-                        ptbNhanVien.Image = Image.FromFile(fullPath);
+                        byte[] bytes = File.ReadAllBytes(fullPath);
+                        using (MemoryStream ms = new MemoryStream(bytes))
+                        {
+                            ptbNhanVien.Image = Image.FromStream(ms);
+                        }
+
                         ptbNhanVien.Tag = pathAnh;
                     }
                     else

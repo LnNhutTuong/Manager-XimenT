@@ -80,6 +80,10 @@ namespace BUS.QuanLyDonHang
             return DonHang_DAO.TimKiemDonHang(tuKhoa, trangThai);
         }
 
+        public static bool XoaDonHang(string maDH)
+        {
+            return DonHang_DAO.XoaDonHang(maDH);
+        }
          
     }
 }

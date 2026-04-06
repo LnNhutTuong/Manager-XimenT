@@ -53,12 +53,12 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham.PopUp
         {
             SanPham_DTO sp = new SanPham_DTO();
 
-            sp.MaSP = txtMaSanPham.Text.ToUpper().Trim();
+            sp.MaSP = txtMaSanPham.Text.ToUpper().Trim().Trim();
             sp.TenSP = txtTenSanPham.Text;
             sp.Size = txtSize.Text;
 
-            sp.MaDM = cboDanhMuc.SelectedValue.ToString();
-            sp.MaTH= cboThuongHieu.SelectedValue.ToString();
+            sp.MaDM = cboDanhMuc.SelectedValue.ToString().Trim();
+            sp.MaTH= cboThuongHieu.SelectedValue.ToString().Trim();
             sp.MaNV= cboNhanVien.SelectedValue.ToString();
             sp.NgayThem = DateTime.Now;
             //sp.NgaySua = DateTime.Now;

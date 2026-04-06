@@ -303,6 +303,30 @@ namespace QlCuaHangXimenT.QuanLyDonHang.PopUp
             }
         }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string maDh = lblMaDonHang.Text;
+
+            DialogResult ans;
+            ans = MessageBox.Show("Bạn có muốn xóa DH: " + maDh + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (ans == DialogResult.Yes)
+            {
+                bool kq = DonHang_BUS.XoaDonHang(maDh);
+
+                if (kq)
+                {
+                    MessageBox.Show("Xóa thành công");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công");
+                }
+            }
+        }
+
         private void ChiTietDH_Load(object sender, EventArgs e)
         {
             SetMode(FormMode.View);

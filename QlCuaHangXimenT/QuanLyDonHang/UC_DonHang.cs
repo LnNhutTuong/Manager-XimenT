@@ -148,5 +148,29 @@ namespace QlCuaHangXimenT.QuanLyDonHang
             LayDuLieu();
 
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+            string maDh = dgvDonHang.CurrentRow.Cells["MaDH"].Value.ToString();
+
+            DialogResult ans;
+            ans = MessageBox.Show("Bạn có muốn xóa DH: " + maDh + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (ans == DialogResult.Yes)
+            {
+                bool kq = DonHang_BUS.XoaDonHang(maDh);
+
+                if (kq)
+                {
+                    MessageBox.Show("Xóa thành công");
+                    LayDuLieu();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công");
+                }
+            }
+        }
     }
 }

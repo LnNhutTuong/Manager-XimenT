@@ -309,6 +309,7 @@
             this.btnXoa.Size = new System.Drawing.Size(158, 40);
             this.btnXoa.TabIndex = 131;
             this.btnXoa.Text = "Xóa đơn hàng";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // dgvDonHang
             // 

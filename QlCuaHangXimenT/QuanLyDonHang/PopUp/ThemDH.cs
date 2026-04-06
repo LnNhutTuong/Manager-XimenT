@@ -158,7 +158,7 @@ namespace DTO.QuanLyDonHang
 
             #region dữ liệu Đơn hàng
             DonHang_DTO dh = new DonHang_DTO();
-            dh.MaDH = txtMaDonHang.Text.ToUpper();
+            dh.MaDH = txtMaDonHang.Text.ToUpper().Trim();
             dh.MaNV = cboNhanVien.SelectedValue.ToString();
             dh.MaKH = cboKhachHang.SelectedValue.ToString();
             dh.NgayTao = DateTime.Today.Date;
@@ -173,7 +173,7 @@ namespace DTO.QuanLyDonHang
                 if (sanpham is Card_SanPham_Overview item && sanpham.Visible == true)
                 {
                     CtDonHang_DTO ct = new CtDonHang_DTO();
-                    ct.MaDH = dh.MaDH;
+                    ct.MaDH = dh.MaDH.Trim();
                     ct.MaSP = item.maSP;
                     ct.DonGia = item.giaTien;
                     ct.SoLuong = item.SoLuongMua;

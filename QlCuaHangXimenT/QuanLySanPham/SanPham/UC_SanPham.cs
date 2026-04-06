@@ -35,6 +35,9 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             dtpBatDau.MaxDate = DateTime.Now;
 
             dtpKetThuc.MaxDate = DateTime.Now;
+
+
+          
         }
 
         public void LayDuLieuCBO()
@@ -209,6 +212,11 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
         private void dtpBatDau_ValueChanged(object sender, EventArgs e)
         {
             LoadFlowTheoDK();
+            if (dtpBatDau.Value.Date > dtpKetThuc.Value.Date)
+            {
+                MessageBox.Show("Ngày bắt đầu không thể lớn hơn kết thúc!");
+                dtpBatDau.Value = DateTime.Now;
+            }
         }
 
         private void dtpKetThuc_ValueChanged(object sender, EventArgs e)

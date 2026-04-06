@@ -35,7 +35,7 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
         private void guna2GradientButton4_Click(object sender, EventArgs e)
         {
             NhanVien_DTO nv = new NhanVien_DTO();
-            nv.MaNV = txtMaNhanVien.Text.ToUpper();
+            nv.MaNV = txtMaNhanVien.Text.ToUpper().Trim();
             nv.TenNV = txtTenNhanVien.Text;
             nv.MaCV = cboChucVu.SelectedValue.ToString();
             nv.Ten_dang_nhap = txtTenDangNhap.Text.Trim();
@@ -76,27 +76,10 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
             txtMaNhanVien.Clear();
             txtTenNhanVien.Clear();
             txtTenDangNhap.Clear();
-            txtMatKhau.Clear();
             ptbNhanVien.Image = Resources.nonePicture;
         }
 
-        private void txtMatKhau_IconRightClick(object sender, EventArgs e)
-        {
-            if (txtMatKhau.UseSystemPasswordChar)
-            {
-                // Hiện mật khẩu
-                txtMatKhau.UseSystemPasswordChar = false;
-                txtMatKhau.PasswordChar = '\0';
-                txtMatKhau.IconRight = Properties.Resources.view;
-            }
-            else
-            {
-                // Ẩn mật khẩu
-                txtMatKhau.UseSystemPasswordChar = true;
-                txtMatKhau.PasswordChar = '*';
-                txtMatKhau.IconRight = Properties.Resources.hide;
-            }
-        }
+       
 
         private void btnThayAnh_Click_1(object sender, EventArgs e)
         {

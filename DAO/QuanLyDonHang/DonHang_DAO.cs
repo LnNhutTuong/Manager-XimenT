@@ -198,5 +198,20 @@ namespace DAO.QuanLyDonHang
             return table;
         }
 
+        public static bool XoaDonHang(string maKh)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmdCT = new SqlCommand(@"Delete From CtDonHang where MaDH = @MaDH");
+            cmdCT.Parameters.Add("@MaDH", SqlDbType.VarChar, 5).Value = maKh;
+            dp.TruyVanKhongLayDuLieu(cmdCT);
+
+            SqlCommand cmdDH = new SqlCommand(@"Delete From DonHang where MaDH = @MaDH");
+            cmdDH.Parameters.Add("@MaDH", SqlDbType.VarChar, 5).Value = maKh;
+
+            int kq = dp.TruyVanKhongLayDuLieu(cmdDH);
+
+            return kq > 0;
+        }
     }
 }

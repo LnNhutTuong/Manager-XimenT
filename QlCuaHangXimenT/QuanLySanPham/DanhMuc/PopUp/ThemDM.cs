@@ -24,7 +24,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.DanhMuc.PopUp
         {
             DanhMuc_DTO dm = new DanhMuc_DTO();
 
-            dm.MaDM = txtMaDanhMuc.Text.ToUpper();
+            dm.MaDM = txtMaDanhMuc.Text.ToUpper().Trim();
             dm.TenDM = txtTenDanhMuc.Text;
 
             string message = "";
