@@ -115,5 +115,10 @@ namespace BUS.QuanLyKhachHang
         {
             return KhachHang_DAO.Top3KhachHang();
         }
+
+        public static bool KiemTraKHDangCoDon(string maKh)
+        {
+            return KhachHang_DAO.KiemTraKHDangCoDon(maKh);
+        }
     }
 }

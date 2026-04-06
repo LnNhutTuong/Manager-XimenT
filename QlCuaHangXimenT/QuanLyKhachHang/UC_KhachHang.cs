@@ -102,7 +102,6 @@ namespace QlCuaHangXimenT.KhachHang
 
         }
 
-        string maKH;
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
             KhachHang_DTO kh = new KhachHang_DTO();
@@ -167,28 +166,39 @@ namespace QlCuaHangXimenT.KhachHang
 
         private void btnXoaBo_Click(object sender, EventArgs e)
         {
-            DialogResult ans;
-            ans = MessageBox.Show("Bạn có muốn xóa NV: " + txtMaKhachHang.Text + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (ans == DialogResult.Yes)
+            bool KiemTra = KhachHang_BUS.KiemTraKHDangCoDon(txtMaKhachHang.Text);
+
+            if (KiemTra)
             {
-                bool kq = KhachHang_BUS.XoaKhachHang(txtMaKhachHang.Text);
+                MessageBox.Show("Khách hàng đang có đơn", "Không thể xóa!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                DialogResult ans;
+                ans = MessageBox.Show("Bạn có muốn xóa NV: " + txtMaKhachHang.Text + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (kq)
+                if (ans == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xóa thành công");
-                    txtMaKhachHang.Clear();
-                    txtTenKhachHang.Clear();
-                    txtSoDienThoai.Clear();
-                    txtDiaChi.Clear();
-                    OnOff(false);
-                    LayDuLieu();                    
-                }
-                else
-                {
-                    MessageBox.Show("Xóa không thành công");
+                    bool kq = KhachHang_BUS.XoaKhachHang(txtMaKhachHang.Text);
+
+                    if (kq)
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        txtMaKhachHang.Clear();
+                        txtTenKhachHang.Clear();
+                        txtSoDienThoai.Clear();
+                        txtDiaChi.Clear();
+                        OnOff(false);
+                        LayDuLieu();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công");
+                    }
                 }
             }
+           
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)

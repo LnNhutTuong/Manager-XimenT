@@ -117,5 +117,17 @@ namespace DAO.QuanLyKhachHang
 
             return table;
         }
+
+        public static bool KiemTraKHDangCoDon(string maKh)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  Select top 1 1 From DonHang Where MaKH = @MaKH");
+            cmd.Parameters.Add("@MaKH", SqlDbType.VarChar, 5).Value = maKh;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table.Rows.Count > 0;
+        }
     }
 }
