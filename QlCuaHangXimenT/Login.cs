@@ -19,6 +19,7 @@ namespace QlCuaHangXimenT
     {
 
         public NguoiDung_DTO NguoiDungHienTai { get; private set; }
+
         public Login()
         {
             InitializeComponent();

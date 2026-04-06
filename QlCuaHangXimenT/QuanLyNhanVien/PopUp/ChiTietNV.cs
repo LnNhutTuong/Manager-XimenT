@@ -167,25 +167,37 @@ namespace QlCuaHangXimenT.QuanLiNhanVien.Popup
         private void btnXoa_Click(object sender, EventArgs e)
         {
             NhanVien_DTO nv = new NhanVien_DTO();
+
             nv.MaNV = txtMaNhanVien.Text;
-            DialogResult ans;
-            ans = MessageBox.Show("Bạn có muốn xóa NV: " + nv.MaNV + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (ans == DialogResult.Yes)
+            bool kiemTra = NhanVien_BUS.KiemTraNVDangLamGi(nv.MaNV);
+
+            if (kiemTra) 
             {
-                bool kq = NhanVien_BUS.XoaNhanVien(nv);
+               MessageBox.Show("Nhân viên đang phụ trách công việc!", "Không thể xóa!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+            else
+            {
+                DialogResult ans;
+                ans = MessageBox.Show("Bạn có muốn xóa NV: " + nv.MaNV + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (ans == DialogResult.Yes)
+                {
+                    bool kq = NhanVien_BUS.XoaNhanVien(nv);
 
-                if (kq)
-                {
-                    MessageBox.Show("Xóa thành công");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa không thành công");
+                    if (kq)
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công");
+                    }
                 }
             }
+               
         }
 
         private void btnThayAnh_Click(object sender, EventArgs e)

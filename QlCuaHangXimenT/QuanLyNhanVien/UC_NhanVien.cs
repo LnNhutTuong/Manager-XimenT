@@ -1,5 +1,7 @@
 ﻿using BUS;
 using DTO;
+using DTO.Auth;
+using QlCuaHangXimenT.QuanLiNhanVien.Popup;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,13 +12,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using QlCuaHangXimenT.QuanLiNhanVien.Popup;
-
 namespace QlCuaHangXimenT.NhanVien
 {
     public partial class UC_NhanVien : UserControl
     {
-    
 
         private void LayDuLieu()
         {
@@ -31,9 +30,12 @@ namespace QlCuaHangXimenT.NhanVien
         }
 
 
-        public UC_NhanVien()
+        private NguoiDung_DTO NguoiDungHienTai;
+
+        public UC_NhanVien(NguoiDung_DTO user)
         {
             InitializeComponent();
+            NguoiDungHienTai = user;
             LayDuLieu();
         }
 
@@ -51,24 +53,42 @@ namespace QlCuaHangXimenT.NhanVien
             NhanVien_DTO nv = new NhanVien_DTO();
 
             nv.MaNV = dgvNhanVien.CurrentRow.Cells["MaNV"].Value.ToString();
-           
-            DialogResult ans;
-            ans = MessageBox.Show("Bạn có muốn xóa NV: " + nv.MaNV + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (ans == DialogResult.Yes)
+
+
+            bool kiemTra = NhanVien_BUS.KiemTraNVDangLamGi(nv.MaNV);
+
+            if (NguoiDungHienTai.MaNV == nv.MaNV)
             {
-                bool kq = NhanVien_BUS.XoaNhanVien(nv);
-
-                if (kq)
-                {
-                    MessageBox.Show("Xóa thành công");
-                    LayDuLieu();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa không thành công");
-                }
+                MessageBox.Show("Không thể tự xóa bản thân mình được", "Không thể xóa!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+            else if (kiemTra)
+            {
+                MessageBox.Show("Nhân viên đang phụ trách công việc!", "Không thể xóa!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+            else
+            {
+                DialogResult ans;
+                ans = MessageBox.Show("Bạn có muốn xóa NV: " + nv.MaNV + " không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ans == DialogResult.Yes)
+                {
+                    bool kq = NhanVien_BUS.XoaNhanVien(nv);
+
+                    if (kq)
+                    {
+                        MessageBox.Show("Xóa thành công");
+                        LayDuLieu();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công");
+                    }
+                }
+
+            }
+                
 
         }
 

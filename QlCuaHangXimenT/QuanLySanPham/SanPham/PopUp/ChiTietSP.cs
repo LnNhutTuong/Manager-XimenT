@@ -105,7 +105,7 @@ namespace QlCuaHangXimenT.QuanLySanPham.SanPham
             cboNhanVien.DisplayMember = "MaNV";
             cboNhanVien.ValueMember = "MaNV";
             cboNhanVien.DataSource = NhanVien_BUS.DsNvTheoCv("CV003");
-            #endregion
+            #endregion                 
 
         }
 

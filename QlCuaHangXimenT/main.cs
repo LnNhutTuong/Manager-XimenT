@@ -90,7 +90,7 @@ namespace QlCuaHangXimenT
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             ActiveBtn(btnNhanVien);
-            UC_NhanVien nv = new UC_NhanVien();
+            UC_NhanVien nv = new UC_NhanVien(this.nguoiDangNhap);
             nv.Dock = DockStyle.Fill;
             content.Controls.Add(nv);
 

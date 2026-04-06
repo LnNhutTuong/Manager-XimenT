@@ -98,8 +98,13 @@ namespace BUS
             return NhanVien_DAO.SuaNhanVien(nv, maNVcu);
         }
 
-        public static bool XoaNhanVien (NhanVien_DTO nv)
+        public static bool KiemTraNVDangLamGi(string maNV)
         {
+            return NhanVien_DAO.KiemTraNVDangLamGi(maNV);
+        }
+
+        public static bool XoaNhanVien (NhanVien_DTO nv)
+        {           
             return NhanVien_DAO.XoaNhanVien(nv);
         }
 
@@ -112,5 +117,7 @@ namespace BUS
         {
             return NhanVien_DAO.TimKiemNhanVien(tuKhoa);
         }
+
+     
     }
 }

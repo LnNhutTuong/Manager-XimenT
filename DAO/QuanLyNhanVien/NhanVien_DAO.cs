@@ -150,5 +150,20 @@ namespace DAO
 
             return table;
         }
+
+        public static bool KiemTraNVDangLamGi(string maNV)
+        {
+            DataProvider dp = new DataProvider();
+
+            SqlCommand cmd = new SqlCommand(@"  Select top 1 1 From DonHang Where MaNV = @MaNV
+                                                Union all
+                                                Select top 1 1 From SanPham Where ManV = @MaNV");
+            cmd.Parameters.Add("@MaNV", SqlDbType.VarChar, 5).Value = maNV;
+
+            DataTable table = dp.TruyVanLayDuLieu(cmd);
+
+            return table.Rows.Count > 0;
+        }
+
     }
 }
