@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,40 @@ namespace DTO.Auth
             return kq > 0;
         }
 
+        public static bool SaoLuuDuLieu(string sDuongDan)
+        {
+            DataProvider dp = new DataProvider();
 
+            string sTen = "QLNV_" + DateTime.Now.ToString("dd_MM_yyyy_HH_mm") + ".bak";
+
+            string fullPath = Path.Combine(sDuongDan, sTen);
+
+            SqlCommand cmd = new SqlCommand(
+                "BACKUP DATABASE QlCuaHangXimenT TO DISK = @path"
+            );
+            cmd.Parameters.AddWithValue("@path", fullPath);
+
+            dp.TruyVanKhongLayDuLieu(cmd);
+
+            return true;
+        }
+
+        public static bool PhucHoiDuLieu(string sDuongDan)
+        {
+            DataProvider dp = new DataProvider();
+
+
+            string sql = @"USE master;
+            ALTER DATABASE QlCuaHangXimenT SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+            RESTORE DATABASE QlCuaHangXimenT FROM DISK = N'" + sDuongDan + "'";;
+
+            SqlCommand cmd = new SqlCommand(sql);
+
+            dp.TruyVanKhongLayDuLieu(cmd);
+
+            return true;
+
+
+        }
     }
 }

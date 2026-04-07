@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.txtTenDangNhap = new Guna.UI2.WinForms.Guna2TextBox();
@@ -99,18 +99,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Mật khẩu";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(164, 470);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "Quên mật khẩu?";
-            // 
             // txtMatKhau
             // 
             this.txtMatKhau.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -143,7 +131,6 @@
             this.guna2ShadowPanel1.BackgroundImage = global::QlCuaHangXimenT.Properties.Resources.setnAGUfQrPdNo__1_;
             this.guna2ShadowPanel1.Controls.Add(this.txtTenDangNhap);
             this.guna2ShadowPanel1.Controls.Add(this.txtMatKhau);
-            this.guna2ShadowPanel1.Controls.Add(this.label4);
             this.guna2ShadowPanel1.Controls.Add(this.btnDangNhap);
             this.guna2ShadowPanel1.Controls.Add(this.label3);
             this.guna2ShadowPanel1.Controls.Add(this.label2);
@@ -213,7 +200,7 @@
             // lblStatus
             // 
             this.lblStatus.Font = new System.Drawing.Font("MV Boli", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(33, 548);
+            this.lblStatus.Location = new System.Drawing.Point(31, 531);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(1121, 57);
             this.lblStatus.TabIndex = 1;
@@ -254,11 +241,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1186, 693);
-            this.Controls.Add(this.pnlSplash);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.guna2PictureBox1);
+            this.Controls.Add(this.pnlSplash);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -279,7 +267,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2ControlBox btnDong;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

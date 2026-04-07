@@ -40,12 +40,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabBackUp = new System.Windows.Forms.TabPage();
+            this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.btnKhoiPhuc = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSaoLuu = new Guna.UI2.WinForms.Guna2Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabHDSD = new System.Windows.Forms.TabPage();
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.content.SuspendLayout();
             this.tabHuongDanSuDung.SuspendLayout();
             this.tabDoiMatKhau.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
+            this.tabBackUp.SuspendLayout();
+            this.guna2ShadowPanel2.SuspendLayout();
             this.tabHDSD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +74,7 @@
             // tabHuongDanSuDung
             // 
             this.tabHuongDanSuDung.Controls.Add(this.tabDoiMatKhau);
+            this.tabHuongDanSuDung.Controls.Add(this.tabBackUp);
             this.tabHuongDanSuDung.Controls.Add(this.tabHDSD);
             this.tabHuongDanSuDung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabHuongDanSuDung.ItemSize = new System.Drawing.Size(180, 40);
@@ -87,7 +99,7 @@
             this.tabHuongDanSuDung.TabButtonSelectedState.InnerColor = System.Drawing.Color.Black;
             this.tabHuongDanSuDung.TabButtonSize = new System.Drawing.Size(180, 40);
             this.tabHuongDanSuDung.TabIndex = 0;
-            this.tabHuongDanSuDung.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.tabHuongDanSuDung.TabMenuBackColor = System.Drawing.Color.Black;
             this.tabHuongDanSuDung.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
             // 
             // tabDoiMatKhau
@@ -258,6 +270,124 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Đổi mật khẩu";
             // 
+            // tabBackUp
+            // 
+            this.tabBackUp.Controls.Add(this.guna2ShadowPanel2);
+            this.tabBackUp.Location = new System.Drawing.Point(4, 44);
+            this.tabBackUp.Name = "tabBackUp";
+            this.tabBackUp.Size = new System.Drawing.Size(934, 588);
+            this.tabBackUp.TabIndex = 2;
+            this.tabBackUp.Text = "Backup";
+            this.tabBackUp.UseVisualStyleBackColor = true;
+            // 
+            // guna2ShadowPanel2
+            // 
+            this.guna2ShadowPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel2.Controls.Add(this.label8);
+            this.guna2ShadowPanel2.Controls.Add(this.label7);
+            this.guna2ShadowPanel2.Controls.Add(this.btnKhoiPhuc);
+            this.guna2ShadowPanel2.Controls.Add(this.btnSaoLuu);
+            this.guna2ShadowPanel2.Controls.Add(this.label9);
+            this.guna2ShadowPanel2.Controls.Add(this.label6);
+            this.guna2ShadowPanel2.Controls.Add(this.label5);
+            this.guna2ShadowPanel2.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(121, 94);
+            this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
+            this.guna2ShadowPanel2.Radius = 15;
+            this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel2.ShadowShift = 10;
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(693, 400);
+            this.guna2ShadowPanel2.TabIndex = 2;
+            // 
+            // btnKhoiPhuc
+            // 
+            this.btnKhoiPhuc.BorderRadius = 15;
+            this.btnKhoiPhuc.BorderThickness = 2;
+            this.btnKhoiPhuc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnKhoiPhuc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnKhoiPhuc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnKhoiPhuc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnKhoiPhuc.FillColor = System.Drawing.Color.Transparent;
+            this.btnKhoiPhuc.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhoiPhuc.ForeColor = System.Drawing.Color.Black;
+            this.btnKhoiPhuc.Location = new System.Drawing.Point(426, 290);
+            this.btnKhoiPhuc.Name = "btnKhoiPhuc";
+            this.btnKhoiPhuc.Size = new System.Drawing.Size(181, 49);
+            this.btnKhoiPhuc.TabIndex = 9;
+            this.btnKhoiPhuc.Text = "Khôi phục";
+            this.btnKhoiPhuc.Click += new System.EventHandler(this.btnKhoiPhuc_Click);
+            // 
+            // btnSaoLuu
+            // 
+            this.btnSaoLuu.BorderRadius = 15;
+            this.btnSaoLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaoLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaoLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSaoLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSaoLuu.FillColor = System.Drawing.Color.Black;
+            this.btnSaoLuu.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaoLuu.ForeColor = System.Drawing.Color.White;
+            this.btnSaoLuu.Location = new System.Drawing.Point(85, 290);
+            this.btnSaoLuu.Name = "btnSaoLuu";
+            this.btnSaoLuu.Size = new System.Drawing.Size(181, 49);
+            this.btnSaoLuu.TabIndex = 8;
+            this.btnSaoLuu.Text = "Sao lưu";
+            this.btnSaoLuu.Click += new System.EventHandler(this.btnSaoLuu_Click);
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Gray;
+            this.label8.Location = new System.Drawing.Point(353, 156);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(315, 131);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Lấy lại dữ liệu từ bản \"sao lưu\" đã tạo trước đó. Chức năng này được dùng để phục" +
+    " hồi thông tin khi thiết bị gặp sự cố, hoặc khi bạn muốn chuyển toàn bộ dữ liệu " +
+    "cũ sang một máy mới.";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Gray;
+            this.label9.Location = new System.Drawing.Point(25, 156);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(315, 131);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Tạo và cất giữ một bản sao dữ liệu hiện tại của bạn. Việc này giúp bảo vệ dữ liệu" +
+    ", đề phòng trường hợp máy hỏng, mất thiết bị hoặc lỡ tay xóa nhầm";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(438, 114);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(153, 33);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Khôi phục";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(111, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 33);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Sao lưu";
+            // 
+            // label5
+            // 
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Location = new System.Drawing.Point(346, -40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(1, 480);
+            this.label5.TabIndex = 0;
+            // 
             // tabHDSD
             // 
             this.tabHDSD.Controls.Add(this.webView21);
@@ -294,6 +424,9 @@
             this.tabDoiMatKhau.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
+            this.tabBackUp.ResumeLayout(false);
+            this.guna2ShadowPanel2.ResumeLayout(false);
+            this.guna2ShadowPanel2.PerformLayout();
             this.tabHDSD.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
@@ -305,16 +438,25 @@
         private Guna.UI2.WinForms.Guna2Panel content;
         private Guna.UI2.WinForms.Guna2TabControl tabHuongDanSuDung;
         private System.Windows.Forms.TabPage tabDoiMatKhau;
-        private System.Windows.Forms.TabPage tabHDSD;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox txtNhapLai;
+        private Guna.UI2.WinForms.Guna2TextBox txtMatKhauMoi;
+        private Guna.UI2.WinForms.Guna2TextBox txtMatKhauCu;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox txtNhapLai;
-        private Guna.UI2.WinForms.Guna2TextBox txtMatKhauMoi;
-        private Guna.UI2.WinForms.Guna2TextBox txtMatKhauCu;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage tabBackUp;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
+        private Guna.UI2.WinForms.Guna2Button btnKhoiPhuc;
+        private Guna.UI2.WinForms.Guna2Button btnSaoLuu;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage tabHDSD;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
     }
 }

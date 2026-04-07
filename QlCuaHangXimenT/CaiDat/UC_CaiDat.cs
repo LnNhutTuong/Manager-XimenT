@@ -18,9 +18,6 @@ namespace QlCuaHangXimenT.CaiDat
         {
             InitializeComponent();
             this.tenDangNhap = tenDangNhap;
-
-
-            
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -116,6 +113,36 @@ namespace QlCuaHangXimenT.CaiDat
 
                 // Navigate thẳng tới file PDF
                 webView21.CoreWebView2.Navigate(pdfPath);
+            }
+        }
+
+        private void btnSaoLuu_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog saoluuFolder = new FolderBrowserDialog();
+            saoluuFolder.Description = "Chọn thư mục lưu trữ";
+            if (saoluuFolder.ShowDialog() == DialogResult.OK)
+            {
+                string sDuongDan = saoluuFolder.SelectedPath;
+                if (Auth_BUS.SaoLuu(sDuongDan) == true)
+                    MessageBox.Show("Đã sao lưu dữ liệu vào " + sDuongDan);
+                else
+                    MessageBox.Show("Thao tác không thành công");
+            }
+        }
+
+        private void btnKhoiPhuc_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog phuchoiFile = new OpenFileDialog();
+            phuchoiFile.Filter = "*.bak|*.bak";
+            phuchoiFile.Title = "Chọn tập tin phục hồi (.bak)";
+            if (phuchoiFile.ShowDialog() == DialogResult.OK && phuchoiFile.CheckFileExists == true)
+            {
+
+                string sDuongDan = phuchoiFile.FileName;
+                if (Auth_BUS.PhucHoi(sDuongDan) == true)
+                    MessageBox.Show("Thành công");
+                else
+                    MessageBox.Show("Thất bại");
             }
         }
     }

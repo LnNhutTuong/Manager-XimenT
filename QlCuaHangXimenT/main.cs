@@ -175,8 +175,15 @@ namespace QlCuaHangXimenT
 
         void PhanQuyen()
         {
-            string chucvu = nguoiDangNhap.MaCV;
+            btnNhanVien.Visible = false;
+            btnQuanliSanPham.Visible = false;
+            btnKhachHang.Visible = false;
+            btnDonHang.Visible = false;
+            btnThongKe.Visible = false;
 
+            if (nguoiDangNhap == null) return;
+
+            string chucvu = nguoiDangNhap.MaCV;
             if (chucvu == "ADMIN") 
             {
                 btnNhanVien.Visible = true;
@@ -204,20 +211,24 @@ namespace QlCuaHangXimenT
                 btnThongKe.Visible = true;
             }
 
+            else if (chucvu == "CV004")
+            {
+                btnNhanVien.Visible = true;
+            }
+
         }
 
         private NguoiDung_DTO nguoiDangNhap;
 
-        private bool DangNhap()
+        private bool DangNhap(bool skipLoading = false)
         {
-          using(Login login = new Login())
+            // Truyền biến skipLoading vào form Login
+            using (Login login = new Login(skipLoading))
             {
-                if(login.ShowDialog() == DialogResult.OK)
+                if (login.ShowDialog() == DialogResult.OK)
                 {
                     this.nguoiDangNhap = login.NguoiDungHienTai;
-
                     this.Show();
-
                     PhanQuyen();
 
                     lblTenNV.Text = this.nguoiDangNhap.TenNV.ToString();
@@ -230,7 +241,6 @@ namespace QlCuaHangXimenT
                     else
                     {
                         string pathAnh = this.nguoiDangNhap.HinhAnh.ToString();
-
                         string fullPath = Path.Combine(Application.StartupPath, pathAnh);
 
                         if (File.Exists(fullPath))
@@ -241,20 +251,18 @@ namespace QlCuaHangXimenT
                         else
                         {
                             ptbNhanVien.Image = Resources.nonePicture;
-                            MessageBox.Show(" ảnh không tồn tại nữa!");
                         }
                     }
 
-
                     btnDangXuat.Visible = true;
-                    return true;                    
+                    return true;
                 }
-                
-                
-                    return false;
-                
+                return false;
             }
         }
+
+
+
 
         private void main_Load(object sender, EventArgs e)
         {
@@ -274,10 +282,18 @@ namespace QlCuaHangXimenT
             if (MessageBox.Show("Bạn có muốn đăng xuất không?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 this.nguoiDangNhap = null;
+
+                lblTenNV.Text = "Tên nhân viên";
+                lblChucVu.Text = "Chức vụ";
+                ptbNhanVien.Image = Resources.nonePicture;
                 content.Controls.Clear();
+                pnlSubSanPham.Visible = false;
+                btnQuanliSanPham.Image = Resources.up;
+                ResetBtn();
+
                 this.Hide();
 
-                if (!DangNhap())
+                if (!DangNhap(true))
                 {
                     Application.Exit();
                 }

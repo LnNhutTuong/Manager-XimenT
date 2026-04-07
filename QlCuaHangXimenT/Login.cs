@@ -86,23 +86,36 @@ namespace QlCuaHangXimenT
             }
         }
 
+
+        private bool _skipLoading;
+
+        public Login(bool skipLoading = false)
+        {
+            InitializeComponent();
+            _skipLoading = skipLoading; 
+        }
+
         #region 100% AI
         float swingTimer = 0;
         int loadPercent = 0;
 
         private async void Login_Shown(object sender, EventArgs e)
         {
+            if (_skipLoading)
+            {
+                pnlSplash.Visible = false; 
+                return; 
+            }
+
             pnlSplash.BringToFront();
             pnlSplash.Visible = true;
 
-            // Bật cái timer bạn kéo từ Toolbox vào (nhớ chỉnh Interval là 30 trong Properties)
             timer1.Start();
 
             var progress = new Progress<int>(percent =>
             {
                 loadPercent = percent;
                 lblStatus.Text = $"XimenT đang khởi tạo... {percent}%";
-                // Không cần Invalidate ở đây vì timer1 đã làm rồi
             });
 
             await Task.Run(() => LoadRealData(progress));

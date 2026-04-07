@@ -122,5 +122,14 @@ namespace BUS.Auth
 
             }
         }
+
+        public static bool SaoLuu(string sDuongDan)
+        {
+            return Auth_DAO.SaoLuuDuLieu(sDuongDan);
+        }
+        public static bool PhucHoi(string sDuongDan)
+        {
+            return Auth_DAO.PhucHoiDuLieu(sDuongDan);
+        }
     }
 }
