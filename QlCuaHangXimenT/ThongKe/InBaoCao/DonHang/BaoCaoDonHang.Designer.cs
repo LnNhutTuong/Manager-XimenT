@@ -35,7 +35,7 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QlCuaHangXimenT.ThongKe.InBaoCao.SanPham.BaoCaoSanPham.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QlCuaHangXimenT.ThongKe.InBaoCao.DonHang.BaoCaoDonHang.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -65,7 +65,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BaoCaoDonHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo cáo Đơn hàng";
+            this.Load += new System.EventHandler(this.BaoCaoDonHang_Load);
             this.ResumeLayout(false);
 
         }

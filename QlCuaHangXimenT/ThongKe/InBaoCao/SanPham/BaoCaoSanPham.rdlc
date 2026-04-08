@@ -877,19 +877,32 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetSanPham</DataSetName>
+        <Top>0.1875in</Top>
         <Height>0.75in</Height>
-        <Width>12.44792in</Width>
+        <Width>12.44794in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Line Name="Line1">
+        <Top>0.17639cm</Top>
+        <Left>4.18722cm</Left>
+        <Height>0cm</Height>
+        <Width>23.24333cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
     <Height>5.08cm</Height>
     <Style />
   </Body>
-  <Width>31.61771cm</Width>
+  <Width>31.61777cm</Width>
   <Page>
     <PageHeader>
       <Height>2.77495cm</Height>

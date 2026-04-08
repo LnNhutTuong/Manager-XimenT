@@ -384,6 +384,7 @@
     <EmbeddedResource Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.resx">
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\InBaoCao\DonHang\BaoCaoDonHang.rdlc" />
     <EmbeddedResource Include="ThongKe\InBaoCao\DonHang\BaoCaoDonHang.resx">
       <DependentUpon>BaoCaoDonHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,9 +404,9 @@
     <EmbeddedResource Include="ThongKe\UC_ThongKe.resx">
       <DependentUpon>UC_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DTO.QuanLyDonHang.CtDonHang_DTO.datasource" />
+    <None Include="Properties\DataSources\DTO.QuanLyDonHang.DonHang_DTO2.datasource" />
     <None Include="Properties\DataSources\DTO.QuanLySanPham.SanPham_DTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
