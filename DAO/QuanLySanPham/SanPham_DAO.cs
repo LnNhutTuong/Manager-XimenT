@@ -16,14 +16,8 @@ namespace DAO.QuanLySanPham
         {
             DataProvider dp = new DataProvider();
 
-            SqlCommand cmd = new SqlCommand(@"  Select *, dm.TenDM, th.TenTH, nv.MaNV 
-                                                From SanPham as sp
-                                                Join DanhMuc as dm
-                                                On dm.MaDM = sp.MaDM
-                                                Join ThuongHieu as th
-                                                On th.MaTH = sp.MaTH
-                                                Join NhanVien as nv
-                                                On nv.MaNV = sp.MaNV");
+            SqlCommand cmd = new SqlCommand(@"  Select *
+                                                From SanPham");
 
             DataTable table = dp.TruyVanLayDuLieu(cmd);
 

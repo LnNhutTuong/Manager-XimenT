@@ -1,4 +1,5 @@
-﻿using QlCuaHangXimenT.ThongKe.tab;
+﻿using QlCuaHangXimenT.ThongKe.InBaoCao;
+using QlCuaHangXimenT.ThongKe.tab;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,6 +69,20 @@ namespace QlCuaHangXimenT.ThongKe
             sp.LayDuLieuTren(tuNgay, denNgay);
 
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if(tcThongKe.SelectedTab == tabSanPham)
+            {
+                BaoCaoSanPham sp = new BaoCaoSanPham();
+                sp.Show();
+            }
+            else if(tcThongKe.SelectedTab == tabTongHop)
+            {
+                BaoCaoTongHop th = new BaoCaoTongHop();
+                th.Show();
+            }
         }
     }
 }

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace DAO.ThongKe
 {
@@ -95,7 +96,7 @@ namespace DAO.ThongKe
         }
         #endregion
 
-           #region TỔNG SỐ DANH MỤC
+            #region TỔNG SỐ DANH MỤC
         public static DataTable TongSoDanhMuc()
         {
             DataProvider dp = new DataProvider();
@@ -227,6 +228,44 @@ namespace DAO.ThongKe
             DataTable table = dp.TruyVanLayDuLieu(cmd);
 
             return table; 
+        }
+        #endregion
+
+        #region Report
+        public static TongHop_DTO LayThongKeTongHop(DateTime tuNgay, DateTime denNgay)
+        {
+            TongHop_DTO tongHop = new TongHop_DTO();
+
+            // Doanh thu
+            DataTable dtDoanhThu = ThongKe_DAO.ThongKeTheoKhoangThoiGian(tuNgay, denNgay);
+            if (dtDoanhThu != null && dtDoanhThu.Rows.Count > 0)
+            {
+                tongHop.DoanhThu = dtDoanhThu.Rows[0]["DoanhThu"] == DBNull.Value
+                    ? 0
+                    : Convert.ToDecimal(dtDoanhThu.Rows[0]["DoanhThu"]);
+                tongHop.SoLuongSanPhamDaBan = dtDoanhThu.Rows[0]["SoLuong"] == DBNull.Value
+                    ? 0
+                    : Convert.ToInt32(dtDoanhThu.Rows[0]["SoLuong"]);
+            }
+
+            // Đơn hàng thành công
+            DataTable dtThanhCong = ThongKe_DAO.TongSoDonHangTheoThoiGian(2, tuNgay, denNgay);
+            if (dtThanhCong != null && dtThanhCong.Rows.Count > 0)
+            {
+                tongHop.SoDonHangThanhCong = Convert.ToInt32(dtThanhCong.Rows[0]["SoDonHang"]);
+            }
+
+            // Đơn hàng bị hủy
+            DataTable dtBiHuy = ThongKe_DAO.TongSoDonHangTheoThoiGian(3, tuNgay, denNgay);
+            if (dtBiHuy != null && dtBiHuy.Rows.Count > 0)
+            {
+                tongHop.SoDonHangBiHuy = Convert.ToInt32(dtBiHuy.Rows[0]["SoDonHang"]);
+            }
+
+            tongHop.TuNgay = tuNgay;
+            tongHop.DenNgay = denNgay;
+
+            return tongHop;
         }
         #endregion
     }

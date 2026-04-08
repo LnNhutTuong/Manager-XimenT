@@ -272,6 +272,12 @@
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ThongKe\InBaoCao\BaoCaoSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\InBaoCao\BaoCaoSanPham.Designer.cs">
+      <DependentUpon>BaoCaoSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongKe\tab\tab_SanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,10 @@
     <EmbeddedResource Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.resx">
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\InBaoCao\BaoCaoSanPham.resx">
+      <DependentUpon>BaoCaoSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\InBaoCao\ThongKeTongHopRpt.rdlc" />
     <EmbeddedResource Include="ThongKe\tab\tab_SanPham.resx">
       <DependentUpon>tab_SanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -378,6 +388,7 @@
     <None Include="GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DTO.QuanLyDonHang.CtDonHang_DTO.datasource" />
+    <None Include="Properties\DataSources\DTO.QuanLySanPham.SanPham_DTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

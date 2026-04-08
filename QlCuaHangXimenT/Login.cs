@@ -141,8 +141,6 @@ namespace QlCuaHangXimenT
 
             return "Dữ liệu đã sẵn sàng";
         }
-        #endregion
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             swingTimer += 0.12f; // Tốc độ lắc, chỉnh số này nếu muốn lắc nhanh/chậm hơn
@@ -181,5 +179,6 @@ namespace QlCuaHangXimenT
                 e.Graphics.Restore(state);
             }
         }
+        #endregion
     }
 }
