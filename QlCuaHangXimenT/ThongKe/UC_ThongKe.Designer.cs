@@ -172,6 +172,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(144, 31);
             this.guna2Button1.TabIndex = 186;
             this.guna2Button1.Text = "Xuất báo cáo";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // tcThongKe
             // 
