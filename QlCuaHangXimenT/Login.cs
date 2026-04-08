@@ -25,66 +25,9 @@ namespace QlCuaHangXimenT
             InitializeComponent();
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
-        {
-            string tenDangNhap = txtTenDangNhap.Text.Trim();
-            string matKhau = txtMatKhau.Text.Trim();
-            string mess;
+       
 
-            NguoiDung_DTO user = Auth_BUS.DangNhap(tenDangNhap, matKhau, out mess);
-
-            if (user != null)
-            {
-                this.NguoiDungHienTai = user;
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show(mess, "Thông báo lỗi!");
-            }
-        }
-
-        private void Login_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string tenDangNhap = txtTenDangNhap.Text.Trim();
-                string matKhau = txtMatKhau.Text.Trim();
-                string mess;
-
-                NguoiDung_DTO user = Auth_BUS.DangNhap(tenDangNhap, matKhau, out mess);
-
-                if (user != null)
-                {
-                    this.NguoiDungHienTai = user;
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show(mess, "Thông báo lỗi!");
-                }
-            }
-        }
-
-        private void txtMatKhau_IconRightClick(object sender, EventArgs e)
-        {
-            if (txtMatKhau.UseSystemPasswordChar)
-            {
-                // Hiện mật khẩu
-                txtMatKhau.UseSystemPasswordChar = false;
-                txtMatKhau.PasswordChar = '\0';
-                txtMatKhau.IconRight = Properties.Resources.view;
-            }
-            else
-            {
-                // Ẩn mật khẩu
-                txtMatKhau.UseSystemPasswordChar = true;
-                txtMatKhau.PasswordChar = '*';
-                txtMatKhau.IconRight = Properties.Resources.hide;
-            }
-        }
+      
 
 
         private bool _skipLoading;
@@ -99,32 +42,7 @@ namespace QlCuaHangXimenT
         float swingTimer = 0;
         int loadPercent = 0;
 
-        private async void Login_Shown(object sender, EventArgs e)
-        {
-            if (_skipLoading)
-            {
-                pnlSplash.Visible = false; 
-                return; 
-            }
-
-            pnlSplash.BringToFront();
-            pnlSplash.Visible = true;
-
-            timer1.Start();
-
-            var progress = new Progress<int>(percent =>
-            {
-                loadPercent = percent;
-                lblStatus.Text = $"XimenT đang khởi tạo... {percent}%";
-            });
-
-            await Task.Run(() => LoadRealData(progress));
-
-            while (loadPercent < 100) await Task.Delay(100);
-
-            timer1.Stop();
-            pnlSplash.Visible = false;
-        }
+      
 
 
         private string LoadRealData(IProgress<int> progress)
@@ -180,5 +98,93 @@ namespace QlCuaHangXimenT
             }
         }
         #endregion
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            string tenDangNhap = txtTenDangNhap.Text.Trim();
+            string matKhau = txtMatKhau.Text.Trim();
+            string mess;
+
+            NguoiDung_DTO user = Auth_BUS.DangNhap(tenDangNhap, matKhau, out mess);
+
+            if (user != null)
+            {
+                this.NguoiDungHienTai = user;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(mess, "Thông báo lỗi!");
+            }
+        }
+
+        private void btnDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string tenDangNhap = txtTenDangNhap.Text.Trim();
+                string matKhau = txtMatKhau.Text.Trim();
+                string mess;
+
+                NguoiDung_DTO user = Auth_BUS.DangNhap(tenDangNhap, matKhau, out mess);
+
+                if (user != null)
+                {
+                    this.NguoiDungHienTai = user;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(mess, "Thông báo lỗi!");
+                }
+            }
+        }
+
+        private void txtMatKhau_IconRightClick(object sender, EventArgs e)
+        {
+            if (txtMatKhau.UseSystemPasswordChar)
+            {
+                // Hiện mật khẩu
+                txtMatKhau.UseSystemPasswordChar = false;
+                txtMatKhau.PasswordChar = '\0';
+                txtMatKhau.IconRight = Properties.Resources.view;
+            }
+            else
+            {
+                // Ẩn mật khẩu
+                txtMatKhau.UseSystemPasswordChar = true;
+                txtMatKhau.PasswordChar = '*';
+                txtMatKhau.IconRight = Properties.Resources.hide;
+            }
+        }
+
+        private async void Login_Shown(object sender, EventArgs e)
+        {
+            if (_skipLoading)
+            {
+                pnlSplash.Visible = false;
+                return;
+            }
+
+            pnlSplash.BringToFront();
+            pnlSplash.Visible = true;
+
+            timer1.Start();
+
+            var progress = new Progress<int>(percent =>
+            {
+                loadPercent = percent;
+                lblStatus.Text = $"XimenT đang khởi tạo... {percent}%";
+            });
+
+            await Task.Run(() => LoadRealData(progress));
+
+            while (loadPercent < 100) await Task.Delay(100);
+
+            timer1.Stop();
+            pnlSplash.Visible = false;
+        }
     }
 }

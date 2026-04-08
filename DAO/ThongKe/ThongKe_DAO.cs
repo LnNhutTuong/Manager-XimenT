@@ -198,76 +198,8 @@ namespace DAO.ThongKe
             return table;
         }
         #endregion
-        #endregion
-
-
-
-        #region TỔNG SỐ TIỀN NHẬP SẢN PHẨM
-        public static DataTable TongSoTienNhapSP()
-        {
-            DataProvider dp = new DataProvider();
-
-            SqlCommand cmd = new SqlCommand(@"Select Sum(GiaNhap) as GiaNhap from SanPham");
-
-            DataTable table = dp.TruyVanLayDuLieu(cmd);
-
-            return table;
-        }
-        #endregion
-
-        #region LỢI NHUẬN
-        public static DataTable LoiNhuan()
-        {
-            DataProvider dp = new DataProvider();
-
-            SqlCommand cmd = new SqlCommand(@"  select sum(dh.TongTien) - sum(sp.GiaNhap) as LoiNhuan from DonHang as dh 
-                                                Join CtDonHang as ct On ct.MaDH = dh.MaDH
-                                                Join SanPham as sp on ct.MaSP = sp.MaSP
-                                                Where dh.TrangThai = '2'");
-
-            DataTable table = dp.TruyVanLayDuLieu(cmd);
-
-            return table; 
-        }
-        #endregion
-
-        #region Report
-        public static TongHop_DTO LayThongKeTongHop(DateTime tuNgay, DateTime denNgay)
-        {
-            TongHop_DTO tongHop = new TongHop_DTO();
-
-            // Doanh thu
-            DataTable dtDoanhThu = ThongKe_DAO.ThongKeTheoKhoangThoiGian(tuNgay, denNgay);
-            if (dtDoanhThu != null && dtDoanhThu.Rows.Count > 0)
-            {
-                tongHop.DoanhThu = dtDoanhThu.Rows[0]["DoanhThu"] == DBNull.Value
-                    ? 0
-                    : Convert.ToDecimal(dtDoanhThu.Rows[0]["DoanhThu"]);
-                tongHop.SoLuongSanPhamDaBan = dtDoanhThu.Rows[0]["SoLuong"] == DBNull.Value
-                    ? 0
-                    : Convert.ToInt32(dtDoanhThu.Rows[0]["SoLuong"]);
-            }
-
-            // Đơn hàng thành công
-            DataTable dtThanhCong = ThongKe_DAO.TongSoDonHangTheoThoiGian(2, tuNgay, denNgay);
-            if (dtThanhCong != null && dtThanhCong.Rows.Count > 0)
-            {
-                tongHop.SoDonHangThanhCong = Convert.ToInt32(dtThanhCong.Rows[0]["SoDonHang"]);
-            }
-
-            // Đơn hàng bị hủy
-            DataTable dtBiHuy = ThongKe_DAO.TongSoDonHangTheoThoiGian(3, tuNgay, denNgay);
-            if (dtBiHuy != null && dtBiHuy.Rows.Count > 0)
-            {
-                tongHop.SoDonHangBiHuy = Convert.ToInt32(dtBiHuy.Rows[0]["SoDonHang"]);
-            }
-
-            tongHop.TuNgay = tuNgay;
-            tongHop.DenNgay = denNgay;
-
-            return tongHop;
-        }
-        #endregion
+        #endregion    
+       
     }
 }
 

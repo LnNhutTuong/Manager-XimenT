@@ -272,10 +272,10 @@
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="ThongKe\InBaoCao\BaoCaoSanPham.cs">
+    <Compile Include="ThongKe\InBaoCao\SanPham\BaoCaoSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongKe\InBaoCao\BaoCaoSanPham.Designer.cs">
+    <Compile Include="ThongKe\InBaoCao\SanPham\BaoCaoSanPham.Designer.cs">
       <DependentUpon>BaoCaoSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongKe\tab\tab_SanPham.cs">
@@ -372,10 +372,10 @@
     <EmbeddedResource Include="QuanLySanPham\ThuongHieu\UC_ThuongHieu.resx">
       <DependentUpon>UC_ThuongHieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongKe\InBaoCao\BaoCaoSanPham.resx">
+    <EmbeddedResource Include="ThongKe\InBaoCao\SanPham\BaoCaoSanPham.resx">
       <DependentUpon>BaoCaoSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongKe\InBaoCao\ThongKeTongHopRpt.rdlc" />
+    <EmbeddedResource Include="ThongKe\InBaoCao\SanPham\BaoCaoSanPhamRpt.rdlc" />
     <EmbeddedResource Include="ThongKe\tab\tab_SanPham.resx">
       <DependentUpon>tab_SanPham.cs</DependentUpon>
     </EmbeddedResource>

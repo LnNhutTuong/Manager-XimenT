@@ -73,16 +73,8 @@ namespace QlCuaHangXimenT.ThongKe
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if(tcThongKe.SelectedTab == tabSanPham)
-            {
                 BaoCaoSanPham sp = new BaoCaoSanPham();
                 sp.Show();
-            }
-            else if(tcThongKe.SelectedTab == tabTongHop)
-            {
-                BaoCaoTongHop th = new BaoCaoTongHop();
-                th.Show();
-            }
         }
     }
 }
