@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace DAO.ThongKe
 {
@@ -95,7 +96,7 @@ namespace DAO.ThongKe
         }
         #endregion
 
-           #region TỔNG SỐ DANH MỤC
+            #region TỔNG SỐ DANH MỤC
         public static DataTable TongSoDanhMuc()
         {
             DataProvider dp = new DataProvider();
@@ -197,38 +198,8 @@ namespace DAO.ThongKe
             return table;
         }
         #endregion
-        #endregion
-
-
-
-        #region TỔNG SỐ TIỀN NHẬP SẢN PHẨM
-        public static DataTable TongSoTienNhapSP()
-        {
-            DataProvider dp = new DataProvider();
-
-            SqlCommand cmd = new SqlCommand(@"Select Sum(GiaNhap) as GiaNhap from SanPham");
-
-            DataTable table = dp.TruyVanLayDuLieu(cmd);
-
-            return table;
-        }
-        #endregion
-
-        #region LỢI NHUẬN
-        public static DataTable LoiNhuan()
-        {
-            DataProvider dp = new DataProvider();
-
-            SqlCommand cmd = new SqlCommand(@"  select sum(dh.TongTien) - sum(sp.GiaNhap) as LoiNhuan from DonHang as dh 
-                                                Join CtDonHang as ct On ct.MaDH = dh.MaDH
-                                                Join SanPham as sp on ct.MaSP = sp.MaSP
-                                                Where dh.TrangThai = '2'");
-
-            DataTable table = dp.TruyVanLayDuLieu(cmd);
-
-            return table; 
-        }
-        #endregion
+        #endregion    
+       
     }
 }
 

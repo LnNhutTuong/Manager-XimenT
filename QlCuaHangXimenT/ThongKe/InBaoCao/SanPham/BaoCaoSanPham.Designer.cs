@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaoCaoSanPham));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
+            this.reportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "QlCuaHangXimenT.ThongKe.InBaoCao.SanPham.BaoCaoSanPham.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
@@ -74,5 +77,6 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

@@ -26,8 +26,9 @@ namespace QlCuaHangXimenT.ThongKe.InBaoCao.SanPham
             try
             {
                 ReportDataSource rds = new ReportDataSource("DataSetSanPham", DsSanPham);
-                reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(rds);
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    ReportDataSource rds = new ReportDataSource("DataSetSanPham", dsSanPham);
+                    reportViewer1.LocalReport.DataSources.Add(rds);
                 this.reportViewer1.RefreshReport();
             }
             catch (Exception e)
